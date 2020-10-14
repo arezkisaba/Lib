@@ -96,7 +96,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Samples/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
     arguments: '-c Debug -o $(webPackageDir)'
 
 - task: DotNetCoreCLI@2
@@ -104,35 +104,28 @@ steps:
   displayName: Dotnet test on [Lib.Core.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.UnitTests/Lib.Core.UnitTests/*.csproj'
-
-- task: DotNetCoreCLI@2
-  enabled: true
-  displayName: Dotnet test on [Lib.Core.OnlineServices.OpenWeatherMap.UnitTests]
-  inputs:
-    command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core/Lib.Core.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
   displayName: Dotnet test on [Lib.Core.OnlineServices.Rawg.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg.UnitTests/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
   displayName: Dotnet test on [Lib.Core.OnlineServices.Rss.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss.UnitTests/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
   displayName: Dotnet pack on [Lib.Core]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core/Lib.Core/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core/Lib.Core/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -141,7 +134,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.Mvvm]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.Mvvm" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -150,7 +143,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.OpenWeatherMap]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.OpenWeatherMap" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -159,7 +152,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Rawg]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rawg" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -168,7 +161,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Plex]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Plex/Lib.Core.OnlineServices.Plex/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Plex/Lib.Core.OnlineServices.Plex/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Plex" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -177,7 +170,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Rss]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rss" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -186,7 +179,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.TeamFoundationServer]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.TeamFoundationServer/Lib.Core.OnlineServices.TeamFoundationServer/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.TeamFoundationServer/Lib.Core.OnlineServices.TeamFoundationServer/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.TeamFoundationServer" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -195,7 +188,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Torrents]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Torrents/Lib.Core.OnlineServices.Torrents/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Torrents/Lib.Core.OnlineServices.Torrents/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Torrents" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -204,7 +197,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Trakt]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Trakt/Lib.Core.OnlineServices.Trakt/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Trakt/Lib.Core.OnlineServices.Trakt/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Trakt" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -213,7 +206,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Transmission]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Transmission/Lib.Core.OnlineServices.Transmission/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Transmission/Lib.Core.OnlineServices.Transmission/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Transmission" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -222,7 +215,7 @@ steps:
   displayName: Dotnet pack on [Lib.Core.OnlineServices.Unibet]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Unibet/Lib.Core.OnlineServices.Unibet/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Unibet/Lib.Core.OnlineServices.Unibet/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -231,7 +224,7 @@ steps:
   displayName: Dotnet pack on [Lib.Win32]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Win32/Lib.Win32/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Win32/Lib.Win32/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Win32" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
@@ -240,14 +233,14 @@ steps:
   displayName: Nuget pack on [Lib.Uwp]
   inputs:
     command: 'custom'
-    arguments: 'pack "$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Uwp/Lib.Uwp/Lib.Uwp.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp" -Symbols -SymbolPackageFormat snupkg'
+    arguments: 'pack "$(Build.SourcesDirectory)/Lib/Lib.Uwp/Lib.Uwp/Lib.Uwp.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp" -Symbols -SymbolPackageFormat snupkg'
 
 - task: NuGetCommand@2
   enabled: true
   displayName: Nuget pack on [Lib.Uwp.Mvvm]
   inputs:
     command: 'custom'
-    arguments: 'pack "$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp.Mvvm" -Symbols -SymbolPackageFormat snupkg'
+    arguments: 'pack "$(Build.SourcesDirectory)/Lib/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp.Mvvm" -Symbols -SymbolPackageFormat snupkg'
 
 - task: NuGetCommand@2
   enabled: true
