@@ -96,7 +96,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Samples/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
     arguments: '-c Debug -o $(webPackageDir)'
 
 - task: DotNetCoreCLI@2
@@ -111,21 +111,21 @@ steps:
   displayName: Dotnet test on [Lib.Core.OnlineServices.OpenWeatherMap.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
   displayName: Dotnet test on [Lib.Core.OnlineServices.Rawg.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg.UnitTests/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
   displayName: Dotnet test on [Lib.Core.OnlineServices.Rss.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss.UnitTests/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
