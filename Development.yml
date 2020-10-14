@@ -104,7 +104,7 @@ steps:
   displayName: Dotnet test on [Lib.Core.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.UnitTests/Lib.Core.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core/Lib.Core.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
