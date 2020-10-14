@@ -108,13 +108,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet test on [Lib.Core.OnlineServices.OpenWeatherMap.UnitTests]
-  inputs:
-    command: 'test'
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/*.csproj'
-
-- task: DotNetCoreCLI@2
-  enabled: true
   displayName: Dotnet test on [Lib.Core.OnlineServices.Rawg.UnitTests]
   inputs:
     command: 'test'
