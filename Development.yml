@@ -1,0 +1,278 @@
+# Universal Windows Platform
+# Build a Universal Windows Platform project using Visual Studio.
+# Add steps that test and distribute an app, save build artifacts, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'x64'
+  buildConfiguration: 'Debug'
+  appxPackageDir: '$(Build.ArtifactStagingDirectory)/AppxPackages'
+  webPackageDir: '$(Build.ArtifactStagingDirectory)/WebPackages'
+  nugetPackageDir: '$(Build.ArtifactStagingDirectory)/NugetPackages'
+
+steps:
+
+- task: PowerShell@2
+  enabled: true
+  displayName: Environment settings
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "BuildConfiguration : $(BuildConfiguration)"
+      Write-Host "Agent.BuildDirectory : $(Agent.BuildDirectory)"
+      Write-Host "Agent.HomeDirectory : $(Agent.HomeDirectory)"
+      Write-Host "Agent.Id : $(Agent.Id)"
+      Write-Host "Agent.JobName : $(Agent.JobName)"
+      Write-Host "Agent.JobStatus : $(Agent.JobStatus)"
+      Write-Host "Agent.MachineName : $(Agent.MachineName)"
+      Write-Host "Agent.Name : $(Agent.Name)"
+      Write-Host "Agent.OS : $(Agent.OS)"
+      Write-Host "Agent.OSArchitecture : $(Agent.OSArchitecture)"
+      Write-Host "Agent.TempDirectory : $(Agent.TempDirectory)"
+      Write-Host "Agent.ToolsDirectory : $(Agent.ToolsDirectory)"
+      Write-Host "Agent.WorkFolder : $(Agent.WorkFolder)"
+      Write-Host "Build.ArtifactStagingDirectory : $(Build.ArtifactStagingDirectory)"
+      Write-Host "Build.BuildId : $(Build.BuildId)"
+      Write-Host "Build.BuildNumber : $(Build.BuildNumber)"
+      Write-Host "Build.BuildUri : $(Build.BuildUri)"
+      Write-Host "Build.BinariesDirectory : $(Build.BinariesDirectory)"
+      Write-Host "Build.ContainerId : $(Build.ContainerId)"
+      Write-Host "Build.DefinitionName : $(Build.DefinitionName)"
+      Write-Host "Build.DefinitionVersion : $(Build.DefinitionVersion)"
+      Write-Host "Build.QueuedBy : $(Build.QueuedBy)"
+      Write-Host "Build.QueuedById : $(Build.QueuedById)"
+      Write-Host "Build.Reason : $(Build.Reason)"
+      Write-Host "Build.Repository.LocalPath : $(Build.Repository.LocalPath)"
+      Write-Host "Build.Repository.ID : $(Build.Repository.ID)"
+      Write-Host "Build.Repository.Name : $(Build.Repository.Name)"
+      Write-Host "Build.Repository.Provider : $(Build.Repository.Provider)"
+      Write-Host "Build.SourcesDirectory : $(Build.SourcesDirectory)"
+      Write-Host "Pipeline.Workspace : $(Pipeline.Workspace)"
+      Write-Host "System.DefaultWorkingDirectory : $(System.DefaultWorkingDirectory)"
+      Write-Host "System.JobName : $(System.JobName)"
+      Write-Host "System.TeamProject : $(System.TeamProject)"
+
+- task: PowerShell@2
+  enabled: true
+  displayName: Github Sync
+  inputs:
+    targetType: 'inline'
+    script: 'git push https://$(GithubUsername):$(GithubPassword)@github.com/arezkisaba/Lib.git HEAD:master'
+
+- task: NuGetToolInstaller@1
+  enabled: true
+  displayName: Nuget installation
+
+- task: NuGetCommand@2
+  enabled: true
+  displayName: Nuget restore
+  inputs:
+    command: 'restore'
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select'
+    vstsFeed: 'f48150d8-bc5e-41fc-9295-d308720814c6'
+    noCache: true
+    verbosityRestore: 'Normal'
+
+- task: VSBuild@1
+  enabled: true
+  displayName: Build solution
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet publish on [Lib.Core.Samples.WebApi]
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
+    arguments: '-c Debug -o $(webPackageDir)'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet test on [Lib.Core.UnitTests]
+  inputs:
+    command: 'test'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.UnitTests/Lib.Core.UnitTests/*.csproj'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet test on [Lib.Core.OnlineServices.OpenWeatherMap.UnitTests]
+  inputs:
+    command: 'test'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/Lib.Core.OnlineServices.OpenWeatherMap.UnitTests/*.csproj'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet test on [Lib.Core.OnlineServices.Rawg.UnitTests]
+  inputs:
+    command: 'test'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg.UnitTests/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet test on [Lib.Core.OnlineServices.Rss.UnitTests]
+  inputs:
+    command: 'test'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss.UnitTests/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core/Lib.Core/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.Mvvm]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.Mvvm" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.OpenWeatherMap]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.OpenWeatherMap" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Rawg]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rawg" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Plex]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Plex/Lib.Core.OnlineServices.Plex/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Plex" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Rss]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rss" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.TeamFoundationServer]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.TeamFoundationServer/Lib.Core.OnlineServices.TeamFoundationServer/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.TeamFoundationServer" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Torrents]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Torrents/Lib.Core.OnlineServices.Torrents/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Torrents" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Trakt]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Trakt/Lib.Core.OnlineServices.Trakt/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Trakt" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Transmission]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Transmission/Lib.Core.OnlineServices.Transmission/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Transmission" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.OnlineServices.Unibet]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.OnlineServices.Unibet/Lib.Core.OnlineServices.Unibet/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Win32]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Win32/Lib.Win32/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Win32" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: NuGetCommand@2
+  enabled: true
+  displayName: Nuget pack on [Lib.Uwp]
+  inputs:
+    command: 'custom'
+    arguments: 'pack "$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Uwp/Lib.Uwp/Lib.Uwp.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp" -Symbols -SymbolPackageFormat snupkg'
+
+- task: NuGetCommand@2
+  enabled: true
+  displayName: Nuget pack on [Lib.Uwp.Mvvm]
+  inputs:
+    command: 'custom'
+    arguments: 'pack "$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp.Mvvm" -Symbols -SymbolPackageFormat snupkg'
+
+- task: NuGetCommand@2
+  enabled: true
+  displayName: Nuget push
+  inputs:
+    command: 'push'
+    packagesToPush: '"$(nugetPackageDir)/**/*.nupkg"'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'f48150d8-bc5e-41fc-9295-d308720814c6'
+    publishPackageMetadata: false
+    allowPackageConflicts: true
+    verbosityPush: 'Normal'
+
+- task: PublishSymbols@2
+  enabled: true
+  displayName: Nuget symbols publish
+  inputs:
+    SymbolsFolder: '$(Build.SourcesDirectory)'
+    SearchPattern: '**/bin/**/*.pdb'
+    SymbolServerType: 'TeamServices'
+
+- task: PublishBuildArtifacts@1
+  enabled: true
+  displayName: Artifacts publish
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

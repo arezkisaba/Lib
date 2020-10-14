@@ -1,0 +1,6 @@
+Secrets storage :
+- https://www.meziantou.net/how-to-avoid-storing-secrets-in-the-source-code.htm
+
+Azure KeyVault :
+- https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1
+- https://docs.microsoft.com/en-us/dotnet/api/overview/azure/key-vault?view=azure-dotnet

@@ -1,0 +1,5 @@
+Create Integration test with test server
+How to UnitTests/IntegrationTests with credentials, storage, dataprotection ?
+
+Serilog
+Secure git repo

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup Label="Globals">
+        <SccProjectName>SAK</SccProjectName>
+        <SccProvider>SAK</SccProvider>
+        <SccAuxPath>SAK</SccAuxPath>
+        <SccLocalPath>SAK</SccLocalPath>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Lib.Core.OnlineServices.Unibet</AssemblyName>
+        <AssemblyTitle>Lib.Core.OnlineServices.Unibet</AssemblyTitle>
+        <Authors>Arezki Saba</Authors>
+        <Company>Arezki Saba</Company>
+        <Copyright></Copyright>
+        <DebugType>portable</DebugType>
+        <Description>Lib.Core.OnlineServices.Unibet</Description>
+        <NeutralLanguage>en</NeutralLanguage>
+        <PackageId>Lib.Core.OnlineServices.Unibet</PackageId>
+        <OutputType>Library</OutputType>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Version>1.0.4</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Properties\**" />
+        <EmbeddedResource Remove="Properties\**" />
+        <None Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Lib.Core\Lib.Core\Lib.Core.csproj" />
+    </ItemGroup>
+
+</Project>

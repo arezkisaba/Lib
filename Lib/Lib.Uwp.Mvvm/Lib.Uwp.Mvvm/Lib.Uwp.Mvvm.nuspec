@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<package >
+    <metadata>
+        <authors>Arezki Saba</authors>
+        <copyright></copyright>
+        <description>Lib.Uwp.Mvvm</description>
+        <id>Lib.Uwp.Mvvm</id>
+        <owners>Arezki Saba</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Lib.Uwp.Mvvm</title>
+        <version>1.0.4</version>
+    </metadata>
+</package>
