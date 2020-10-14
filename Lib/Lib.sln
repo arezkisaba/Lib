@@ -94,6 +94,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Documentation", "1_Documentation", "{B517618F-5F8B-42E2-A522-3D545F9CF7E0}"
 	ProjectSection(SolutionItems) = preProject
 		1_Documentation\Documentation.txt = 1_Documentation\Documentation.txt
+		1_Documentation\README.md = 1_Documentation\README.md
 		1_Documentation\Todo.txt = 1_Documentation\Todo.txt
 	EndProjectSection
 EndProject
@@ -110,11 +111,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Core.Samples.WebApi", "Samples\Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi.csproj", "{8078CAD7-F842-493E-97C7-9E6AFD6F0D8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Core.Samples.WebApi.UnitTests", "Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi.UnitTests\Lib.Core.Samples.WebApi.UnitTests.csproj", "{3E2E964E-6A39-41F4-B1B3-BD961BEF025A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C808FAA3-115E-4635-BFB0-11924BC5A8CA}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
