@@ -96,7 +96,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
+    projects: '$(Build.SourcesDirectory)/$(Build.Repository.Name)/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/Lib.Core.Samples.WebApi/*.csproj'
     arguments: '-c Debug -o $(webPackageDir)'
 
 - task: DotNetCoreCLI@2
