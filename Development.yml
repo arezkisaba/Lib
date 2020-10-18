@@ -108,17 +108,17 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet test on [Lib.Core.OnlineServices.Rawg.UnitTests]
+  displayName: Dotnet test on [Lib.ApiServices.Rawg.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rawg/Lib.ApiServices.Rawg.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet test on [Lib.Core.OnlineServices.Rss.UnitTests]
+  displayName: Dotnet test on [Lib.ApiServices.Rss.UnitTests]
   inputs:
     command: 'test'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss.UnitTests/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rss/Lib.ApiServices.Rss.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
@@ -140,84 +140,84 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.OpenWeatherMap]
+  displayName: Dotnet pack on [Lib.ApiServices.OpenWeatherMap]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.OpenWeatherMap/Lib.Core.OnlineServices.OpenWeatherMap/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.OpenWeatherMap/Lib.ApiServices.OpenWeatherMap/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.OpenWeatherMap" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.OpenWeatherMap" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Rawg]
+  displayName: Dotnet pack on [Lib.ApiServices.Rawg]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rawg/Lib.Core.OnlineServices.Rawg/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rawg/Lib.ApiServices.Rawg/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rawg" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Rawg" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Plex]
+  displayName: Dotnet pack on [Lib.ApiServices.Plex]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Plex/Lib.Core.OnlineServices.Plex/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Plex/Lib.ApiServices.Plex/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Plex" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Plex" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Rss]
+  displayName: Dotnet pack on [Lib.ApiServices.Rss]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Rss/Lib.Core.OnlineServices.Rss/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rss/Lib.ApiServices.Rss/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Rss" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Rss" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.TeamFoundationServer]
+  displayName: Dotnet pack on [Lib.ApiServices.TeamFoundationServer]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.TeamFoundationServer/Lib.Core.OnlineServices.TeamFoundationServer/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.TeamFoundationServer/Lib.ApiServices.TeamFoundationServer/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.TeamFoundationServer" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.TeamFoundationServer" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Torrents]
+  displayName: Dotnet pack on [Lib.ApiServices.Torrents]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Torrents/Lib.Core.OnlineServices.Torrents/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Torrents/Lib.ApiServices.Torrents/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Torrents" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Torrents" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Trakt]
+  displayName: Dotnet pack on [Lib.ApiServices.Trakt]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Trakt/Lib.Core.OnlineServices.Trakt/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Trakt/Lib.ApiServices.Trakt/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Trakt" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Trakt" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Transmission]
+  displayName: Dotnet pack on [Lib.ApiServices.Transmission]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Transmission/Lib.Core.OnlineServices.Transmission/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Transmission/Lib.ApiServices.Transmission/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Transmission" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Transmission" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.OnlineServices.Unibet]
+  displayName: Dotnet pack on [Lib.ApiServices.Unibet]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.OnlineServices.Unibet/Lib.Core.OnlineServices.Unibet/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Unibet/Lib.ApiServices.Unibet/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.OnlineServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
