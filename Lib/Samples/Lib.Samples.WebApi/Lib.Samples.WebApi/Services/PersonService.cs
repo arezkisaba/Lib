@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lib.Core.Samples.WebApi
+namespace Lib.Samples.WebApi
 {
     public class PersonService : IPersonService
     {

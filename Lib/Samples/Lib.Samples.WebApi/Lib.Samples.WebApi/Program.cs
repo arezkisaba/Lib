@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.EventLog;
 using System.Reflection;
 
-namespace Lib.Core.Samples.WebApi
+namespace Lib.Samples.WebApi
 {
     public class Program
     {

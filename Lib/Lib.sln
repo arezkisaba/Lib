@@ -95,11 +95,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.TeamFoundat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Core.Mvvm.UnitTests", "Lib.Core.Mvvm\Lib.Core.Mvvm.UnitTests\Lib.Core.Mvvm.UnitTests.csproj", "{707DFD32-EE3D-41A0-8062-C70FBD4BD8B7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib.Core.Samples.WebApi", "Lib.Core.Samples.WebApi", "{85C57F88-B4FF-4527-A942-F08D4EE4EA84}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib.Samples.WebApi", "Lib.Samples.WebApi", "{85C57F88-B4FF-4527-A942-F08D4EE4EA84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Core.Samples.WebApi", "Samples\Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi.csproj", "{8078CAD7-F842-493E-97C7-9E6AFD6F0D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Samples.WebApi", "Samples\Lib.Samples.WebApi\Lib.Samples.WebApi\Lib.Samples.WebApi.csproj", "{8078CAD7-F842-493E-97C7-9E6AFD6F0D8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Core.Samples.WebApi.UnitTests", "Samples\Lib.Core.Samples.WebApi\Lib.Core.Samples.WebApi.UnitTests\Lib.Core.Samples.WebApi.UnitTests.csproj", "{BDA06B4E-3E40-42AB-9756-D3F06ACA200F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Samples.WebApi.UnitTests", "Samples\Lib.Samples.WebApi\Lib.Samples.WebApi.UnitTests\Lib.Samples.WebApi.UnitTests.csproj", "{BDA06B4E-3E40-42AB-9756-D3F06ACA200F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C24F04BA-10B7-4612-B294-99AFCC343B56}"
 	ProjectSection(SolutionItems) = preProject

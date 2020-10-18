@@ -1,6 +1,6 @@
 using System;
 
-namespace Lib.Core.Samples.WebApi
+namespace Lib.Samples.WebApi
 {
     public class Person
     {

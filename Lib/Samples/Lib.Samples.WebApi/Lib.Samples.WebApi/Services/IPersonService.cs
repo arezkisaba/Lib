@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Lib.Core.Samples.WebApi
+namespace Lib.Samples.WebApi
 {
     public interface IPersonService
     {
