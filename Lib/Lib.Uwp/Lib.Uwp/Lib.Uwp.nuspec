@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0"?>
 <package >
-    <metadata>
-        <authors>Arezki Saba</authors>
-        <copyright></copyright>
-        <description>Lib.Uwp</description>
-        <id>Lib.Uwp</id>
-        <owners>Arezki Saba</owners>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <title>Lib.Uwp</title>
-        <version>1.0.4</version>
-    </metadata>
+  <metadata>
+    <authors>Arezki Saba</authors>
+    <copyright></copyright>
+    <description>Lib.Uwp</description>
+    <id>Lib.Uwp</id>
+    <owners>Arezki Saba</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <title>Lib.Uwp</title>
+    <version>1.0.7</version>
+  </metadata>
 </package>

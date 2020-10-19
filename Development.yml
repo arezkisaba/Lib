@@ -122,24 +122,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core/Lib.Core/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-
-- task: DotNetCoreCLI@2
-  enabled: true
-  displayName: Dotnet pack on [Lib.Core.Mvvm]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.Mvvm" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-
-- task: DotNetCoreCLI@2
-  enabled: true
   displayName: Dotnet pack on [Lib.ApiServices.OpenWeatherMap]
   inputs:
     command: 'custom'
@@ -218,6 +200,24 @@ steps:
     projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Unibet/Lib.ApiServices.Unibet/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core/Lib.Core/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.Core.Mvvm]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.Mvvm" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true

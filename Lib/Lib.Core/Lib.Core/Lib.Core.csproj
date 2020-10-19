@@ -1,37 +1,37 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup Label="Globals">
-        <SccProjectName>SAK</SccProjectName>
-        <SccProvider>SAK</SccProvider>
-        <SccAuxPath>SAK</SccAuxPath>
-        <SccLocalPath>SAK</SccLocalPath>
-        <Configurations>Debug;Release</Configurations>
-    </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <AssemblyName>Lib.Core</AssemblyName>
-        <AssemblyTitle>Lib.Core</AssemblyTitle>
-        <Authors>Arezki Saba</Authors>
-        <Company>Arezki Saba</Company>
-        <Copyright></Copyright>
-        <DebugType>portable</DebugType>
-        <Description>Lib.Core</Description>
-        <NeutralLanguage>en</NeutralLanguage>
-        <PackageId>Lib.Core</PackageId>
-        <OutputType>Library</OutputType>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <Version>1.0.6-alpha.1</Version>
-    </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>Lib.Core</AssemblyName>
+    <AssemblyTitle>Lib.Core</AssemblyTitle>
+    <Authors>Arezki Saba</Authors>
+    <Company>Arezki Saba</Company>
+    <Copyright></Copyright>
+    <DebugType>portable</DebugType>
+    <Description>Lib.Core</Description>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageId>Lib.Core</PackageId>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.7</Version>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <Compile Remove="Properties\**" />
-        <EmbeddedResource Remove="Properties\**" />
-        <None Remove="Properties\**" />
-    </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-        <PackageReference Include="System.Net.Http" Version="4.3.3" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  </ItemGroup>
 
 </Project>
