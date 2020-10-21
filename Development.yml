@@ -59,13 +59,6 @@ steps:
       Write-Host "System.JobName : $(System.JobName)"
       Write-Host "System.TeamProject : $(System.TeamProject)"
 
-- task: PowerShell@2
-  enabled: true
-  displayName: Github Sync
-  inputs:
-    targetType: 'inline'
-    script: 'git push https://$(GithubUsername):$(GithubPassword)@github.com/arezkisaba/Lib.git HEAD:master'
-
 - task: NuGetToolInstaller@1
   enabled: true
   displayName: Nuget installation
@@ -269,3 +262,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: PowerShell@2
+  enabled: true
+  displayName: Github Sync
+  inputs:
+    targetType: 'inline'
+    script: 'git push https://$(GithubUsername):$(GithubPassword)@github.com/arezkisaba/Lib.git HEAD:master'
