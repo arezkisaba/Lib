@@ -54,6 +54,6 @@
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles=".\bin\$(Configuration)\Lib.Wix.Setup.msi" DestinationFiles=".\bin\$(Configuration)\$(ProductName).msi" />
-    <Delete Files=".\bin\$(Configuration)\$(ProductName).msi" />
+    <!--<Delete Files=".\bin\$(Configuration)\Lib.Wix.Setup.msi" />-->
   </Target>
 </Project>
