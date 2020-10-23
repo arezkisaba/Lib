@@ -10,7 +10,7 @@ foreach ($item in $items) {
 		$relativePath = "$artifactFolderPath\$($item.Name)"
 		$guid = (New-Guid).Guid;
 		$otherGuid = $guid.Replace("-", "")
-		$row = "`t`t`t<Component Id=`"$($item.Name).$otherGuid`" Guid=`"$guid`">`r`n`t`t`t`t<File Id=`"$($item.Name).$otherGuid`" Name=`"$($item.Name)`" Source=`"$relativePath`"/>`r`n`t`t`t</Component>`r`n"
+		$row = "`t`t`t<Component Id=`"$($item.Name.Replace("-", "")).$otherGuid`" Guid=`"$guid`">`r`n`t`t`t`t<File Id=`"$($item.Name).$otherGuid`" Name=`"$($item.Name)`" Source=`"$relativePath`"/>`r`n`t`t`t</Component>`r`n"
 		$xml += "$row`n"
 	}
 }
