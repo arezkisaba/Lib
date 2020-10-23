@@ -9,7 +9,7 @@
 <?endif ?>
 
 <?ifndef UpgradeCode ?>
-<?define UpgradeCode = "00000000-0000-0000-0000-000000000000"?>
+<?define UpgradeCode = "00000001-0001-0001-0001-000000000001"?>
 <?endif ?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
