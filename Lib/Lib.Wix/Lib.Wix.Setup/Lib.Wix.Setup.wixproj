@@ -41,15 +41,6 @@
   <PropertyGroup>
     <PreBuildEvent>powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(ProjectDir)update-productwxs.ps1</PreBuildEvent>
   </PropertyGroup>
-  <!--
-	To modify your build process, add your task inside one of the targets below and uncomment it.
-	Other similar extension points exist, see Wix.targets.
-	<Target Name="BeforeBuild">
-	</Target>
-	<Target Name="AfterBuild">
-	</Target>
-	-->
-
   <Target Name="BeforeBuild">
     <CreateProperty Condition="$(UpgradeCode) != ''" Value="UpgradeCode=$(UpgradeCode);$(DefineConstants)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
@@ -60,5 +51,7 @@
     <CreateProperty Condition="$(Version) != ''" Value="PackageVersion=$(Version);$(Version)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
     </CreateProperty>
+  </Target>
+  <Target Name="AfterBuild">
   </Target>
 </Project>

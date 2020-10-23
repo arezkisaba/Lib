@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?ifndef ProductName ?>
+<?define ProductName = "CHANGEME"?>
+<?endif ?>
+
+<?ifndef Version ?>
+<?define Version = "1.0.0.0"?>
+<?endif ?>
+
+<?ifndef UpgradeCode ?>
+<?define UpgradeCode = "00000000-0000-0000-0000-000000000000"?>
+<?endif ?>
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Id="6a0b422c-2ac2-494b-8939-21d8daf6354b" Name="$(var.ProductName)" Language="1033" Version="$(var.Version)" Manufacturer="Arezki Saba" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
