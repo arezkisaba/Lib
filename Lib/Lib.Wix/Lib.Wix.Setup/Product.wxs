@@ -35,6 +35,98 @@
 
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="BabylonTools.XMap.deps.json.e7ff08aea29343ea85059bb0a365842c" Guid="e7ff08ae-a293-43ea-8505-9bb0a365842c">
+				<File Id="BabylonTools.XMap.deps.json.e7ff08aea29343ea85059bb0a365842c" Name="BabylonTools.XMap.deps.json" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.deps.json"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.dll.46a5556334dc4bdd9abad433a1430855" Guid="46a55563-34dc-4bdd-9aba-d433a1430855">
+				<File Id="BabylonTools.XMap.dll.46a5556334dc4bdd9abad433a1430855" Name="BabylonTools.XMap.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.dll"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.dll.config.951a6c8b21bb404b807d2cad60d64688" Guid="951a6c8b-21bb-404b-807d-2cad60d64688">
+				<File Id="BabylonTools.XMap.dll.config.951a6c8b21bb404b807d2cad60d64688" Name="BabylonTools.XMap.dll.config" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.dll.config"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.exe.66f2145221b94e03a7a6a6e33edd87e7" Guid="66f21452-21b9-4e03-a7a6-a6e33edd87e7">
+				<File Id="BabylonTools.XMap.exe.66f2145221b94e03a7a6a6e33edd87e7" Name="BabylonTools.XMap.exe" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.exe"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.pdb.f2bd985b079b4757b43a202cae9cde4e" Guid="f2bd985b-079b-4757-b43a-202cae9cde4e">
+				<File Id="BabylonTools.XMap.pdb.f2bd985b079b4757b43a202cae9cde4e" Name="BabylonTools.XMap.pdb" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.pdb"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.runtimeconfig.dev.json.af37642ab1364821970202d09643882b" Guid="af37642a-b136-4821-9702-02d09643882b">
+				<File Id="BabylonTools.XMap.runtimeconfig.dev.json.af37642ab1364821970202d09643882b" Name="BabylonTools.XMap.runtimeconfig.dev.json" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.runtimeconfig.dev.json"/>
+			</Component>
+
+			<Component Id="BabylonTools.XMap.runtimeconfig.json.b9f3e5ed2e4744c198d6a7b37d7eb53f" Guid="b9f3e5ed-2e47-44c1-98d6-a7b37d7eb53f">
+				<File Id="BabylonTools.XMap.runtimeconfig.json.b9f3e5ed2e4744c198d6a7b37d7eb53f" Name="BabylonTools.XMap.runtimeconfig.json" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\BabylonTools.XMap.runtimeconfig.json"/>
+			</Component>
+
+			<Component Id="Lib.Core.dll.f4f8964f74e84915b830d52dc7eaff92" Guid="f4f8964f-74e8-4915-b830-d52dc7eaff92">
+				<File Id="Lib.Core.dll.f4f8964f74e84915b830d52dc7eaff92" Name="Lib.Core.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\Lib.Core.dll"/>
+			</Component>
+
+			<Component Id="Lib.Win32.dll.0ccf14d9b5f0496caadf55211a433805" Guid="0ccf14d9-b5f0-496c-aadf-55211a433805">
+				<File Id="Lib.Win32.dll.0ccf14d9b5f0496caadf55211a433805" Name="Lib.Win32.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\Lib.Win32.dll"/>
+			</Component>
+
+			<Component Id="Microsoft.Win32.SystemEvents.dll.c07d077cb0b0401da195072328d44dba" Guid="c07d077c-b0b0-401d-a195-072328d44dba">
+				<File Id="Microsoft.Win32.SystemEvents.dll.c07d077cb0b0401da195072328d44dba" Name="Microsoft.Win32.SystemEvents.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\Microsoft.Win32.SystemEvents.dll"/>
+			</Component>
+
+			<Component Id="NAudio.dll.09857569c5f9401fa6a5f0eda9a9711c" Guid="09857569-c5f9-401f-a6a5-f0eda9a9711c">
+				<File Id="NAudio.dll.09857569c5f9401fa6a5f0eda9a9711c" Name="NAudio.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\NAudio.dll"/>
+			</Component>
+
+			<Component Id="Newtonsoft.Json.dll.2e4bc5797efb46268145f67def2dbae6" Guid="2e4bc579-7efb-4626-8145-f67def2dbae6">
+				<File Id="Newtonsoft.Json.dll.2e4bc5797efb46268145f67def2dbae6" Name="Newtonsoft.Json.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\Newtonsoft.Json.dll"/>
+			</Component>
+
+			<Component Id="README.txt.9c1acdb4589246b9ad52908cd6cbb853" Guid="9c1acdb4-5892-46b9-ad52-908cd6cbb853">
+				<File Id="README.txt.9c1acdb4589246b9ad52908cd6cbb853" Name="README.txt" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\README.txt"/>
+			</Component>
+
+			<Component Id="SharpDX.dll.3fc1df1d664d43759423f99805702967" Guid="3fc1df1d-664d-4375-9423-f99805702967">
+				<File Id="SharpDX.dll.3fc1df1d664d43759423f99805702967" Name="SharpDX.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\SharpDX.dll"/>
+			</Component>
+
+			<Component Id="SharpDX.XInput.dll.41163108f94849b5af59e6aa812ee43f" Guid="41163108-f948-49b5-af59-e6aa812ee43f">
+				<File Id="SharpDX.XInput.dll.41163108f94849b5af59e6aa812ee43f" Name="SharpDX.XInput.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\SharpDX.XInput.dll"/>
+			</Component>
+
+			<Component Id="System.Configuration.ConfigurationManager.dll.9aacd21cf098468eb5d057bedaf011e4" Guid="9aacd21c-f098-468e-b5d0-57bedaf011e4">
+				<File Id="System.Configuration.ConfigurationManager.dll.9aacd21cf098468eb5d057bedaf011e4" Name="System.Configuration.ConfigurationManager.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Configuration.ConfigurationManager.dll"/>
+			</Component>
+
+			<Component Id="System.Diagnostics.EventLog.dll.a54f0ad4adfb43a89c49f7c0f79ffddd" Guid="a54f0ad4-adfb-43a8-9c49-f7c0f79ffddd">
+				<File Id="System.Diagnostics.EventLog.dll.a54f0ad4adfb43a89c49f7c0f79ffddd" Name="System.Diagnostics.EventLog.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Diagnostics.EventLog.dll"/>
+			</Component>
+
+			<Component Id="System.Drawing.Common.dll.372b62dc4b2345458580225c5fca628a" Guid="372b62dc-4b23-4545-8580-225c5fca628a">
+				<File Id="System.Drawing.Common.dll.372b62dc4b2345458580225c5fca628a" Name="System.Drawing.Common.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Drawing.Common.dll"/>
+			</Component>
+
+			<Component Id="System.Resources.Extensions.dll.6104ccb4b10140449225298a647b639d" Guid="6104ccb4-b101-4044-9225-298a647b639d">
+				<File Id="System.Resources.Extensions.dll.6104ccb4b10140449225298a647b639d" Name="System.Resources.Extensions.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Resources.Extensions.dll"/>
+			</Component>
+
+			<Component Id="System.Security.Cryptography.ProtectedData.dll.1d62138502474bf997abd05f29581a76" Guid="1d621385-0247-4bf9-97ab-d05f29581a76">
+				<File Id="System.Security.Cryptography.ProtectedData.dll.1d62138502474bf997abd05f29581a76" Name="System.Security.Cryptography.ProtectedData.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Security.Cryptography.ProtectedData.dll"/>
+			</Component>
+
+			<Component Id="System.Security.Permissions.dll.a8637565174d4b988707d908a3b90c40" Guid="a8637565-174d-4b98-8707-d908a3b90c40">
+				<File Id="System.Security.Permissions.dll.a8637565174d4b988707d908a3b90c40" Name="System.Security.Permissions.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Security.Permissions.dll"/>
+			</Component>
+
+			<Component Id="System.ServiceProcess.ServiceController.dll.4d88124e74b04ad5b838c2ad8b5b7ff3" Guid="4d88124e-74b0-4ad5-b838-c2ad8b5b7ff3">
+				<File Id="System.ServiceProcess.ServiceController.dll.4d88124e74b04ad5b838c2ad8b5b7ff3" Name="System.ServiceProcess.ServiceController.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.ServiceProcess.ServiceController.dll"/>
+			</Component>
+
+			<Component Id="System.Windows.Extensions.dll.b0f3e677cf4e48f280f4b820d135ef9c" Guid="b0f3e677-cf4e-48f2-80f4-b820d135ef9c">
+				<File Id="System.Windows.Extensions.dll.b0f3e677cf4e48f280f4b820d135ef9c" Name="System.Windows.Extensions.dll" Source="C:\src\git\Lib\Lib\Lib.Wix\Lib.Wix.Setup\Artifacts\System.Windows.Extensions.dll"/>
+			</Component>
+
 
     </ComponentGroup>
   </Fragment>

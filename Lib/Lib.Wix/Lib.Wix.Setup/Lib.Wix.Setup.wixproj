@@ -27,16 +27,6 @@
     <Content Include="update-productwxs.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib.Wix.Setup.CustomAction\Lib.Wix.Setup.CustomAction.csproj">
-      <Name>Lib.Wix.Setup.CustomAction</Name>
-      <Project>{928cc56b-d787-40c4-9dd9-dcac275b2dbb}</Project>
-      <Private>True</Private>
-      <DoNotHarvest>True</DoNotHarvest>
-      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
-      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Artifacts\" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
