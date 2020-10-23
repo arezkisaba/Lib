@@ -49,4 +49,16 @@
 	<Target Name="AfterBuild">
 	</Target>
 	-->
+
+  <Target Name="BeforeBuild">
+    <CreateProperty Condition="$(UpgradeCode) != ''" Value="UpgradeCode=$(UpgradeCode);$(DefineConstants)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+    <CreateProperty Condition="$(ProductName) != ''" Value="ProductName=$(ProductName);$(DefineConstants)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+    <CreateProperty Condition="$(Version) != ''" Value="PackageVersion=$(Version);$(Version)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+  </Target>
 </Project>
