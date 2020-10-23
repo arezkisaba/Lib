@@ -48,7 +48,7 @@
     <CreateProperty Condition="$(ProductName) != ''" Value="ProductName=$(ProductName);$(DefineConstants)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
     </CreateProperty>
-    <CreateProperty Condition="$(Version) != ''" Value="PackageVersion=$(Version);$(Version)">
+    <CreateProperty Condition="$(ProductVersion) != ''" Value="ProductVersion=$(ProductVersion);$(DefineConstants)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
     </CreateProperty>
   </Target>
