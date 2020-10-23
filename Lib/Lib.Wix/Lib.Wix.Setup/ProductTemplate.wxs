@@ -16,15 +16,11 @@
   <Product Id="6a0b422c-2ac2-494b-8939-21d8daf6354b" Name="$(var.ProductName)" Language="1033" Version="$(var.Version)" Manufacturer="Arezki Saba" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <MediaTemplate EmbedCab="yes" />
-
-    <WixVariable Id="WixUIBannerBmp" Value="Images\installer_top-banner.bmp" />
-
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
     <!--
-    <UIRef Id="WixUI_InstallDir"/>
-    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <WixVariable Id="WixUIBannerBmp" Value="Images\installer_top-banner.bmp" />
+    <UIRef Id="WixUI_Custom" />
     -->
-
     <Feature Id="ProductFeature" Title="$(var.ProductName).Setup" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>

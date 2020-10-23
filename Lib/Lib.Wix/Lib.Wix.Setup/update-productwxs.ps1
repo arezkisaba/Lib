@@ -7,11 +7,12 @@ $xml = ""
 
 foreach ($item in $items) {
 	if (!$item.PSIsContainer) {
-		$relativePath = "$artifactFolderPath\$($item.Name)"
+		$absolutePath = "$artifactFolderPath\$($item.Name)"
 		$guid = (New-Guid).Guid;
-		$otherGuid = $guid.Replace("-", "")
-		$itemNameValid = $item.Name.Replace("-", "")
-		$row = "`t`t`t<Component Id=`"$($itemNameValid).$otherGuid`" Guid=`"$guid`">`r`n`t`t`t`t<File Id=`"$($itemNameValid).$otherGuid`" Name=`"$($item.Name)`" Source=`"$relativePath`"/>`r`n`t`t`t</Component>`r`n"
+		$pattern = '[^a-zA-Z\._0-9]'
+		$fileId = $absolutePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
+		$componentId = -join ((65..90) + (97..122) | Get-Random -Count 15 | % {[char]$_})
+		$row = "`t`t`t<Component Id=`"$componentId`" Guid=`"$guid`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($item.Name)`" Source=`"$absolutePath`"/>`r`n`t`t`t</Component>`r`n"
 		$xml += "$row`n"
 	}
 }
