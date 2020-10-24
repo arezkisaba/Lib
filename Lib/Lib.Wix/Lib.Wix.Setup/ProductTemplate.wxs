@@ -30,36 +30,14 @@
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
 
-    <CustomAction Id="Install"
-                  Property="InstallProperty"
-                  Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.ProjectDir)install.ps1&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
-                  Execute="immediate" />
-    <CustomAction Id="InstallProperty"
-									BinaryKey="WixCA"
-									DllEntry="CAQuietExec64"
-									Execute="deferred"
-									Return="check"
-									Impersonate="no" />
-
-    <CustomAction Id="UninstallStartup"
-                  Property="UninstallStartupProperty"
-                  Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.ProjectDir)uninstall.ps1&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
-                  Execute="immediate" />
-    <CustomAction Id="UninstallStartupProperty"
-									BinaryKey="WixCA"
-									DllEntry="CAQuietExec64"
-									Execute="deferred"
-									Return="check"
-									Impersonate="no" />
+    <SetProperty Id="Install" Before="Install" Sequence="execute" Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;[#_Artifacts_install.ps1]&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;" />
+    <CustomAction Id="Install" BinaryKey="WixCA" DllEntry="CAQuietExec64" Execute="deferred" Return="check" Impersonate="no" />
 
     <InstallExecuteSequence>
-      <Custom Action="Install" After="CostFinalize">NOT Installed</Custom>
-      <Custom Action="InstallProperty" After="InstallFiles">NOT Installed</Custom>
-      
-      <Custom Action='UninstallStartup' Before='CostInitialize'>(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
-      <Custom Action='UninstallStartupProperty' Before='RemoveFiles'>(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+      <Custom Action="Install" After="InstallFiles"><![CDATA[NOT Installed]]></Custom>
     </InstallExecuteSequence>
 
+    
     <!--
     <CustomAction Id="SayHello" BinaryKey="Lib.Wix.Setup.CustomAction.CA" DllEntry="DeferredHello" Execute="deferred" Return="check" Impersonate="no" />
     <Property Id="SayHello" Value="Name=World" />
@@ -80,6 +58,7 @@
 
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
       ##TOREPLACE##
     </ComponentGroup>
   </Fragment>

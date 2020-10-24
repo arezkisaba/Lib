@@ -22,8 +22,8 @@
   <ItemGroup>
     <Compile Include="Product.wxs" />
     <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
-    <Content Include="install.ps1" />
-    <Content Include="uninstall.ps1" />
+    <Content Include="Artifacts\install.ps1" />
+    <Content Include="Artifacts\uninstall.ps1" />
     <Content Include="ProductTemplate.wxs" />
   </ItemGroup>
   <ItemGroup>
