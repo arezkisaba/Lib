@@ -12,6 +12,10 @@
 <?define UpgradeCode = "00000001-0001-0001-0001-000000000001"?>
 <?endif ?>
 
+<?ifndef HandleStartup ?>
+<?define HandleStartup = "False"?>
+<?endif ?>
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Arezki Saba" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
