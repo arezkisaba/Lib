@@ -13,7 +13,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug</DefineConstants>
-    <DefineSolutionProperties>false</DefineSolutionProperties>
+    <!--<DefineSolutionProperties>false</DefineSolutionProperties>-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -24,6 +24,7 @@
     <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\uninstall.ps1" />
+    <Content Include="logo.ico" />
     <Content Include="ProductTemplate.wxs" />
   </ItemGroup>
   <ItemGroup>

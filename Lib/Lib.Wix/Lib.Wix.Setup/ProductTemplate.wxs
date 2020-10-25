@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?ifndef ProductManufacturer ?>
+<?define ProductManufacturer = "Arezki Saba"?>
+<?endif ?>
+
 <?ifndef ProductName ?>
 <?define ProductName = "CHANGEME"?>
 <?endif ?>
@@ -17,23 +21,24 @@
 <?endif ?>
 
 <?ifndef InstallFolder ?>
-<?define InstallFolder = "C:\Program Files (x86)\Babylon"?>
+<?define InstallFolder = "C:\Program Files (x86)\$(var.ProductManufacturer)"?>
 <?endif ?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Arezki Saba" UpgradeCode="$(var.UpgradeCode)">
-    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.ProductManufacturer)" UpgradeCode="$(var.UpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Manufacturer="$(var.ProductManufacturer)" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <!--<MajorUpgrade Schedule="afterInstallInitialize" AllowDowngrades="no" DowngradeErrorMessage="ok" AllowSameVersionUpgrades="yes" />-->
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
-    <!--
-    <WixVariable Id="WixUIBannerBmp" Value="Images\installer_top-banner.bmp" />
-    <UIRef Id="WixUI_Custom" />
-    -->
-    <Feature Id="ProductFeature" Title="$(var.ProductName).Setup" Level="1">
-      <ComponentGroupRef Id="ProductComponents" />
-    </Feature>
     
+    <!--<MajorUpgrade Schedule="afterInstallInitialize" AllowDowngrades="no" DowngradeErrorMessage="ok" AllowSameVersionUpgrades="yes" />-->
+    <!--<Media Id="1" Cabinet="$(var.ProductName).cab" EmbedCab="yes" />-->
+    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
+    <!--<Property Id="ARPPRODUCTICON" Value="Logo.ico" />-->
+    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
+    
+    <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)\logo.ico" />
+    <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
+
     <CustomAction Id="Install"
                   Property="InstallProperty"
                   Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.InstallFolder)\$(var.ProductName)\install.ps1&quot; -InstallFolder &quot;$(var.InstallFolder)\$(var.ProductName)&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
@@ -44,7 +49,6 @@
 									Execute="deferred"
 									Return="check"
 									Impersonate="no" />
-
     <CustomAction Id="Uninstall"
                   Property="UninstallProperty"
                   Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.InstallFolder)\$(var.ProductName)\uninstall.ps1&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
@@ -55,38 +59,64 @@
 									Execute="deferred"
 									Return="check"
 									Impersonate="no" />
-
     <InstallExecuteSequence>
       <Custom Action="Install" After="CostFinalize">NOT Installed</Custom>
       <Custom Action="InstallProperty" After="InstallFiles">NOT Installed</Custom>
       <Custom Action="Uninstall" Before="CostFinalize">Installed</Custom>
       <Custom Action="UninstallProperty" Before="RemoveFiles">Installed</Custom>
     </InstallExecuteSequence>
-    
-    <!--
-    <CustomAction Id="SayHello" BinaryKey="Lib.Wix.Setup.CustomAction.CA" DllEntry="DeferredHello" Execute="deferred" Return="check" Impersonate="no" />
-    <Property Id="SayHello" Value="Name=World" />
-    <Binary Id="Lib.Wix.Setup.CustomAction.CA" SourceFile="..\Lib.Wix.Setup.CustomAction\bin\Debug\Lib.Wix.Setup.CustomAction.CA.dll" />
-    <InstallExecuteSequence>
-      <Custom Action="SayHello" After="InstallFiles" />
-    </InstallExecuteSequence>
-    -->
+
+    <Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentGroupRef Id="ComponentGroupDesktopShortcut" />
+    </Feature>
   </Product>
 
+  <!--Directories-->
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="BabylonFolder" Name="Babylon">
-          <Directory Id="ProductFolder" Name="$(var.ProductName)" />
+        <Directory Id="ROOTDIRECTORY" Name="$(var.ProductManufacturer)">
+          <Directory Id="INSTALLFOLDER" Name="$(var.ProductName)">
+            <Directory Id="DesktopFolder" Name="DesktopFolder" />
+          </Directory>
         </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.ProductName)"/>
       </Directory>
     </Directory>
   </Fragment>
 
+  <!--All Files-->
   <Fragment>
-    <ComponentGroup Id="ProductComponents" Directory="ProductFolder">
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 
       ##TOREPLACE##
     </ComponentGroup>
   </Fragment>
+
+  <!--Start menu shortcut-->
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="*">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductManufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <!--Desktop shortcut-->
+  <Fragment>
+    <ComponentGroup Id="ComponentGroupDesktopShortcut">
+      <Component Id="ComponentDesktopShortcut" Guid="*" Directory="DesktopFolder" >
+        <Shortcut Id="AppDesktopShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" Directory="DesktopFolder" />
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\$(var.ProductManufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
 </Wix>
