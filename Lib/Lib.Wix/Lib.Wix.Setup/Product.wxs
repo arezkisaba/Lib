@@ -5,7 +5,7 @@
 <?endif ?>
 
 <?ifndef ProductName ?>
-<?define ProductName = "CHANGEME"?>
+<?define ProductName = "BabylonTools.XMap"?>
 <?endif ?>
 
 <?ifndef Version ?>
@@ -36,7 +36,7 @@
     <!--<Property Id="ARPPRODUCTICON" Value="Logo.ico" />-->
     <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
     
-    <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)\logo.ico" />
+    <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
 
     <CustomAction Id="Install"
@@ -73,6 +73,7 @@
     </Feature>
   </Product>
 
+  <!--Directories-->
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
@@ -88,10 +89,15 @@
     </Directory>
   </Fragment>
 
+  <!--All Files-->
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 
-      			<Component Id="Artifacts_BabylonTools.XMap.deps.json" Guid="*">
+      			<Component Id="Artifacts_Artifacts_BabylonTools.XMap.exe" Guid="*">
+				<File Id="Artifacts_Artifacts_BabylonTools.XMap.exe" Name="Artifacts_BabylonTools.XMap.exe" Source="$(var.ProjectDir)Artifacts\Artifacts_BabylonTools.XMap.exe"/>
+			</Component>
+
+			<Component Id="Artifacts_BabylonTools.XMap.deps.json" Guid="*">
 				<File Id="Artifacts_BabylonTools.XMap.deps.json" Name="BabylonTools.XMap.deps.json" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.deps.json"/>
 			</Component>
 
@@ -133,6 +139,10 @@
 
 			<Component Id="Artifacts_Lib.Win32.dll" Guid="*">
 				<File Id="Artifacts_Lib.Win32.dll" Name="Lib.Win32.dll" Source="$(var.ProjectDir)Artifacts\Lib.Win32.dll"/>
+			</Component>
+
+			<Component Id="Artifacts_logo.ico" Guid="*">
+				<File Id="Artifacts_logo.ico" Name="logo.ico" Source="$(var.ProjectDir)Artifacts\logo.ico"/>
 			</Component>
 
 			<Component Id="Artifacts_Microsoft.Win32.SystemEvents.dll" Guid="*">

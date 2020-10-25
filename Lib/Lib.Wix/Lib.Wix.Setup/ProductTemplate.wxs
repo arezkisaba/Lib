@@ -5,7 +5,7 @@
 <?endif ?>
 
 <?ifndef ProductName ?>
-<?define ProductName = "CHANGEME"?>
+<?define ProductName = "BabylonTools.XMap"?>
 <?endif ?>
 
 <?ifndef Version ?>
