@@ -36,7 +36,7 @@
     <!--<Property Id="ARPPRODUCTICON" Value="Logo.ico" />-->
     <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
     
-    <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)\logo.ico" />
+    <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
 
     <CustomAction Id="Install"
