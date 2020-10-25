@@ -26,7 +26,6 @@
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
     <Content Include="Artifacts\uninstall.ps1" />
-    <Content Include="logo.ico" />
     <Content Include="ProductTemplate.wxs" />
   </ItemGroup>
   <ItemGroup>

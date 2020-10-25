@@ -39,6 +39,33 @@
     <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
 
+    <CustomAction Id="Install"
+                  Property="InstallProperty"
+                  Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.InstallFolder)\$(var.ProductName)\install.ps1&quot; -InstallFolder &quot;$(var.InstallFolder)\$(var.ProductName)&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
+                  Execute="immediate" />
+    <CustomAction Id="InstallProperty"
+									BinaryKey="WixCA"
+									DllEntry="CAQuietExec64"
+									Execute="deferred"
+									Return="check"
+									Impersonate="no" />
+    <CustomAction Id="Uninstall"
+                  Property="UninstallProperty"
+                  Value="&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoLogo -NonInteractive -InputFormat None -NoProfile -File &quot;$(var.InstallFolder)\$(var.ProductName)\uninstall.ps1&quot; -ProductName &quot;$(var.ProductName)&quot; -HandleStartup &quot;$(var.HandleStartup)&quot;"
+                  Execute="immediate" />
+    <CustomAction Id="UninstallProperty"
+									BinaryKey="WixCA"
+									DllEntry="CAQuietExec64"
+									Execute="deferred"
+									Return="check"
+									Impersonate="no" />
+    <InstallExecuteSequence>
+      <Custom Action="Install" After="CostFinalize">NOT Installed</Custom>
+      <Custom Action="InstallProperty" After="InstallFiles">NOT Installed</Custom>
+      <Custom Action="Uninstall" Before="CostFinalize">Installed</Custom>
+      <Custom Action="UninstallProperty" Before="RemoveFiles">Installed</Custom>
+    </InstallExecuteSequence>
+
     <Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="ApplicationShortcut" />
