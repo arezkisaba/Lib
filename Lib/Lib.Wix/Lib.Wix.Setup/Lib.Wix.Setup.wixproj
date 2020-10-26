@@ -22,7 +22,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
-    <Content Include="Artifacts\Artifacts_BabylonTools.XMap.exe" />
     <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
