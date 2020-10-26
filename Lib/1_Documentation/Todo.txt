@@ -3,3 +3,10 @@ How to UnitTests/IntegrationTests with credentials, storage, dataprotection ?
 
 Serilog
 Secure git repo
+
+MSI -> UPDATE VERSION -> Numéro de Build
+Banière msi
+Autolaunch Steam each 10 sec
+Disable xbox input after endgame
+écriture fichier targets pour ne pas build Wix
+Xteve Task Scheduler
