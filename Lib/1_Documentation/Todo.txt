@@ -5,8 +5,7 @@ Serilog
 Secure git repo
 
 MSI -> UPDATE VERSION -> Numéro de Build
+Lancement des consoles via le TaskScheduler
 Banière msi
 Autolaunch Steam each 10 sec
-Disable xbox input after endgame
-écriture fichier targets pour ne pas build Wix
 Xteve Task Scheduler

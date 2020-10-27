@@ -1,1 +1,0 @@
-This folder is used for artifacts deposit from other projets
