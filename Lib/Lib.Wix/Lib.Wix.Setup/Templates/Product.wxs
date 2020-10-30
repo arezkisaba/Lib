@@ -32,10 +32,18 @@
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
     
     <!--<Media Id="1" Cabinet="$(var.ProductName).cab" EmbedCab="yes" />-->
-    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
-    <!--<Property Id="ARPPRODUCTICON" Value="Logo.ico" />-->
-    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
-    
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)Artifacts\LICENCE.rtf" />
+
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch $(var.ProductName)" />
+    <Property Id="WixShellExecTarget" Value="[#Artifacts_$(var.ProductName).exe]" />
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+
     <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
 

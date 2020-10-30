@@ -1,11 +1,5 @@
-Create Integration test with test server
-How to UnitTests/IntegrationTests with credentials, storage, dataprotection ?
-
-Serilog
-Secure git repo
-
-MSI -> UPDATE VERSION -> Numéro de Build
-Lancement des consoles via le TaskScheduler
-Banière msi
-Autolaunch Steam each 10 sec
-Xteve Task Scheduler
+WIX :
+- UI
+- Options checkbox
+- Upgrade version
+- Banner

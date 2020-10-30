@@ -22,17 +22,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
+    <Content Include="Artifacts\LICENCE.rtf" />
+    <Content Include="Templates\Product.wxs" />
     <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
     <Content Include="Artifacts\uninstall.ps1" />
-    <Content Include="ProductTemplate.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="update-productwxs.ps1" />
+    <Content Include="Templates\LICENCE.rtf" />
+    <Content Include="update.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Artifacts\" />
+    <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUtilExtension">
@@ -56,9 +59,6 @@
   <PropertyGroup>
     <PostBuildEvent />
   </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(ProjectDir)update-productwxs.ps1</PreBuildEvent>
-  </PropertyGroup>
   <Target Name="BeforeBuild">
     <CreateProperty Condition="$(UpgradeCode) != ''" Value="UpgradeCode=$(UpgradeCode);$(DefineConstants)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
@@ -79,4 +79,7 @@
     <Delete Files=".\bin\$(Configuration)\Lib.Wix.Setup.msi" />
     <Delete Files=".\bin\$(Configuration)\Lib.Wix.Setup.wixpdb" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(ProjectDir)update.ps1</PreBuildEvent>
+  </PropertyGroup>
 </Project>

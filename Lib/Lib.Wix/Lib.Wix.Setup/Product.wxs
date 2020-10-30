@@ -32,10 +32,18 @@
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
     
     <!--<Media Id="1" Cabinet="$(var.ProductName).cab" EmbedCab="yes" />-->
-    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
-    <!--<Property Id="ARPPRODUCTICON" Value="Logo.ico" />-->
-    <!--<Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />-->
-    
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)Artifacts\LICENCE.rtf" />
+
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch $(var.ProductName)" />
+    <Property Id="WixShellExecTarget" Value="[#Artifacts_$(var.ProductName).exe]" />
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+
     <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
 
@@ -93,39 +101,7 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 
-      			<Component Id="Artifacts_Artifacts_BabylonTools.XMap.exe" Guid="*">
-				<File Id="Artifacts_Artifacts_BabylonTools.XMap.exe" Name="Artifacts_BabylonTools.XMap.exe" Source="$(var.ProjectDir)Artifacts\Artifacts_BabylonTools.XMap.exe"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.deps.json" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.deps.json" Name="BabylonTools.XMap.deps.json" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.deps.json"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.dll" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.dll" Name="BabylonTools.XMap.dll" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.dll.config" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.dll.config" Name="BabylonTools.XMap.dll.config" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.dll.config"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.exe" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.exe" Name="BabylonTools.XMap.exe" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.exe"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.pdb" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.pdb" Name="BabylonTools.XMap.pdb" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.pdb"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.runtimeconfig.dev.json" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.runtimeconfig.dev.json" Name="BabylonTools.XMap.runtimeconfig.dev.json" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.runtimeconfig.dev.json"/>
-			</Component>
-
-			<Component Id="Artifacts_BabylonTools.XMap.runtimeconfig.json" Guid="*">
-				<File Id="Artifacts_BabylonTools.XMap.runtimeconfig.json" Name="BabylonTools.XMap.runtimeconfig.json" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.runtimeconfig.json"/>
-			</Component>
-
-			<Component Id="Artifacts_DROP_PACKAGE_HERE.txt" Guid="*">
+      			<Component Id="Artifacts_DROP_PACKAGE_HERE.txt" Guid="*">
 				<File Id="Artifacts_DROP_PACKAGE_HERE.txt" Name="DROP_PACKAGE_HERE.txt" Source="$(var.ProjectDir)Artifacts\DROP_PACKAGE_HERE.txt"/>
 			</Component>
 
@@ -133,76 +109,24 @@
 				<File Id="Artifacts_install.ps1" Name="install.ps1" Source="$(var.ProjectDir)Artifacts\install.ps1"/>
 			</Component>
 
-			<Component Id="Artifacts_Lib.Core.dll" Guid="*">
-				<File Id="Artifacts_Lib.Core.dll" Name="Lib.Core.dll" Source="$(var.ProjectDir)Artifacts\Lib.Core.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_Lib.Win32.dll" Guid="*">
-				<File Id="Artifacts_Lib.Win32.dll" Name="Lib.Win32.dll" Source="$(var.ProjectDir)Artifacts\Lib.Win32.dll"/>
+			<Component Id="Artifacts_LICENCE.rtf" Guid="*">
+				<File Id="Artifacts_LICENCE.rtf" Name="LICENCE.rtf" Source="$(var.ProjectDir)Artifacts\LICENCE.rtf"/>
 			</Component>
 
 			<Component Id="Artifacts_logo.ico" Guid="*">
 				<File Id="Artifacts_logo.ico" Name="logo.ico" Source="$(var.ProjectDir)Artifacts\logo.ico"/>
 			</Component>
 
-			<Component Id="Artifacts_Microsoft.Win32.SystemEvents.dll" Guid="*">
-				<File Id="Artifacts_Microsoft.Win32.SystemEvents.dll" Name="Microsoft.Win32.SystemEvents.dll" Source="$(var.ProjectDir)Artifacts\Microsoft.Win32.SystemEvents.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_NAudio.dll" Guid="*">
-				<File Id="Artifacts_NAudio.dll" Name="NAudio.dll" Source="$(var.ProjectDir)Artifacts\NAudio.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_Newtonsoft.Json.dll" Guid="*">
-				<File Id="Artifacts_Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.ProjectDir)Artifacts\Newtonsoft.Json.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_README.txt" Guid="*">
-				<File Id="Artifacts_README.txt" Name="README.txt" Source="$(var.ProjectDir)Artifacts\README.txt"/>
-			</Component>
-
-			<Component Id="Artifacts_SharpDX.dll" Guid="*">
-				<File Id="Artifacts_SharpDX.dll" Name="SharpDX.dll" Source="$(var.ProjectDir)Artifacts\SharpDX.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_SharpDX.XInput.dll" Guid="*">
-				<File Id="Artifacts_SharpDX.XInput.dll" Name="SharpDX.XInput.dll" Source="$(var.ProjectDir)Artifacts\SharpDX.XInput.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Configuration.ConfigurationManager.dll" Guid="*">
-				<File Id="Artifacts_System.Configuration.ConfigurationManager.dll" Name="System.Configuration.ConfigurationManager.dll" Source="$(var.ProjectDir)Artifacts\System.Configuration.ConfigurationManager.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Diagnostics.EventLog.dll" Guid="*">
-				<File Id="Artifacts_System.Diagnostics.EventLog.dll" Name="System.Diagnostics.EventLog.dll" Source="$(var.ProjectDir)Artifacts\System.Diagnostics.EventLog.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Drawing.Common.dll" Guid="*">
-				<File Id="Artifacts_System.Drawing.Common.dll" Name="System.Drawing.Common.dll" Source="$(var.ProjectDir)Artifacts\System.Drawing.Common.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Resources.Extensions.dll" Guid="*">
-				<File Id="Artifacts_System.Resources.Extensions.dll" Name="System.Resources.Extensions.dll" Source="$(var.ProjectDir)Artifacts\System.Resources.Extensions.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Security.Cryptography.ProtectedData.dll" Guid="*">
-				<File Id="Artifacts_System.Security.Cryptography.ProtectedData.dll" Name="System.Security.Cryptography.ProtectedData.dll" Source="$(var.ProjectDir)Artifacts\System.Security.Cryptography.ProtectedData.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Security.Permissions.dll" Guid="*">
-				<File Id="Artifacts_System.Security.Permissions.dll" Name="System.Security.Permissions.dll" Source="$(var.ProjectDir)Artifacts\System.Security.Permissions.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.ServiceProcess.ServiceController.dll" Guid="*">
-				<File Id="Artifacts_System.ServiceProcess.ServiceController.dll" Name="System.ServiceProcess.ServiceController.dll" Source="$(var.ProjectDir)Artifacts\System.ServiceProcess.ServiceController.dll"/>
-			</Component>
-
-			<Component Id="Artifacts_System.Windows.Extensions.dll" Guid="*">
-				<File Id="Artifacts_System.Windows.Extensions.dll" Name="System.Windows.Extensions.dll" Source="$(var.ProjectDir)Artifacts\System.Windows.Extensions.dll"/>
-			</Component>
-
 			<Component Id="Artifacts_uninstall.ps1" Guid="*">
 				<File Id="Artifacts_uninstall.ps1" Name="uninstall.ps1" Source="$(var.ProjectDir)Artifacts\uninstall.ps1"/>
+			</Component>
+
+			<Component Id="Artifacts_xteve.exe" Guid="*">
+				<File Id="Artifacts_xteve.exe" Name="xteve.exe" Source="$(var.ProjectDir)Artifacts\xteve.exe"/>
+			</Component>
+
+			<Component Id="Artifacts_xteve.txt" Guid="*">
+				<File Id="Artifacts_xteve.txt" Name="xteve.txt" Source="$(var.ProjectDir)Artifacts\xteve.txt"/>
 			</Component>
 
 
