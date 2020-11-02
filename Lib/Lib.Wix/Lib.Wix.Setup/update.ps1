@@ -3,8 +3,8 @@ $artifactFolderName = "Artifacts"
 
 #PRODUCT.WXS
 
-$wxsTemplatePath = "$basePath\Templates\Product.wxs"
-$wxsPath = "$basePath\Product.wxs"
+$wxsTemplatePath = "$basePath\Templates\Components.wxs"
+$wxsPath = "$basePath\Components.wxs"
 $artifactFiles = Get-ChildItem "$basePath\$artifactFolderName"
 $xml = ""
 

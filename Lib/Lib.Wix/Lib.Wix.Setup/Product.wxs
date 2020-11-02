@@ -97,42 +97,6 @@
     </Directory>
   </Fragment>
 
-  <!--All Files-->
-  <Fragment>
-    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-
-      			<Component Id="Artifacts_DROP_PACKAGE_HERE.txt" Guid="*">
-				<File Id="Artifacts_DROP_PACKAGE_HERE.txt" Name="DROP_PACKAGE_HERE.txt" Source="$(var.ProjectDir)Artifacts\DROP_PACKAGE_HERE.txt"/>
-			</Component>
-
-			<Component Id="Artifacts_install.ps1" Guid="*">
-				<File Id="Artifacts_install.ps1" Name="install.ps1" Source="$(var.ProjectDir)Artifacts\install.ps1"/>
-			</Component>
-
-			<Component Id="Artifacts_LICENCE.rtf" Guid="*">
-				<File Id="Artifacts_LICENCE.rtf" Name="LICENCE.rtf" Source="$(var.ProjectDir)Artifacts\LICENCE.rtf"/>
-			</Component>
-
-			<Component Id="Artifacts_logo.ico" Guid="*">
-				<File Id="Artifacts_logo.ico" Name="logo.ico" Source="$(var.ProjectDir)Artifacts\logo.ico"/>
-			</Component>
-
-			<Component Id="Artifacts_uninstall.ps1" Guid="*">
-				<File Id="Artifacts_uninstall.ps1" Name="uninstall.ps1" Source="$(var.ProjectDir)Artifacts\uninstall.ps1"/>
-			</Component>
-
-			<Component Id="Artifacts_xteve.exe" Guid="*">
-				<File Id="Artifacts_xteve.exe" Name="xteve.exe" Source="$(var.ProjectDir)Artifacts\xteve.exe"/>
-			</Component>
-
-			<Component Id="Artifacts_xteve.txt" Guid="*">
-				<File Id="Artifacts_xteve.txt" Name="xteve.txt" Source="$(var.ProjectDir)Artifacts\xteve.txt"/>
-			</Component>
-
-
-    </ComponentGroup>
-  </Fragment>
-
   <!--Start menu shortcut-->
   <Fragment>
     <DirectoryRef Id="ApplicationProgramsFolder">

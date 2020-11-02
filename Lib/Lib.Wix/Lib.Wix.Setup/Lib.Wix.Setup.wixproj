@@ -21,9 +21,10 @@
     <DefineSolutionProperties>false</DefineSolutionProperties>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Components.wxs" />
     <Compile Include="Product.wxs" />
     <Content Include="Artifacts\LICENCE.rtf" />
-    <Content Include="Templates\Product.wxs" />
+    <Content Include="Templates\Components.wxs" />
     <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
