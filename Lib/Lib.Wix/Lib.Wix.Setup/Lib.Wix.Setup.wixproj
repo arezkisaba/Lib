@@ -25,7 +25,6 @@
     <Compile Include="Product.wxs" />
     <Content Include="Artifacts\LICENCE.rtf" />
     <Content Include="Templates\Components.wxs" />
-    <Content Include="Artifacts\DROP_PACKAGE_HERE.txt" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
     <Content Include="Artifacts\uninstall.ps1" />
