@@ -5,16 +5,16 @@ $artifactFolderName = "Artifacts"
 
 $wxsTemplatePath = "$basePath\Templates\Components.wxs"
 $wxsPath = "$basePath\Components.wxs"
-$artifactFiles = Get-ChildItem "$basePath\$artifactFolderName"
+$artifactFiles = Get-ChildItem -Recurse "$basePath\$artifactFolderName"
 $xml = ""
 
 foreach ($artifactFile in $artifactFiles) {
 	if (!$artifactFile.PSIsContainer) {
-		$absolutePath = "$artifactFolderName\$($artifactFile.Name)"
+		$relativePath = $artifactFile.FullName.Replace("$basePath", "")
 		$pattern = '[^a-zA-Z\._0-9]'
-		$fileId = $absolutePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
+		$fileId = $relativePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
 		$componentId = -join ((65..90) + (97..122) | Get-Random -Count 15 | % {[char]$_})
-		$row = "`t`t`t<Component Id=`"$fileId`" Guid=`"*`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($artifactFile.Name)`" Source=`"`$(var.ProjectDir)$absolutePath`"/>`r`n`t`t`t</Component>`r`n"
+		$row = "`t`t`t<Component Id=`"$fileId`" Guid=`"*`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($artifactFile.Name)`" Source=`"`$(var.ProjectDir)$relativePath`"/>`r`n`t`t`t</Component>`r`n"
 		$xml += "$row`n"
 	}
 }
