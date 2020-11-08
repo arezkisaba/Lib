@@ -32,6 +32,13 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        public async Task GetAccountAsync_TestMethod()
+        {
+            var account = await _traktService.GetAccountAsync();
+            Assert.IsTrue(account != null);
+        }
+
+        [TestMethod]
         public async Task GetMoviesCollectedAsync_TestMethod()
         {
             var movies = await _traktService.GetMoviesCollectedAsync();
@@ -48,8 +55,8 @@ namespace Lib.ApiServices.Trakt.UnitTests
         [TestMethod]
         public async Task GetMovieTranslationsAsync_TestMethod()
         {
-            var movies = await _traktService.GetMoviesWatchedAsync();
-            var translations = await _traktService.GetMovieTranslationsAsync(movies.First(), "fr");
+            var movies = await _traktService.GetMoviesCollectedAsync();
+            var translations = await _traktService.GetMovieTranslationsAsync(movies.FirstOrDefault(obj => obj.Title.Contains("Scary Movie 5")), "en");
             Assert.IsTrue(translations != null && translations.Any());
         }
 
@@ -70,7 +77,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         [TestMethod]
         public async Task GetTvShowTranslationsAsync_TestMethod()
         {
-            var tvshows = await _traktService.GetTvShowsWatchedAsync();
+            var tvshows = await _traktService.GetTvShowsCollectedAsync();
             var translations = await _traktService.GetTvShowTranslationsAsync(tvshows.First(), "fr");
             Assert.IsTrue(translations != null && translations.Any());
         }

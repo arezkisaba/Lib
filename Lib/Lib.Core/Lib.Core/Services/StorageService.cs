@@ -44,7 +44,7 @@ namespace Lib.Core
 
         public Task DeleteFolderAsync(string folderName)
         {
-            Directory.Delete(folderName);
+            Directory.Delete(folderName, recursive: true);
             return Task.CompletedTask;
         }
 
