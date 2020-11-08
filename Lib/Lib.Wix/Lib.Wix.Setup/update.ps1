@@ -1,4 +1,6 @@
-﻿$basePath = $PsScriptRoot
+﻿# FOR TESTING : msbuild /p:RunWixToolsOutOfProc=true /p:ProductName="BabylonTools.MediaManager.NetCore" /p:ProductVersion="1.0.0.0" /p:UpgradeCode="db71bd75-c571-4155-a1ac-bd6d13680710" /p:HandleStartup="True"
+
+$basePath = $PsScriptRoot
 $artifactFolderName = "Artifacts"
 
 #PRODUCT.WXS
@@ -10,7 +12,7 @@ $xml = ""
 
 foreach ($artifactFile in $artifactFiles) {
 	if (!$artifactFile.PSIsContainer) {
-		$relativePath = $artifactFile.FullName.Replace("$basePath", "")
+		$relativePath = $artifactFile.FullName.Replace("$basePath\", "")
 		$pattern = '[^a-zA-Z\._0-9]'
 		$fileId = $relativePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
 		$componentId = -join ((65..90) + (97..122) | Get-Random -Count 15 | % {[char]$_})

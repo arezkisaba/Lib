@@ -41,7 +41,7 @@
     </UI>
 
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch $(var.ProductName)" />
-    <Property Id="WixShellExecTarget" Value="[#_Artifacts_$(var.ProductName).exe]" />
+    <Property Id="WixShellExecTarget" Value="[#Artifacts_$(var.ProductName).exe]" />
     <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
 
     <Icon Id="Logo.ico" SourceFile="$(var.ProjectDir)Artifacts\logo.ico" />
@@ -101,7 +101,7 @@
   <Fragment>
     <DirectoryRef Id="ApplicationProgramsFolder">
       <Component Id="ApplicationShortcut" Guid="*">
-        <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#_Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" />
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
         <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductManufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>
@@ -112,7 +112,7 @@
   <Fragment>
     <ComponentGroup Id="ComponentGroupDesktopShortcut">
       <Component Id="ComponentDesktopShortcut" Guid="*" Directory="DesktopFolder" >
-        <Shortcut Id="AppDesktopShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#_Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" Directory="DesktopFolder" />
+        <Shortcut Id="AppDesktopShortcut" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="Logo.ico" Target="[#Artifacts_$(var.ProductName).exe]" WorkingDirectory="INSTALLFOLDER" Directory="DesktopFolder" />
         <RemoveFolder Id="DesktopFolder" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\$(var.ProductManufacturer)\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>

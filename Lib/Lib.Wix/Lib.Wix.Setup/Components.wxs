@@ -5,700 +5,708 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 
-			<Component Id="_Artifacts_appsettings.Development.json" Guid="*">
-				<File Id="_Artifacts_appsettings.Development.json" Name="appsettings.Development.json" Source="$(var.ProjectDir)\Artifacts\appsettings.Development.json"/>
+			<Component Id="Artifacts_appsettings.Development.json" Guid="*">
+				<File Id="Artifacts_appsettings.Development.json" Name="appsettings.Development.json" Source="$(var.ProjectDir)Artifacts\appsettings.Development.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_appsettings.DevelopmentLocal.json" Guid="*">
-				<File Id="_Artifacts_appsettings.DevelopmentLocal.json" Name="appsettings.DevelopmentLocal.json" Source="$(var.ProjectDir)\Artifacts\appsettings.DevelopmentLocal.json"/>
+			<Component Id="Artifacts_appsettings.DevelopmentLocal.json" Guid="*">
+				<File Id="Artifacts_appsettings.DevelopmentLocal.json" Name="appsettings.DevelopmentLocal.json" Source="$(var.ProjectDir)Artifacts\appsettings.DevelopmentLocal.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_appsettings.json" Guid="*">
-				<File Id="_Artifacts_appsettings.json" Name="appsettings.json" Source="$(var.ProjectDir)\Artifacts\appsettings.json"/>
+			<Component Id="Artifacts_appsettings.json" Guid="*">
+				<File Id="Artifacts_appsettings.json" Name="appsettings.json" Source="$(var.ProjectDir)Artifacts\appsettings.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_BabylonTools.MediaManager.NetCore.exe" Guid="*">
-				<File Id="_Artifacts_BabylonTools.MediaManager.NetCore.exe" Name="BabylonTools.MediaManager.NetCore.exe" Source="$(var.ProjectDir)\Artifacts\BabylonTools.MediaManager.NetCore.exe"/>
+			<Component Id="Artifacts_BabylonTools.MediaManager.NetCore.exe" Guid="*">
+				<File Id="Artifacts_BabylonTools.MediaManager.NetCore.exe" Name="BabylonTools.MediaManager.NetCore.exe" Source="$(var.ProjectDir)Artifacts\BabylonTools.MediaManager.NetCore.exe"/>
 			</Component>
 
-			<Component Id="_Artifacts_BabylonTools.MediaManager.NetCore.pdb" Guid="*">
-				<File Id="_Artifacts_BabylonTools.MediaManager.NetCore.pdb" Name="BabylonTools.MediaManager.NetCore.pdb" Source="$(var.ProjectDir)\Artifacts\BabylonTools.MediaManager.NetCore.pdb"/>
+			<Component Id="Artifacts_BabylonTools.MediaManager.NetCore.pdb" Guid="*">
+				<File Id="Artifacts_BabylonTools.MediaManager.NetCore.pdb" Name="BabylonTools.MediaManager.NetCore.pdb" Source="$(var.ProjectDir)Artifacts\BabylonTools.MediaManager.NetCore.pdb"/>
 			</Component>
 
-			<Component Id="_Artifacts_LICENCE.rtf" Guid="*">
-				<File Id="_Artifacts_LICENCE.rtf" Name="LICENCE.rtf" Source="$(var.ProjectDir)\Artifacts\LICENCE.rtf"/>
+			<Component Id="Artifacts_install.ps1" Guid="*">
+				<File Id="Artifacts_install.ps1" Name="install.ps1" Source="$(var.ProjectDir)Artifacts\install.ps1"/>
 			</Component>
 
-			<Component Id="_Artifacts_logo.ico" Guid="*">
-				<File Id="_Artifacts_logo.ico" Name="logo.ico" Source="$(var.ProjectDir)\Artifacts\logo.ico"/>
+			<Component Id="Artifacts_LICENCE.rtf" Guid="*">
+				<File Id="Artifacts_LICENCE.rtf" Name="LICENCE.rtf" Source="$(var.ProjectDir)Artifacts\LICENCE.rtf"/>
 			</Component>
 
-			<Component Id="_Artifacts_packagelock.json" Guid="*">
-				<File Id="_Artifacts_packagelock.json" Name="package-lock.json" Source="$(var.ProjectDir)\Artifacts\package-lock.json"/>
+			<Component Id="Artifacts_logo.ico" Guid="*">
+				<File Id="Artifacts_logo.ico" Name="logo.ico" Source="$(var.ProjectDir)Artifacts\logo.ico"/>
 			</Component>
 
-			<Component Id="_Artifacts_web.config" Guid="*">
-				<File Id="_Artifacts_web.config" Name="web.config" Source="$(var.ProjectDir)\Artifacts\web.config"/>
+			<Component Id="Artifacts_packagelock.json" Guid="*">
+				<File Id="Artifacts_packagelock.json" Name="package-lock.json" Source="$(var.ProjectDir)Artifacts\package-lock.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_assetmanifest.json" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_assetmanifest.json" Name="asset-manifest.json" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\asset-manifest.json"/>
+			<Component Id="Artifacts_uninstall.ps1" Guid="*">
+				<File Id="Artifacts_uninstall.ps1" Name="uninstall.ps1" Source="$(var.ProjectDir)Artifacts\uninstall.ps1"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_favicon.ico" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_favicon.ico" Name="favicon.ico" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\favicon.ico"/>
+			<Component Id="Artifacts_web.config" Guid="*">
+				<File Id="Artifacts_web.config" Name="web.config" Source="$(var.ProjectDir)Artifacts\web.config"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_index.html" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_index.html" Name="index.html" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\index.html"/>
+			<Component Id="Artifacts_ClientApp_build_assetmanifest.json" Guid="*">
+				<File Id="Artifacts_ClientApp_build_assetmanifest.json" Name="asset-manifest.json" Source="$(var.ProjectDir)Artifacts\ClientApp\build\asset-manifest.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_manifest.json" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_manifest.json" Name="manifest.json" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\manifest.json"/>
+			<Component Id="Artifacts_ClientApp_build_favicon.ico" Guid="*">
+				<File Id="Artifacts_ClientApp_build_favicon.ico" Name="favicon.ico" Source="$(var.ProjectDir)Artifacts\ClientApp\build\favicon.ico"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_precachemanifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_precachemanifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Name="precache-manifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\precache-manifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js"/>
+			<Component Id="Artifacts_ClientApp_build_index.html" Guid="*">
+				<File Id="Artifacts_ClientApp_build_index.html" Name="index.html" Source="$(var.ProjectDir)Artifacts\ClientApp\build\index.html"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_serviceworker.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_serviceworker.js" Name="service-worker.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\service-worker.js"/>
+			<Component Id="Artifacts_ClientApp_build_manifest.json" Guid="*">
+				<File Id="Artifacts_ClientApp_build_manifest.json" Name="manifest.json" Source="$(var.ProjectDir)Artifacts\ClientApp\build\manifest.json"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_css_custommobile.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_css_custommobile.css" Name="custom-mobile.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\css\custom-mobile.css"/>
+			<Component Id="Artifacts_ClientApp_build_precachemanifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_precachemanifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Name="precache-manifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\precache-manifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_css_custom.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_css_custom.css" Name="custom.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\css\custom.css"/>
+			<Component Id="Artifacts_ClientApp_build_serviceworker.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_serviceworker.js" Name="service-worker.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\service-worker.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_css_themes_theme.dark.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_css_themes_theme.dark.css" Name="theme.dark.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\css\themes\theme.dark.css"/>
+			<Component Id="Artifacts_ClientApp_build_css_custommobile.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_css_custommobile.css" Name="custom-mobile.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\custom-mobile.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_css_themes_theme.light.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_css_themes_theme.light.css" Name="theme.light.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\css\themes\theme.light.css"/>
+			<Component Id="Artifacts_ClientApp_build_css_custom.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_css_custom.css" Name="custom.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\custom.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_img_cat.png" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_img_cat.png" Name="cat.png" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\img\cat.png"/>
+			<Component Id="Artifacts_ClientApp_build_css_themes_theme.dark.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_css_themes_theme.dark.css" Name="theme.dark.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\themes\theme.dark.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_js_custom.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_js_custom.js" Name="custom.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\js\custom.js"/>
+			<Component Id="Artifacts_ClientApp_build_css_themes_theme.light.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_css_themes_theme.light.css" Name="theme.light.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\themes\theme.light.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css" Name="2.67123b20.chunk.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css"/>
+			<Component Id="Artifacts_ClientApp_build_img_cat.png" Guid="*">
+				<File Id="Artifacts_ClientApp_build_img_cat.png" Name="cat.png" Source="$(var.ProjectDir)Artifacts\ClientApp\build\img\cat.png"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css.map" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css.map" Name="2.67123b20.chunk.css.map" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css.map"/>
+			<Component Id="Artifacts_ClientApp_build_js_custom.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_js_custom.js" Name="custom.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\js\custom.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js" Name="2.168289e7.chunk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js"/>
+			<Component Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css" Name="2.67123b20.chunk.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.LICENSE.txt" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.LICENSE.txt" Name="2.168289e7.chunk.js.LICENSE.txt" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.LICENSE.txt"/>
+			<Component Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css.map" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css.map" Name="2.67123b20.chunk.css.map" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css.map"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.map" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.map" Name="2.168289e7.chunk.js.map" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.map"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js" Name="2.168289e7.chunk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js" Name="main.8da74976.chunk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.LICENSE.txt" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.LICENSE.txt" Name="2.168289e7.chunk.js.LICENSE.txt" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.LICENSE.txt"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js.map" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js.map" Name="main.8da74976.chunk.js.map" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js.map"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.map" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.map" Name="2.168289e7.chunk.js.map" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.map"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js" Name="runtime-main.fa014656.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js" Name="main.8da74976.chunk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js.map" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js.map" Name="runtime-main.fa014656.js.map" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js.map"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js.map" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js.map" Name="main.8da74976.chunk.js.map" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js.map"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapglyphicons.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapglyphicons.css" Name="bootstrap-glyphicons.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-glyphicons.css"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js" Name="runtime-main.fa014656.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.css" Name="bootstrap-grid.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.css"/>
+			<Component Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js.map" Guid="*">
+				<File Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js.map" Name="runtime-main.fa014656.js.map" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js.map"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.min.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.min.css" Name="bootstrap-grid.min.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.min.css"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapglyphicons.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapglyphicons.css" Name="bootstrap-glyphicons.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-glyphicons.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.css" Name="bootstrap-reboot.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.css"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.css" Name="bootstrap-grid.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.min.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.min.css" Name="bootstrap-reboot.min.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.min.css"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.min.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.min.css" Name="bootstrap-grid.min.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.min.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.css" Name="bootstrap.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.css"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.css" Name="bootstrap-reboot.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.min.css" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.min.css" Name="bootstrap.min.css" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.min.css"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.min.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.min.css" Name="bootstrap-reboot.min.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.min.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.js" Name="bootstrap.bundle.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.css" Name="bootstrap.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.min.js" Name="bootstrap.bundle.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.min.css" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.min.css" Name="bootstrap.min.css" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.min.css"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.js" Name="bootstrap.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.js" Name="bootstrap.bundle.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.min.js" Name="bootstrap.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.min.js" Name="bootstrap.bundle.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jquery_core.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jquery_core.js" Name="core.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery\core.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.js" Name="bootstrap.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.js" Name="jquery.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery\jquery.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.min.js" Name="bootstrap.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.min.js" Name="jquery.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery\jquery.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jquery_core.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jquery_core.js" Name="core.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\core.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.slim.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.slim.js" Name="jquery.slim.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery\jquery.slim.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jquery_jquery.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.js" Name="jquery.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.slim.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jquery_jquery.slim.min.js" Name="jquery.slim.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery\jquery.slim.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jquery_jquery.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.min.js" Name="jquery.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.js" Name="additional-methods.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.js" Name="jquery.slim.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.slim.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.min.js" Name="additional-methods.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.min.js" Name="jquery.slim.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.slim.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.js" Name="jquery.validate.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.js" Name="additional-methods.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.min.js" Name="jquery.validate.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.min.js" Name="additional-methods.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.js" Name="messages_ar.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.js" Name="jquery.validate.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.min.js" Name="messages_ar.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.min.js" Name="jquery.validate.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.js" Name="messages_az.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.js" Name="messages_ar.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.min.js" Name="messages_az.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.min.js" Name="messages_ar.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.js" Name="messages_bg.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.js" Name="messages_az.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.min.js" Name="messages_bg.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.min.js" Name="messages_az.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.js" Name="messages_bn_BD.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.js" Name="messages_bg.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.min.js" Name="messages_bn_BD.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.min.js" Name="messages_bg.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.js" Name="messages_ca.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.js" Name="messages_bn_BD.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.min.js" Name="messages_ca.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.min.js" Name="messages_bn_BD.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.js" Name="messages_cs.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.js" Name="messages_ca.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.min.js" Name="messages_cs.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.min.js" Name="messages_ca.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.js" Name="messages_da.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.js" Name="messages_cs.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.min.js" Name="messages_da.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.min.js" Name="messages_cs.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.js" Name="messages_de.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.js" Name="messages_da.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.min.js" Name="messages_de.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.min.js" Name="messages_da.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.js" Name="messages_el.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.js" Name="messages_de.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.min.js" Name="messages_el.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.min.js" Name="messages_de.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.js" Name="messages_es.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.js" Name="messages_el.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.min.js" Name="messages_es.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.min.js" Name="messages_el.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.js" Name="messages_es_AR.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.js" Name="messages_es.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.min.js" Name="messages_es_AR.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.min.js" Name="messages_es.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.js" Name="messages_es_PE.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.js" Name="messages_es_AR.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.min.js" Name="messages_es_PE.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.min.js" Name="messages_es_AR.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.js" Name="messages_et.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.js" Name="messages_es_PE.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.min.js" Name="messages_et.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.min.js" Name="messages_es_PE.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.js" Name="messages_eu.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.js" Name="messages_et.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.min.js" Name="messages_eu.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.min.js" Name="messages_et.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.js" Name="messages_fa.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.js" Name="messages_eu.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.min.js" Name="messages_fa.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.min.js" Name="messages_eu.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.js" Name="messages_fi.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.js" Name="messages_fa.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.min.js" Name="messages_fi.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.min.js" Name="messages_fa.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.js" Name="messages_fr.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.js" Name="messages_fi.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.min.js" Name="messages_fr.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.min.js" Name="messages_fi.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.js" Name="messages_ge.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.js" Name="messages_fr.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.min.js" Name="messages_ge.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.min.js" Name="messages_fr.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.js" Name="messages_gl.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.js" Name="messages_ge.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.min.js" Name="messages_gl.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.min.js" Name="messages_ge.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.js" Name="messages_he.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.js" Name="messages_gl.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.min.js" Name="messages_he.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.min.js" Name="messages_gl.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.js" Name="messages_hr.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.js" Name="messages_he.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.min.js" Name="messages_hr.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.min.js" Name="messages_he.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.js" Name="messages_hu.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.js" Name="messages_hr.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.min.js" Name="messages_hu.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.min.js" Name="messages_hr.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.js" Name="messages_hy_AM.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.js" Name="messages_hu.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.min.js" Name="messages_hy_AM.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.min.js" Name="messages_hu.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.js" Name="messages_id.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.js" Name="messages_hy_AM.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.min.js" Name="messages_id.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.min.js" Name="messages_hy_AM.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.js" Name="messages_is.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.js" Name="messages_id.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.min.js" Name="messages_is.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.min.js" Name="messages_id.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.js" Name="messages_it.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.js" Name="messages_is.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.min.js" Name="messages_it.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.min.js" Name="messages_is.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.js" Name="messages_ja.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.js" Name="messages_it.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.min.js" Name="messages_ja.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.min.js" Name="messages_it.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.js" Name="messages_ka.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.js" Name="messages_ja.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.min.js" Name="messages_ka.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.min.js" Name="messages_ja.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.js" Name="messages_kk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.js" Name="messages_ka.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.min.js" Name="messages_kk.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.min.js" Name="messages_ka.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.js" Name="messages_ko.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.js" Name="messages_kk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.min.js" Name="messages_ko.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.min.js" Name="messages_kk.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.js" Name="messages_lt.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.js" Name="messages_ko.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.min.js" Name="messages_lt.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.min.js" Name="messages_ko.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.js" Name="messages_lv.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.js" Name="messages_lt.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.min.js" Name="messages_lv.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.min.js" Name="messages_lt.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.js" Name="messages_mk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.js" Name="messages_lv.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.min.js" Name="messages_mk.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.min.js" Name="messages_lv.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.js" Name="messages_my.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.js" Name="messages_mk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.min.js" Name="messages_my.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.min.js" Name="messages_mk.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.js" Name="messages_nl.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.js" Name="messages_my.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.min.js" Name="messages_nl.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.min.js" Name="messages_my.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.js" Name="messages_no.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.js" Name="messages_nl.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.min.js" Name="messages_no.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.min.js" Name="messages_nl.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.js" Name="messages_pl.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.js" Name="messages_no.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.min.js" Name="messages_pl.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.min.js" Name="messages_no.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.js" Name="messages_pt_BR.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.js" Name="messages_pl.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.min.js" Name="messages_pt_BR.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.min.js" Name="messages_pl.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.js" Name="messages_pt_PT.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.js" Name="messages_pt_BR.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.min.js" Name="messages_pt_PT.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.min.js" Name="messages_pt_BR.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.js" Name="messages_ro.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.js" Name="messages_pt_PT.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.min.js" Name="messages_ro.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.min.js" Name="messages_pt_PT.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.js" Name="messages_ru.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.js" Name="messages_ro.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.min.js" Name="messages_ru.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.min.js" Name="messages_ro.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.js" Name="messages_sd.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.js" Name="messages_ru.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.min.js" Name="messages_sd.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.min.js" Name="messages_ru.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.js" Name="messages_si.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.js" Name="messages_sd.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.min.js" Name="messages_si.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.min.js" Name="messages_sd.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.js" Name="messages_sk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.js" Name="messages_si.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.min.js" Name="messages_sk.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.min.js" Name="messages_si.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.js" Name="messages_sl.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.js" Name="messages_sk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.min.js" Name="messages_sl.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.min.js" Name="messages_sk.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.js" Name="messages_sr.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.js" Name="messages_sl.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.min.js" Name="messages_sr.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.min.js" Name="messages_sl.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.js" Name="messages_sr_lat.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.js" Name="messages_sr.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.min.js" Name="messages_sr_lat.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.min.js" Name="messages_sr.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.js" Name="messages_sv.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.js" Name="messages_sr_lat.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.min.js" Name="messages_sv.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.min.js" Name="messages_sr_lat.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.js" Name="messages_th.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.js" Name="messages_sv.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.min.js" Name="messages_th.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.min.js" Name="messages_sv.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.js" Name="messages_tj.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.js" Name="messages_th.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.min.js" Name="messages_tj.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.min.js" Name="messages_th.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.js" Name="messages_tr.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.js" Name="messages_tj.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.min.js" Name="messages_tr.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.min.js" Name="messages_tj.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.js" Name="messages_uk.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.js" Name="messages_tr.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.min.js" Name="messages_uk.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.min.js" Name="messages_tr.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.js" Name="messages_ur.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.js" Name="messages_uk.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.min.js" Name="messages_ur.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.min.js" Name="messages_uk.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.js" Name="messages_vi.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.js" Name="messages_ur.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.min.js" Name="messages_vi.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.min.js" Name="messages_ur.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.js" Name="messages_zh.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.js" Name="messages_vi.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.min.js" Name="messages_zh.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.min.js" Name="messages_vi.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.js" Name="messages_zh_TW.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.js" Name="messages_zh.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.min.js" Name="messages_zh_TW.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.min.js" Name="messages_zh.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.js" Name="methods_de.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.js" Name="messages_zh_TW.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.min.js" Name="methods_de.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.min.js" Name="messages_zh_TW.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.js" Name="methods_es_CL.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.js" Name="methods_de.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.min.js" Name="methods_es_CL.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.min.js" Name="methods_de.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.js" Name="methods_fi.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.js" Name="methods_es_CL.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.min.js" Name="methods_fi.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.min.js" Name="methods_es_CL.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.js" Name="methods_it.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.js" Name="methods_fi.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.min.js" Name="methods_it.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.min.js" Name="methods_fi.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.js" Name="methods_nl.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.js" Name="methods_it.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.min.js" Name="methods_nl.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.min.js" Name="methods_it.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.min.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.js" Name="methods_pt.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.js" Name="methods_nl.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.js"/>
 			</Component>
 
-			<Component Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.min.js" Guid="*">
-				<File Id="_Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.min.js" Name="methods_pt.min.js" Source="$(var.ProjectDir)\Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.min.js"/>
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.min.js" Name="methods_nl.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.min.js"/>
+			</Component>
+
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.js" Name="methods_pt.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.js"/>
+			</Component>
+
+			<Component Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.min.js" Guid="*">
+				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.min.js" Name="methods_pt.min.js" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.min.js"/>
 			</Component>
 
 
