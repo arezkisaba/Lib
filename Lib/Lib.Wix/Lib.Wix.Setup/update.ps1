@@ -16,7 +16,7 @@ foreach ($artifactFile in $artifactFiles) {
 		$pattern = '[^a-zA-Z\._0-9]'
 		$fileId = $relativePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
 		$componentId = -join ((65..90) + (97..122) | Get-Random -Count 15 | % {[char]$_})
-		$row = "`t`t`t<Component Id=`"$fileId`" Guid=`"*`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($artifactFile.Name)`" Source=`"`$(var.ProjectDir)$relativePath`"/>`r`n`t`t`t</Component>`r`n"
+		$row = "`t`t`t<Component Id=`"$fileId`" Guid=`"$([guid]::NewGuid().ToString())`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($artifactFile.Name)`" Source=`"`$(var.ProjectDir)$relativePath`"/>`r`n`t`t`t</Component>`r`n"
 		$xml += "$row`n"
 	}
 }
