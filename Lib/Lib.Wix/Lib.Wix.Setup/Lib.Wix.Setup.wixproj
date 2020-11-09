@@ -24,8 +24,8 @@
   <ItemGroup>
     <Compile Include="Components.wxs" />
     <Compile Include="Product.wxs" />
-    <Content Include="Artifacts\LICENCE.rtf" />
-    <Content Include="Templates\Components.wxs" />
+    <None Include="Templates\Components.wxs" />
+    <None Include="Artifacts\LICENCE.rtf" />
     <Content Include="Artifacts\install.ps1" />
     <Content Include="Artifacts\logo.ico" />
     <Content Include="Artifacts\uninstall.ps1" />
@@ -73,6 +73,10 @@
     <CreateProperty Condition="$(HandleStartup) != ''" Value="HandleStartup=$(HandleStartup);$(DefineConstants)">
       <Output TaskParameter="Value" PropertyName="DefineConstants" />
     </CreateProperty>
+    <CreateProperty Value="ArtifactsPath=Artifacts;$(DefineConstants)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+    <!--<HeatDirectory Directory="Artifacts" OutputFile="_HeatGeneratedFileList.wxs" PreprocessorVariable="var.ArtifactsPath" ToolPath="$(WixToolPath)" SuppressAllWarnings="true" AutogenerateGuids="true" ComponentGroupName="ProductComponents" KeepEmptyDirectories="true" />-->
   </Target>
   <Target Name="AfterBuild">
     <Copy SourceFiles=".\bin\$(Configuration)\Lib.Wix.Setup.msi" DestinationFiles=".\bin\$(Configuration)\$(ProductName).msi" />

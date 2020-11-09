@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  
+##DIRECTIORIES##
   <Fragment>
-    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-
-##TOREPLACE##
+    <ComponentGroup Id="ProductComponents">
+##FILES##
     </ComponentGroup>
   </Fragment>
-
 </Wix>

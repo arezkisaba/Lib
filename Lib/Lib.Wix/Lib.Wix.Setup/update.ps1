@@ -1,5 +1,32 @@
 ﻿# FOR TESTING : msbuild /p:RunWixToolsOutOfProc=true /p:ProductName="BabylonTools.MediaManager.NetCore" /p:ProductVersion="1.0.0.0" /p:UpgradeCode="db71bd75-c571-4155-a1ac-bd6d13680710" /p:HandleStartup="True"
 
+Function InternalGetItemsFromDirectory($Path, $DirectoryRefId, [ref]$XmlForDirectories, [ref]$XmlForFiles) {
+
+	$items = Get-ChildItem "$path"
+	foreach ($item in $items) {
+		if (!$item.PSIsContainer) {
+			$componentId = "cmp" + [guid]::NewGuid().ToString().Replace("-", "")
+			$relativePath = (Resolve-Path -Relative $item.FullName).Replace("..\", "").Replace(".\", "")
+			$fileId = $relativePath.Replace("-", "").Replace("\", "_")
+			$XmlForFiles.Value += @"
+			<Component Id="$componentId" Directory="$DirectoryRefId" Guid="*">
+				<File Id="$fileId" KeyPath="yes" Source="`$(var.ProjectDir)$relativePath" />
+			</Component>`n
+"@
+		} else {
+			$directoryId = "dir" + [guid]::NewGuid().ToString().Replace("-", "")
+			$XmlForDirectories.Value += @"
+	<Fragment>
+		<DirectoryRef Id="$DirectoryRefId">
+			<Directory Id="$directoryId" Name="$($item.Name)" />
+		</DirectoryRef>
+	</Fragment>`n
+"@
+			InternalGetItemsFromDirectory -Path "$($item.FullName)" -DirectoryRefId "$($directoryId)" -XmlForDirectories $XmlForDirectories -XmlForFiles $XmlForFiles
+		}
+	}
+}
+
 $basePath = $PsScriptRoot
 $artifactFolderName = "Artifacts"
 
@@ -7,22 +34,14 @@ $artifactFolderName = "Artifacts"
 
 $wxsTemplatePath = "$basePath\Templates\Components.wxs"
 $wxsPath = "$basePath\Components.wxs"
-$artifactFiles = Get-ChildItem -Recurse "$basePath\$artifactFolderName"
-$xml = ""
+$xmlForDirectories = ""
+$xmlForFiles = ""
 
-foreach ($artifactFile in $artifactFiles) {
-	if (!$artifactFile.PSIsContainer) {
-		$relativePath = $artifactFile.FullName.Replace("$basePath\", "")
-		$pattern = '[^a-zA-Z\._0-9]'
-		$fileId = $relativePath.Replace($basePath, '').Replace('\', '_') -replace $pattern,''
-		$componentId = -join ((65..90) + (97..122) | Get-Random -Count 15 | % {[char]$_})
-		$row = "`t`t`t<Component Id=`"$fileId`" Guid=`"$([guid]::NewGuid().ToString())`">`r`n`t`t`t`t<File Id=`"$fileId`" Name=`"$($artifactFile.Name)`" Source=`"`$(var.ProjectDir)$relativePath`"/>`r`n`t`t`t</Component>`r`n"
-		$xml += "$row`n"
-	}
-}
+InternalGetItemsFromDirectory -Path "$basePath\$artifactFolderName" -DirectoryRefId "INSTALLFOLDER" -XmlForDirectories ([ref]$xmlForDirectories) -XmlForFiles ([ref]$xmlForFiles)
 
 $content = (Get-Content $wxsTemplatePath)
-$content = $content -replace "##TOREPLACE##", $xml
+$content = $content -replace "##DIRECTIORIES##", $xmlForDirectories
+$content = $content -replace "##FILES##", $xmlForFiles
 Set-Content $wxsPath $content
 
 # LICENCE
