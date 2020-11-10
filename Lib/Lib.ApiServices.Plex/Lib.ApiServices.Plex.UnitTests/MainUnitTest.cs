@@ -82,5 +82,11 @@ namespace Lib.ApiServices.Plex.UnitTests
             var episodes = await _plexService.GetEpisodesAsync(season.IdPlex);
             Assert.IsTrue(episodes.Any());
         }
+
+        [TestMethod]
+        public async Task RefreshSectionsAsync_TestMethod()
+        {
+            await _plexService.RefreshSectionsAsync();
+        }
     }
 }
