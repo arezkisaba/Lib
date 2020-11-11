@@ -24,11 +24,11 @@ namespace Lib.Win32
             Process.Start(filePath);
         }
 
-        public bool Start(string filePath, string arguments, ProcessWindowStyle processWindowStyle = ProcessWindowStyle.Normal)
+        public bool Start(string filePath, string arguments)
         {
             var process = new Process();
             process.StartInfo.FileName = filePath;
-            process.StartInfo.WindowStyle = processWindowStyle;
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
             if (!string.IsNullOrEmpty(arguments))
             {
                 process.StartInfo.Arguments = arguments;
@@ -48,12 +48,11 @@ namespace Lib.Win32
             return process.ExitCode == 0;
         }
 
-        public bool StartPowershellScript(string filePath, string arguments, ProcessWindowStyle processWindowStyle = ProcessWindowStyle.Normal)
+        public bool StartScript(string filePath)
         {
             var process = new Process();
             process.StartInfo.FileName = "powershell.exe";
             process.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy unrestricted -file \"{filePath}\"";
-            process.StartInfo.WindowStyle = processWindowStyle;
 
             try
             {
