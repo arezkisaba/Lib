@@ -2,614 +2,790 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Fragment>
 		<DirectoryRef Id="INSTALLFOLDER">
-			<Directory Id="dird9f5cec545cd4e3aad8594fed5355a4d" Name="ClientApp" />
+			<Directory Id="dira9957a5c669341559f643f05cbdf9fd6" Name="ClientApp" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dird9f5cec545cd4e3aad8594fed5355a4d">
-			<Directory Id="dir0ace8fc0664547349747b2f3954809c1" Name="build" />
+		<DirectoryRef Id="dira9957a5c669341559f643f05cbdf9fd6">
+			<Directory Id="dir3807e8e452514aee87099be9796bf331" Name="build" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir0ace8fc0664547349747b2f3954809c1">
-			<Directory Id="dir7d94ebdfe0544a32a6a61030f1870f05" Name="css" />
+		<DirectoryRef Id="dir3807e8e452514aee87099be9796bf331">
+			<Directory Id="dirce705b6b1a13448fa78aeb262f39a472" Name="css" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir7d94ebdfe0544a32a6a61030f1870f05">
-			<Directory Id="dir3471cb6270fd4fa8bcef9af3c1218f97" Name="themes" />
+		<DirectoryRef Id="dirce705b6b1a13448fa78aeb262f39a472">
+			<Directory Id="dir739b615d526245cb859bb4625a667cf1" Name="themes" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir0ace8fc0664547349747b2f3954809c1">
-			<Directory Id="dir9ae9dbe783a34983afe9aaa9a3e4f552" Name="img" />
+		<DirectoryRef Id="dir3807e8e452514aee87099be9796bf331">
+			<Directory Id="dir31ca4098b5974edabed19c52eaa7c6fc" Name="img" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir0ace8fc0664547349747b2f3954809c1">
-			<Directory Id="dir46dbfe90476a4bf9b0af4337e13a1832" Name="js" />
+		<DirectoryRef Id="dir3807e8e452514aee87099be9796bf331">
+			<Directory Id="dir623600230bec45a2a8dc32cf09b6dd62" Name="js" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir0ace8fc0664547349747b2f3954809c1">
-			<Directory Id="dir858ac61e960744279f2183156e8f49c1" Name="static" />
+		<DirectoryRef Id="dir3807e8e452514aee87099be9796bf331">
+			<Directory Id="dir0e34082992ec4b59997d8baa792e4bab" Name="static" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir858ac61e960744279f2183156e8f49c1">
-			<Directory Id="dirdc8194260702462a911d9c5b1b4366bf" Name="css" />
+		<DirectoryRef Id="dir0e34082992ec4b59997d8baa792e4bab">
+			<Directory Id="dirdc32d6628a3e4c56ad00a81da21599b3" Name="css" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir858ac61e960744279f2183156e8f49c1">
-			<Directory Id="dirfebef5b5f83541c1849756d25b52640e" Name="js" />
+		<DirectoryRef Id="dir0e34082992ec4b59997d8baa792e4bab">
+			<Directory Id="dir549ac6af5efb4209879f4c7a5f42d17f" Name="js" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir0ace8fc0664547349747b2f3954809c1">
-			<Directory Id="dir995d168986b5438d9ff34e91f7e1fd64" Name="vendor" />
+		<DirectoryRef Id="dir3807e8e452514aee87099be9796bf331">
+			<Directory Id="dir679688e447094b1aa6dd689ee6ab55f5" Name="vendor" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir995d168986b5438d9ff34e91f7e1fd64">
-			<Directory Id="dird72a81d27e3a45f98f3539fd7375a2a6" Name="bootstrap" />
+		<DirectoryRef Id="dir679688e447094b1aa6dd689ee6ab55f5">
+			<Directory Id="dir1005014642fd4e47960d91e67b6d6424" Name="bootstrap" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dird72a81d27e3a45f98f3539fd7375a2a6">
-			<Directory Id="dir3826439ca41041f68fe9584eab021ec3" Name="css" />
+		<DirectoryRef Id="dir1005014642fd4e47960d91e67b6d6424">
+			<Directory Id="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Name="css" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dird72a81d27e3a45f98f3539fd7375a2a6">
-			<Directory Id="dircd7676e3dde5437caec4bba98187586c" Name="js" />
+		<DirectoryRef Id="dir1005014642fd4e47960d91e67b6d6424">
+			<Directory Id="dire398f442ffd7481e8ce0909674d86fab" Name="js" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir995d168986b5438d9ff34e91f7e1fd64">
-			<Directory Id="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Name="jquery" />
+		<DirectoryRef Id="dir679688e447094b1aa6dd689ee6ab55f5">
+			<Directory Id="dirac20ffe77c094fb1b85233d4e9294157" Name="jquery" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dir995d168986b5438d9ff34e91f7e1fd64">
-			<Directory Id="dire05cdf95f87e435aab378e23fe9811da" Name="jquery-validation" />
+		<DirectoryRef Id="dir679688e447094b1aa6dd689ee6ab55f5">
+			<Directory Id="dir96a216763cc844d2a2327974cdc40ecc" Name="jquery-validation" />
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
-		<DirectoryRef Id="dire05cdf95f87e435aab378e23fe9811da">
-			<Directory Id="dir0e6ed433b13f40b0919fc24a331796fb" Name="localization" />
+		<DirectoryRef Id="dir96a216763cc844d2a2327974cdc40ecc">
+			<Directory Id="dir307fc36cdcc44ce3a66659dc2642f5cd" Name="localization" />
 		</DirectoryRef>
 	</Fragment>
 
   <Fragment>
     <ComponentGroup Id="ProductComponents">
-			<Component Id="cmpa4be7e24750844d096868c2716fcbc8c" Directory="dir3471cb6270fd4fa8bcef9af3c1218f97" Guid="*">
+			<Component Id="cmpc37f652a45cd49e69d99886bddab91b6" Directory="dir739b615d526245cb859bb4625a667cf1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_css_themes_theme.dark.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\themes\theme.dark.css" />
+				
 			</Component>
-			<Component Id="cmpe0aabb85a44749e8bc0ccac6be84cc2b" Directory="dir3471cb6270fd4fa8bcef9af3c1218f97" Guid="*">
+			<Component Id="cmpa3142772bcd242fca2962223e3b6a37c" Directory="dir739b615d526245cb859bb4625a667cf1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_css_themes_theme.light.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\themes\theme.light.css" />
+				
 			</Component>
-			<Component Id="cmp26c624c12bf54f5c914b2a68fdc306ba" Directory="dir7d94ebdfe0544a32a6a61030f1870f05" Guid="*">
+			<Component Id="cmp4d656ed9ebd54532a42465dbcd82be6e" Directory="dirce705b6b1a13448fa78aeb262f39a472" Guid="*">
 				<File Id="Artifacts_ClientApp_build_css_custommobile.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\custom-mobile.css" />
+				
 			</Component>
-			<Component Id="cmp78dc11006ca04f38ab7534d3dd9ac6a4" Directory="dir7d94ebdfe0544a32a6a61030f1870f05" Guid="*">
+			<Component Id="cmpe9147f75a6d444f9a42e8ff4bdbe5349" Directory="dirce705b6b1a13448fa78aeb262f39a472" Guid="*">
 				<File Id="Artifacts_ClientApp_build_css_custom.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\css\custom.css" />
+				
 			</Component>
-			<Component Id="cmp566e2e1b7ed942d0b362b3654f6ab60e" Directory="dir9ae9dbe783a34983afe9aaa9a3e4f552" Guid="*">
+			<Component Id="cmp5647611ea4b84f70a0fb4e79fbe1aa09" Directory="dir31ca4098b5974edabed19c52eaa7c6fc" Guid="*">
 				<File Id="Artifacts_ClientApp_build_img_cat.png" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\img\cat.png" />
+				
 			</Component>
-			<Component Id="cmp36c6d06aa90348a28010acac832dfa5c" Directory="dir46dbfe90476a4bf9b0af4337e13a1832" Guid="*">
+			<Component Id="cmpe15871bb482f4be4aef85f8bb01b5f0d" Directory="dir623600230bec45a2a8dc32cf09b6dd62" Guid="*">
 				<File Id="Artifacts_ClientApp_build_js_custom.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\js\custom.js" />
+				
 			</Component>
-			<Component Id="cmp925475cb60ca4231be3862a4afb0cffe" Directory="dirdc8194260702462a911d9c5b1b4366bf" Guid="*">
+			<Component Id="cmp9085a46149f14565ba08fbc4a7efa725" Directory="dirdc32d6628a3e4c56ad00a81da21599b3" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css" />
+				
 			</Component>
-			<Component Id="cmp21fcbe917260419aa2e258b8f9eff717" Directory="dirdc8194260702462a911d9c5b1b4366bf" Guid="*">
+			<Component Id="cmp0d2d3b5aef1942ecb2f535976b30dce0" Directory="dirdc32d6628a3e4c56ad00a81da21599b3" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_css_2.67123b20.chunk.css.map" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\css\2.67123b20.chunk.css.map" />
+				
 			</Component>
-			<Component Id="cmp6c21a6d64b264db292dd8b7479c4045a" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmpa60c7fc3dfaf4d64909f60790c10c63e" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js" />
+				
 			</Component>
-			<Component Id="cmpeeec1e52039e40a8a404aa0764eac53e" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmpe5e7fc1c06454cbeb22131dca4fbca06" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.LICENSE.txt" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.LICENSE.txt" />
+				
 			</Component>
-			<Component Id="cmp6ec5ba6e2f7a4cba847a506f57c5890c" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmp8e3e1283cc6b435e9e6359873c71a6ed" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_2.168289e7.chunk.js.map" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\2.168289e7.chunk.js.map" />
+				
 			</Component>
-			<Component Id="cmpf6631e819e11451d9852f92c522868d7" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmpdb33ef4655d24ad39c359ece6327e439" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js" />
+				
 			</Component>
-			<Component Id="cmp43e8f8d4907d4dfeb99aaa4686928d08" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmpe622aa2689904b06bcf8b95d2d1d0173" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_main.8da74976.chunk.js.map" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\main.8da74976.chunk.js.map" />
+				
 			</Component>
-			<Component Id="cmp18f83e1884644fbc9e8c7f27ee1c5a80" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmp8c9d4a19b82042bf8249308d26dc2d52" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js" />
+				
 			</Component>
-			<Component Id="cmp1e2fab19932a4d199daa2bdff60fb085" Directory="dirfebef5b5f83541c1849756d25b52640e" Guid="*">
+			<Component Id="cmpf10aa55c2e47495e99aedec9227fcedc" Directory="dir549ac6af5efb4209879f4c7a5f42d17f" Guid="*">
 				<File Id="Artifacts_ClientApp_build_static_js_runtimemain.fa014656.js.map" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\static\js\runtime-main.fa014656.js.map" />
+				
 			</Component>
-			<Component Id="cmp34485435c4774a3e99d7e4d3440c3768" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmp3fd8275c54cc4fb88a814f779f1dbe78" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapglyphicons.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-glyphicons.css" />
+				
 			</Component>
-			<Component Id="cmp2204d2d524544aaaafeb0ab110898c23" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmp72099f69a34a425093fc3d606101a780" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.css" />
+				
 			</Component>
-			<Component Id="cmpac05b0e05d96419f90cd92d4c60c92f7" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmpff05b0f46b9245359624a2ec8247069a" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapgrid.min.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-grid.min.css" />
+				
 			</Component>
-			<Component Id="cmp575b05563c784c2c89c2f77f07bbde58" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmpe7cfff14fb344f34b7e1a5714a4c4e28" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.css" />
+				
 			</Component>
-			<Component Id="cmp03fc964fbcf14b1aabf024e79c404225" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmped31c9ee203d4d53b5fa3ad58da278ef" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrapreboot.min.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+				
 			</Component>
-			<Component Id="cmpeeec843c49e64b02828149793eb904cc" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmpa01ff9095ab64286bfdf766d8bfb52fc" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.css" />
+				
 			</Component>
-			<Component Id="cmp699525f677d0492b81864482f2c97d3f" Directory="dir3826439ca41041f68fe9584eab021ec3" Guid="*">
+			<Component Id="cmpe724f84436cd45079e36de4d7357043c" Directory="dir0cb1ee2c0d154dee9d3e34f86e59bbd1" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_css_bootstrap.min.css" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\css\bootstrap.min.css" />
+				
 			</Component>
-			<Component Id="cmp3a5a6af5736a4159861d59e96df72227" Directory="dircd7676e3dde5437caec4bba98187586c" Guid="*">
+			<Component Id="cmp69b3bbb6d5b149c8a287e6528b86652d" Directory="dire398f442ffd7481e8ce0909674d86fab" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.js" />
+				
 			</Component>
-			<Component Id="cmp97c89e05f8d04c68b13d13663b69bf4f" Directory="dircd7676e3dde5437caec4bba98187586c" Guid="*">
+			<Component Id="cmpfcbcd3f8d0f04d6fbe3b75a9a2f8e47a" Directory="dire398f442ffd7481e8ce0909674d86fab" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.bundle.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+				
 			</Component>
-			<Component Id="cmp999e9d5008f8435b98c605d305a66a1d" Directory="dircd7676e3dde5437caec4bba98187586c" Guid="*">
+			<Component Id="cmpe7cbfc61fe6345aab940c43e6b141a29" Directory="dire398f442ffd7481e8ce0909674d86fab" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.js" />
+				
 			</Component>
-			<Component Id="cmp191d994031f94cde893685357f1cf637" Directory="dircd7676e3dde5437caec4bba98187586c" Guid="*">
+			<Component Id="cmp6b4b647b27464490940f8075cffe84fe" Directory="dire398f442ffd7481e8ce0909674d86fab" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_bootstrap_js_bootstrap.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\bootstrap\js\bootstrap.min.js" />
+				
 			</Component>
-			<Component Id="cmpd75fb36533ce4726a87b62e69596bdae" Directory="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Guid="*">
+			<Component Id="cmpedf7e12d4b434a3ca52bbb5fc2b9bafd" Directory="dirac20ffe77c094fb1b85233d4e9294157" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jquery_core.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\core.js" />
+				
 			</Component>
-			<Component Id="cmpa281fc79c8c74175a41fd8a97b299e78" Directory="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Guid="*">
+			<Component Id="cmpd8f074191b46408f928af0ece70e8131" Directory="dirac20ffe77c094fb1b85233d4e9294157" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.js" />
+				
 			</Component>
-			<Component Id="cmp3856b4cdd90b449cb65a5f244eb397aa" Directory="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Guid="*">
+			<Component Id="cmp693454f378ca4183a92771f45503e7c6" Directory="dirac20ffe77c094fb1b85233d4e9294157" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.min.js" />
+				
 			</Component>
-			<Component Id="cmp6708d35bb9514ac391898bd27bfa5512" Directory="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Guid="*">
+			<Component Id="cmpd26babdc74044bf3b9b7f3d740050e48" Directory="dirac20ffe77c094fb1b85233d4e9294157" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.slim.js" />
+				
 			</Component>
-			<Component Id="cmp61bbcd15468c44deae676af3086113d6" Directory="dir4afafa08ff6e4aa0a6dc90fd9aa2518d" Guid="*">
+			<Component Id="cmp0d0fba6a8c70475481ea8ccb763ff1bc" Directory="dirac20ffe77c094fb1b85233d4e9294157" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jquery_jquery.slim.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery\jquery.slim.min.js" />
+				
 			</Component>
-			<Component Id="cmpd6b4099529af48a0bae3507119568b39" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp3e0c8ca0e8b04f74a776b84676284bd9" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.js" />
+				
 			</Component>
-			<Component Id="cmpdaeef967bf31422f939d9e90524dc53e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpe83eeeed1cb94c65a73fc8d9aa38077f" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ar.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ar.min.js" />
+				
 			</Component>
-			<Component Id="cmpb43ff55d997c4146bfea9ae4a1d2a9cb" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp86351de2fed64324b18d3cd32688eea1" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.js" />
+				
 			</Component>
-			<Component Id="cmp2381e43e052e48feb2258c96df5ea627" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp442c5482f6834944be67a355180b7c28" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_az.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_az.min.js" />
+				
 			</Component>
-			<Component Id="cmpc50c2eb07e64415db35724b3f54e56b5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpee91aa0a95a74e818fe4948a85b343e5" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.js" />
+				
 			</Component>
-			<Component Id="cmped3d14b6fc15446a9e390022fa9aa7bf" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp187d3d2ee28f4e1085bd620b09314466" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bg.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bg.min.js" />
+				
 			</Component>
-			<Component Id="cmp70328929bdf24994b6cbe47fdaf2dc12" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc932a6581a554da5a288fefefb4a5792" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.js" />
+				
 			</Component>
-			<Component Id="cmp556061a2293c43459fcdcda5b467a2a5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc94f3da54b9f477bae0d809672a51afa" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_bn_BD.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_bn_BD.min.js" />
+				
 			</Component>
-			<Component Id="cmp39b214ee2ae148a286dec61f0e3f7197" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp905ffa46dc7e4319b38fd7421e979ffb" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.js" />
+				
 			</Component>
-			<Component Id="cmp41cddba4f9544b77aa4285e6c40e4dc2" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp6c0145f1cae34354b86049a77277d74b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ca.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ca.min.js" />
+				
 			</Component>
-			<Component Id="cmp47827ca2489d45689b99d3077df932c3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpb5c7cc036a8e4f2db7fbddb9d7555d5b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.js" />
+				
 			</Component>
-			<Component Id="cmp86840b1caf5b47069f04ae4ba9ef8537" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1a314e0d982f4fd5923613bf897fee1e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_cs.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_cs.min.js" />
+				
 			</Component>
-			<Component Id="cmpf62bd23025b24982a3423d57a254a4fc" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp76aca65a0c45419299940de9a808ae4b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.js" />
+				
 			</Component>
-			<Component Id="cmp5f7b3ce39da9484b95ec28e3361a6974" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp5e70bd34e01a481eaf0bfac4bd266f9c" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_da.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_da.min.js" />
+				
 			</Component>
-			<Component Id="cmp822489c5f7f3492c9c406fb8e50a26eb" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp17e424f43e00430798d006d8211343ff" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.js" />
+				
 			</Component>
-			<Component Id="cmpb4687390314545fe90c8f5038e007aa3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp5642514fb984472583449047aae40cef" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_de.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_de.min.js" />
+				
 			</Component>
-			<Component Id="cmp119346ade39a4b5e80422959d9e1979a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp6b3838c25d29419e9b0091dfe6017087" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.js" />
+				
 			</Component>
-			<Component Id="cmp096a4d7184df456bbec8105aa7a98870" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc0feaa814f3a41a89573a069496a5ab2" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_el.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_el.min.js" />
+				
 			</Component>
-			<Component Id="cmpadf65657a2a4492e81b1676a2dbff3cf" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpcd74ca56d13b488eb8fd44bbb608aa99" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.js" />
+				
 			</Component>
-			<Component Id="cmpbbe09880e3614b6f887d78077d9cf0c3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp36caf5531b044759bf78eb25a8c18c1c" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es.min.js" />
+				
 			</Component>
-			<Component Id="cmp333f0d12e1cb4bc0a39e2cd24915459e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp0ca305ce3b9e4a5d8cab56e3faaf9641" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.js" />
+				
 			</Component>
-			<Component Id="cmpb13f93aeaf15443ba085b8d885f06f75" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1a9608a9989d440db5e08f06b79a069e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_AR.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_AR.min.js" />
+				
 			</Component>
-			<Component Id="cmpd4bb99adb6a8472a8c443b434294845f" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpb581bb8c565143fd83fbfa007b1dbe42" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.js" />
+				
 			</Component>
-			<Component Id="cmpc08f4d565d124c01bfc4849a56b04f6c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1087afee17ec459eb024c995efc10539" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_es_PE.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_es_PE.min.js" />
+				
 			</Component>
-			<Component Id="cmp2c0338cfa8e747ada8b11ab97a7b0051" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpce70de57a8004a838271a2dd625b8392" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.js" />
+				
 			</Component>
-			<Component Id="cmp688f07c6436e4820beece9671bab629d" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfda1962faf9d470fb8ff6b6df0ed79da" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_et.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_et.min.js" />
+				
 			</Component>
-			<Component Id="cmp2cdbb97f61a648c88d435d4892cea9d5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp4d9d99203b3f4a80b1d54a5c214434b7" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.js" />
+				
 			</Component>
-			<Component Id="cmp05d3a75e2e5f43569c6d50e81f407af5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9ef9a0b43a77476c84f0631cb45af2d1" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_eu.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_eu.min.js" />
+				
 			</Component>
-			<Component Id="cmpd27df041235e41eebebd20a8243ab676" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc9d6ce5bdd8648c7a04df60ef097f22e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.js" />
+				
 			</Component>
-			<Component Id="cmp16aab0269e00491fbd97fd9e7e9ac8ad" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpf64dc064c0354ef1855e7267fa2dfe4b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fa.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fa.min.js" />
+				
 			</Component>
-			<Component Id="cmpeb914e5ef6ac4e63926484548c10c04d" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp7a5d3a95b78f43cd90d356f1f9fe3aa8" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.js" />
+				
 			</Component>
-			<Component Id="cmp89477466583346b3b0153be75fdf3477" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpe3c30dc139b1408a81a129023c442305" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fi.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fi.min.js" />
+				
 			</Component>
-			<Component Id="cmpff6f2048019e41e4ab6b146e62bb6fd4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp88547d7b12e5431fac0d377ba705a394" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.js" />
+				
 			</Component>
-			<Component Id="cmp9a97199313df461f893b6657fbf6d12e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp727711a6644d4acd968960a5c510d2c3" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_fr.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_fr.min.js" />
+				
 			</Component>
-			<Component Id="cmpa03813e4b49c4973b258aa43d032d723" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd00c1fce291140f18f98aa3afeed7c01" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.js" />
+				
 			</Component>
-			<Component Id="cmp14a738be0bf34468a88e5299dc4b3fc8" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfb0236a528d442b2802ce7ece66f3ab8" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ge.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ge.min.js" />
+				
 			</Component>
-			<Component Id="cmpaa606c513df5410daf15711d71004309" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpabbfe927008747108a6003df8f0de78f" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.js" />
+				
 			</Component>
-			<Component Id="cmp8d649274b5524d95849e91f496fc99d5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp86eca85090ce4e6cb9419c314238a2bb" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_gl.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_gl.min.js" />
+				
 			</Component>
-			<Component Id="cmp9f8e2acd442e4e748a9ed82baef975d4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmped711c6af21249aaa4048726e08c84e5" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.js" />
+				
 			</Component>
-			<Component Id="cmpdfa3de0059fa4eee9adab1aa8689f2ec" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp242d10e9404e4e32b3f208c2cc9ce651" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_he.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_he.min.js" />
+				
 			</Component>
-			<Component Id="cmpf28755e3bf5b4267b42efc52d9b91482" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd7e93a9b6fb84af7891de63b6b5d1aa2" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.js" />
+				
 			</Component>
-			<Component Id="cmp96e2c51629294d34a5ebf4b025087bed" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp339ccd060b5a4e46a79805ba25ec6784" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hr.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hr.min.js" />
+				
 			</Component>
-			<Component Id="cmp30e3a788d73f47a3a920a24ee7494740" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1421e496a9e14093a7499044de40af54" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.js" />
+				
 			</Component>
-			<Component Id="cmp11c90b6edc1140fd9398b1af747c958c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp64000fa3c7ab467fbf01e1d55e109364" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hu.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hu.min.js" />
+				
 			</Component>
-			<Component Id="cmp1276dbf314934a1b8ccb4af26edcfe8f" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp51d3c96f13094e32b2e9e25c5d2ab919" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.js" />
+				
 			</Component>
-			<Component Id="cmp948480e21376455a8882059941981daf" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp69b98a39e05842359dfa408bb4c9f5f4" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_hy_AM.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_hy_AM.min.js" />
+				
 			</Component>
-			<Component Id="cmpa8e7cd5386524754a2d133d691d9130d" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd8aa03fa3529478789e25f95e1808fd5" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.js" />
+				
 			</Component>
-			<Component Id="cmpcd2c969c5abe44cb99538642827a2c55" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp36298849a1f742a38a90d1d25d1f9bee" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_id.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_id.min.js" />
+				
 			</Component>
-			<Component Id="cmpe4939a36c8154ed7b9bfe8fe2c687951" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfb844cc2c823411b999f23e5e0c36307" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.js" />
+				
 			</Component>
-			<Component Id="cmpd15ef959d00d4340834c5ecb110fb060" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp7c6eb9a071764f288a5551ec20f64cd8" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_is.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_is.min.js" />
+				
 			</Component>
-			<Component Id="cmp34519e8b7a4f4dc899c537a8c220bffd" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp46d668a76e8547c088775c6e8b12d9b6" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.js" />
+				
 			</Component>
-			<Component Id="cmp973d87b0538d41e9ad6356ebfa00a0b5" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp8ca1a0ff8171464193d46d0b52ace508" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_it.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_it.min.js" />
+				
 			</Component>
-			<Component Id="cmpac2ead43f557465ca1617bcc036000df" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpbe065650ae214401806f64e1343fe9cf" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.js" />
+				
 			</Component>
-			<Component Id="cmp3936752fce23454bb018b674c6f1051e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp98260eec383e464eaa875a2ceffa3426" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ja.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ja.min.js" />
+				
 			</Component>
-			<Component Id="cmp428ea86450fc4049aaeb0e8ea034d023" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp6c597c844fe34b50a1fa2dadc1fb298d" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.js" />
+				
 			</Component>
-			<Component Id="cmpd28711be9d0d4029b7e28ae7197b59a3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp372918e533ea43ed8d83265c135e0fc7" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ka.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ka.min.js" />
+				
 			</Component>
-			<Component Id="cmp6ab02c297eb442668607433443e62096" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9cc2d95b69104bb4a5afffab49c60e07" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.js" />
+				
 			</Component>
-			<Component Id="cmp7526eaadd85f40e39d93943910ccdc9a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp3c551b82657149ea910ef0fc7bae83e6" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_kk.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_kk.min.js" />
+				
 			</Component>
-			<Component Id="cmpc53dd899a74f489bad17d8d7a6a255e4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp2fd990e1c63d47c591d7dee4d7a43c0e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.js" />
+				
 			</Component>
-			<Component Id="cmpef3beba8744e451a90fe9c72022c1565" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp675bae22c2354fef9e91ff38d4bbeb5a" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ko.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ko.min.js" />
+				
 			</Component>
-			<Component Id="cmpd3dc1d17ce7b453da9726dbd2d173c5c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp4e8787ff8ac14ffe8228416820048aa7" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.js" />
+				
 			</Component>
-			<Component Id="cmp3f7b6f05b7434b8ea8410784a83db052" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfba687a845bd45f3b94ac1a7f9ab3a38" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lt.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lt.min.js" />
+				
 			</Component>
-			<Component Id="cmpfb04122b3326436784c8f11349fae7f9" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9c4461bc35af4d3e9f883c95eb2fc316" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.js" />
+				
 			</Component>
-			<Component Id="cmp558de449c6fd4cd4927220f44eab4c5a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc30425ab42b64a6b9d893cd1a80a5cf0" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_lv.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_lv.min.js" />
+				
 			</Component>
-			<Component Id="cmp858bdc072366434386d3d3ce281c065d" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpde33d54a3a84418782f1710c0b196dad" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.js" />
+				
 			</Component>
-			<Component Id="cmp94268eba7f6a44dbbd0b2ac85a0b9c2e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc7508562816a42d2a25a3bdb72843476" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_mk.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_mk.min.js" />
+				
 			</Component>
-			<Component Id="cmp9d3f819a6fe647e99da997bdf687452a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpb099c23d2a784f3087f29d52e4767e8c" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.js" />
+				
 			</Component>
-			<Component Id="cmp634422bbf2ec4d389e77f53df4e50c49" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfec63988481643a3b414c387e33f700e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_my.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_my.min.js" />
+				
 			</Component>
-			<Component Id="cmpf787d71a3b3c494e9a27039865b1a8dd" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp7b5b9244ef364e52a4d1912ab08eec89" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.js" />
+				
 			</Component>
-			<Component Id="cmpf59eed255b584b6ab11bae2998b5acdc" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpbf0463a5de794ad48844451afc846c83" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_nl.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_nl.min.js" />
+				
 			</Component>
-			<Component Id="cmp9d709bac354e4917a7485a6716bdc1b6" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp4525c3cfee20459da31233c6b6606194" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.js" />
+				
 			</Component>
-			<Component Id="cmp659d7ceeb3ad44d08e93f0e0b1c93e92" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpcfb203de1ce64e5288287bfcb0258ab0" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_no.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_no.min.js" />
+				
 			</Component>
-			<Component Id="cmp5c6838d973dc4d179be4325595f4ca64" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp5a6d0c04a73d4caea7813ff748324255" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.js" />
+				
 			</Component>
-			<Component Id="cmp865421f3c09d42d79950a97a95d1dbea" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp14d05e18c44043b2921f21a624ab3d0a" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pl.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pl.min.js" />
+				
 			</Component>
-			<Component Id="cmpf163eacd704645a9bc5692cb723cf7b0" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpcfeb06566c194fb297474aa20ff5d3d6" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.js" />
+				
 			</Component>
-			<Component Id="cmp5a59c586c3f344e4b4ff81e78fe83a28" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9fd87b43ae4b422e8789d8e3cb47735b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_BR.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_BR.min.js" />
+				
 			</Component>
-			<Component Id="cmpb88acab38c584e7cb80a89316879e4a6" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpc7e09939190e43b29cc0ba883d976084" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.js" />
+				
 			</Component>
-			<Component Id="cmpcd999d0f410c4a6c84053a05c4486b6e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp4833f08467a9454e9043f2d0beca2d96" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_pt_PT.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_pt_PT.min.js" />
+				
 			</Component>
-			<Component Id="cmp73c39f5bb4e14106ae62ccea469f5e7b" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp23004bcb690844e39bc29a44a3453708" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.js" />
+				
 			</Component>
-			<Component Id="cmpa46b17c9a1764e099ba41ac4a027dc80" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd19a1bb102924137b1c6e4619ef7d897" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ro.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ro.min.js" />
+				
 			</Component>
-			<Component Id="cmp503722121afd445987790c38890b8b9c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp0137351bda9a4772ba4f0a41ba890c81" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.js" />
+				
 			</Component>
-			<Component Id="cmp9bc03fb8f9344beb8761bc8e9dc3a327" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1db773438ef442edbf19f0c553c96ba3" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ru.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ru.min.js" />
+				
 			</Component>
-			<Component Id="cmpe5840d996e224c9cbfc6b283a13772c4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpada755f660d1458d995e115a11a676d6" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.js" />
+				
 			</Component>
-			<Component Id="cmp7a17f51344474bd9afe115b0d97107b6" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp26418a4656404dc5b9244e43ac47ab46" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sd.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sd.min.js" />
+				
 			</Component>
-			<Component Id="cmpfc215d483e644163a176d949d554c1f3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp31eee70a4cda4daf92392415938bf1f9" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.js" />
+				
 			</Component>
-			<Component Id="cmpb923686bca884032a40eff991bc8ee23" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp25c2a96c001b4834bdcfc852bf0bd4ee" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_si.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_si.min.js" />
+				
 			</Component>
-			<Component Id="cmpb4bb185c811647ec9fecf495265735b7" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp131e4fac1cdd45d5a47310c411251e38" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.js" />
+				
 			</Component>
-			<Component Id="cmpcbd1ad4dd78e440b9bd28da5dc39b352" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1ebc12cec5b44c2297620b797a050f4d" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sk.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sk.min.js" />
+				
 			</Component>
-			<Component Id="cmpfa124713e19e4ef0b2aa6eebf6049c23" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp63979d3ec5a7466db8e362e9f829eba6" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.js" />
+				
 			</Component>
-			<Component Id="cmp697e8dd5d516424984ed05d557ea88a4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp8ee05adbc9c14b9bb9a8ddb8fb33cc3b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sl.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sl.min.js" />
+				
 			</Component>
-			<Component Id="cmp27ca31c74a1548368cb1b29ba1616c9b" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfecba5b107654180852a6ab174a6e8ac" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.js" />
+				
 			</Component>
-			<Component Id="cmpa5dff7f43ab54f91afe07d176351cd10" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1de6974f51464a178dc577c38dcb26ad" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr.min.js" />
+				
 			</Component>
-			<Component Id="cmp3630d54dd8834430967adbf4b9d5c5c1" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp6b9853156c9f4690898d2ae85091beb2" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.js" />
+				
 			</Component>
-			<Component Id="cmp966ddb4d4ffb498a8f5146fd3d403aaa" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpfd905786a8684dc5a3a07fc9d226f59a" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sr_lat.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sr_lat.min.js" />
+				
 			</Component>
-			<Component Id="cmp876d45b676114dc08b3e04c64df63494" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp7ad558ce61dd4184a27b6ed276c8970c" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.js" />
+				
 			</Component>
-			<Component Id="cmp541a383b0bfd457d97369b2a69df93a4" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp3aaadbad73af4340b1c78bce52020a25" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_sv.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_sv.min.js" />
+				
 			</Component>
-			<Component Id="cmp413c709b40344946bbb105830de51bf0" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp7086a43c664a418d83bea1298051076d" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.js" />
+				
 			</Component>
-			<Component Id="cmpf524847af62a4324befccf30f8bb6082" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd729e660f0f84116bed441660bc927c3" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_th.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_th.min.js" />
+				
 			</Component>
-			<Component Id="cmp17c381f6e18749c2be43e8c3c2922346" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9e35ac4ba480417483a74e87c85ff9d1" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.js" />
+				
 			</Component>
-			<Component Id="cmp041a0b03c3084f48927937b19971347e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp82726549160741269946b91c37d93f3f" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tj.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tj.min.js" />
+				
 			</Component>
-			<Component Id="cmp57fdacaf320d4cd68be4ba798dd72509" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp4398ce42db8b46ef8b32bba5bb564fea" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.js" />
+				
 			</Component>
-			<Component Id="cmp7ecf6a7a98b442c9bf57672c8aa7d825" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp98328dd0d8394217b72f797432f4b5b4" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_tr.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_tr.min.js" />
+				
 			</Component>
-			<Component Id="cmp5c8e286a831440afa421c864eb5f913c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp167c6dc7ed1a4f118f26b8ccb01f954c" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.js" />
+				
 			</Component>
-			<Component Id="cmp79b14401cb5f448da3c0aa3c418decec" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpaddafa02fafa4592a67e5cfab17394cd" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_uk.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_uk.min.js" />
+				
 			</Component>
-			<Component Id="cmp6476713376f94eb6a7d3859617b0c0ec" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp989a2ced27424d228c8fd9c0913cd868" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.js" />
+				
 			</Component>
-			<Component Id="cmpab981a645c8a48288379a038dfec8b61" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp87f069fbed4340f69b595c2c082f2bf9" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_ur.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_ur.min.js" />
+				
 			</Component>
-			<Component Id="cmp88825c1f8caf4370be5f9565856de94e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpb2996bac7202466eae041b5957adf80f" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.js" />
+				
 			</Component>
-			<Component Id="cmp2056856a234e43998ea7b0d6f0b9b19a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd7f866ccff2c4a9f87bc5a0ad959ec9b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_vi.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_vi.min.js" />
+				
 			</Component>
-			<Component Id="cmpdf25982198064648a5be262f15ed427e" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp90e4e9c21276469b8af5545affc7c724" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.js" />
+				
 			</Component>
-			<Component Id="cmpc1e8502fd8c7459283b983319890e9ec" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpf5647c0959d045ffa7ad40b3dfeee047" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh.min.js" />
+				
 			</Component>
-			<Component Id="cmpe0f51e9a4b5141e9897d902ee0f5257b" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp36b8edc719b844c39092b39b9497d193" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.js" />
+				
 			</Component>
-			<Component Id="cmpf8e4dd9eeb6943da84654d929f91e35f" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpca975cafc106441e80cd8315e63d692b" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_messages_zh_TW.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\messages_zh_TW.min.js" />
+				
 			</Component>
-			<Component Id="cmp3064cbe63e64414e8294057f5e0e4a38" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpcebce0f77e80406daaa1d4ab3e2cd03a" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.js" />
+				
 			</Component>
-			<Component Id="cmpe8a3c3807f7144b6874e1480bda09d6c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp624b31cc0d014c3eb5d834cad66d7e71" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_de.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_de.min.js" />
+				
 			</Component>
-			<Component Id="cmp0929063a9e8348c5a137f9e453f9235f" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp3455933d938349cc9fec6ef793b909ad" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.js" />
+				
 			</Component>
-			<Component Id="cmp8086d814b257459eb1e2b53b48a4c775" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpd20f57935c36410b81d1f45fb4d0996e" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_es_CL.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_es_CL.min.js" />
+				
 			</Component>
-			<Component Id="cmp3fa1574baeea4cd798295e2354b05f61" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp649084cab9504558bc8c2b647a520a2d" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.js" />
+				
 			</Component>
-			<Component Id="cmp23369cab9aa24078ad5f500b6af7d9d3" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp51aeeb12a35f4516b0a019281bea5996" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_fi.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_fi.min.js" />
+				
 			</Component>
-			<Component Id="cmp343b35733c4843358064baa43593be58" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp559424eb55e34aa49bff21fd46da1554" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.js" />
+				
 			</Component>
-			<Component Id="cmpb00a5a0275fe4da3be6b89feac65d08a" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp9ca3130d34504d78addb2d160ff46ab3" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_it.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_it.min.js" />
+				
 			</Component>
-			<Component Id="cmpe5fccf9d4db8410aa5cd9d2b06a53156" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmpccfb188ed41c43ec9f85eb11d67cb76d" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.js" />
+				
 			</Component>
-			<Component Id="cmp85105b0b0cfc44319df199dfc9ea1b1c" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp0cd03e3412ea4c94999151eb98c5d646" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_nl.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_nl.min.js" />
+				
 			</Component>
-			<Component Id="cmp217757172d6d45849a7406611d8b8a54" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp1bbbbb0841de4af7bb3498a46976c6b2" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.js" />
+				
 			</Component>
-			<Component Id="cmp7053cbfe77864390814453d5dfc2fe8d" Directory="dir0e6ed433b13f40b0919fc24a331796fb" Guid="*">
+			<Component Id="cmp710e76033b2047b9a0a8fada2d6c7e04" Directory="dir307fc36cdcc44ce3a66659dc2642f5cd" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_localization_methods_pt.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\localization\methods_pt.min.js" />
+				
 			</Component>
-			<Component Id="cmpe26a96d71adf450d9773626e96b51454" Directory="dire05cdf95f87e435aab378e23fe9811da" Guid="*">
+			<Component Id="cmp45a92f90e8ea48b9a11ddf6ba32d7169" Directory="dir96a216763cc844d2a2327974cdc40ecc" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.js" />
+				
 			</Component>
-			<Component Id="cmp8010f1a202c14439b5a9060dffef4230" Directory="dire05cdf95f87e435aab378e23fe9811da" Guid="*">
+			<Component Id="cmpb939f5c679ac4b7a94b92f2905e734fc" Directory="dir96a216763cc844d2a2327974cdc40ecc" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_additionalmethods.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\additional-methods.min.js" />
+				
 			</Component>
-			<Component Id="cmp36357d7b04544e3fb54579680a985eee" Directory="dire05cdf95f87e435aab378e23fe9811da" Guid="*">
+			<Component Id="cmp54cda158f46f495b963cd997f5489941" Directory="dir96a216763cc844d2a2327974cdc40ecc" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.js" />
+				
 			</Component>
-			<Component Id="cmpaebbdca100ce4799bd8079080632f576" Directory="dire05cdf95f87e435aab378e23fe9811da" Guid="*">
+			<Component Id="cmp85f56d63f45b44fc98f801f745483ecf" Directory="dir96a216763cc844d2a2327974cdc40ecc" Guid="*">
 				<File Id="Artifacts_ClientApp_build_vendor_jqueryvalidation_jquery.validate.min.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\vendor\jquery-validation\jquery.validate.min.js" />
+				
 			</Component>
-			<Component Id="cmp4761b143cd6247d8b496c6f847171c30" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmp1eda37fce747418eb1d1aba886eaea45" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_assetmanifest.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\asset-manifest.json" />
+				
 			</Component>
-			<Component Id="cmp7fc79f35ecab4b4ab3f7fd92295bde6f" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmpb6e5abe5e5914a35ab9a6652a6c6aed0" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_favicon.ico" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\favicon.ico" />
+				
 			</Component>
-			<Component Id="cmp243a8a18918449699e3d91b9beb38048" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmp63c7769d41844771b7a70f952c84346b" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_index.html" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\index.html" />
+				
 			</Component>
-			<Component Id="cmpd77efd00344e467383f700ac6808032c" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmp5824563123e840b0b605a7d3fd70f01d" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_manifest.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\manifest.json" />
+				
 			</Component>
-			<Component Id="cmp44f106316e9c404ab302d23f771ec4ae" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmp14efca1718da420d8ba281d7ec1afaa6" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_precachemanifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\precache-manifest.b6dfcd523d0ef3f8ff0a23b655e5c535.js" />
+				
 			</Component>
-			<Component Id="cmp02a0bf2828684ead97b8e560bee319cb" Directory="dir0ace8fc0664547349747b2f3954809c1" Guid="*">
+			<Component Id="cmp2089171babf940028dcbf5290a4eb905" Directory="dir3807e8e452514aee87099be9796bf331" Guid="*">
 				<File Id="Artifacts_ClientApp_build_serviceworker.js" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\ClientApp\build\service-worker.js" />
+				
 			</Component>
-			<Component Id="cmpe664bf9716ae4d7182c724b20c2d68c4" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmpa26c764972d2458eafefe3b3419d30fc" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_appsettings.Development.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\appsettings.Development.json" />
+				
 			</Component>
-			<Component Id="cmp207d7492892e4e318aed999048367727" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmpfba9f870e88446ae98fca62c4de35460" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_appsettings.DevelopmentLocal.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\appsettings.DevelopmentLocal.json" />
+				
 			</Component>
-			<Component Id="cmp16757d296eca44398acdeb0fc303b1d4" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp52fae8f1f57442af9f6e13966ba80346" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_appsettings.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\appsettings.json" />
+				
 			</Component>
-			<Component Id="cmp2c27fe9c0c714b548fbf84b8ecfc7b45" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmpe3ce29a360b84f28bffdaf722aaeb2e8" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_BabylonTools.MediaManager.NetCore.exe" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\BabylonTools.MediaManager.NetCore.exe" />
+				<RemoveFolder Id="INSTALLDIR" On="uninstall" />
 			</Component>
-			<Component Id="cmpb4d4a98d0e4b4640baf2cf3d0b97041f" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp5e956d517f454aef821d36dd510f0431" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_BabylonTools.MediaManager.NetCore.pdb" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\BabylonTools.MediaManager.NetCore.pdb" />
+				
 			</Component>
-			<Component Id="cmpf34076240fda484fa70817dd64934c79" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmpb25df37acfbb4afa85da96c9433dda5d" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_install.ps1" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\install.ps1" />
+				
 			</Component>
-			<Component Id="cmp632124172b1146668481e7c29111be80" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp4015fddf91004ac29ef3a68e67abd616" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_LICENCE.rtf" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\LICENCE.rtf" />
+				
 			</Component>
-			<Component Id="cmp67a09a5623304e8a88a758a198ed7909" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp4c54728c3ff54eb4bd98cfc7dea9e900" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_logo.ico" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\logo.ico" />
+				
 			</Component>
-			<Component Id="cmp1e510776d001439aabdaabaf9ba1ee3f" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmpa59ebc356b4d42f7a65810d83d5a3578" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_packagelock.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\package-lock.json" />
+				
 			</Component>
-			<Component Id="cmp29ee6abe54e3455881399f6f9c579c1a" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp4b37e2a0fb4141ccb8a83f953272d998" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_uninstall.ps1" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\uninstall.ps1" />
+				
 			</Component>
-			<Component Id="cmp6eda0d92fa0f418785d962bcee4309d9" Directory="INSTALLFOLDER" Guid="*">
+			<Component Id="cmp3b9e61d0f63c4138b501151cea0e5ddf" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_web.config" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\web.config" />
+				
 			</Component>
 
     </ComponentGroup>

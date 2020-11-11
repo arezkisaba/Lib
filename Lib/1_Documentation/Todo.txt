@@ -3,3 +3,4 @@ WIX :
 - Options checkbox
 - Upgrade version
 - Banner
+- Uninstall bug when app has folders

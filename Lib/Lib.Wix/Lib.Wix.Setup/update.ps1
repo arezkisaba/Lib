@@ -8,20 +8,22 @@ Function InternalGetItemsFromDirectory($Path, $DirectoryRefId, [ref]$XmlForDirec
 			$componentId = "cmp" + [guid]::NewGuid().ToString().Replace("-", "")
 			$relativePath = (Resolve-Path -Relative $item.FullName).Replace("..\", "").Replace(".\", "")
 			$fileId = $relativePath.Replace("-", "").Replace("\", "_")
-			$XmlForFiles.Value += @"
+			$row = @"
 			<Component Id="$componentId" Directory="$DirectoryRefId" Guid="*">
 				<File Id="$fileId" KeyPath="yes" Source="`$(var.ProjectDir)$relativePath" />
 			</Component>`n
 "@
+			$XmlForFiles.Value += $row
 		} else {
 			$directoryId = "dir" + [guid]::NewGuid().ToString().Replace("-", "")
-			$XmlForDirectories.Value += @"
+			$row = @"
 	<Fragment>
 		<DirectoryRef Id="$DirectoryRefId">
 			<Directory Id="$directoryId" Name="$($item.Name)" />
 		</DirectoryRef>
 	</Fragment>`n
 "@
+			$XmlForDirectories.Value += $row
 			InternalGetItemsFromDirectory -Path "$($item.FullName)" -DirectoryRefId "$($directoryId)" -XmlForDirectories $XmlForDirectories -XmlForFiles $XmlForFiles
 		}
 	}

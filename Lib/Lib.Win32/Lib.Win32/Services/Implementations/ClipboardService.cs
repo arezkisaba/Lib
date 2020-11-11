@@ -4,9 +4,9 @@ using static Lib.Win32.NativeMethods;
 
 namespace Lib.Win32
 {
-    public static class ClipboardHelper
+    public class ClipboardService
     {
-        public static void SetText(string text)
+        public void SetText(string text)
         {
             OpenClipboard(IntPtr.Zero);
             var ptr = Marshal.StringToHGlobalUni(text);
