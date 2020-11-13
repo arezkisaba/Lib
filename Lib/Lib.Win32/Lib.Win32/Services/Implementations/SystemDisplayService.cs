@@ -7,7 +7,7 @@ using static Lib.Win32.NativeMethods;
 
 namespace Lib.Win32
 {
-    public class DisplayService : IDisplayService
+    public class SystemDisplayService : IDisplayService
     {
         public List<DisplayModel> GetAll()
         {

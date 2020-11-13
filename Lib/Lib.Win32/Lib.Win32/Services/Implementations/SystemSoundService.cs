@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace Lib.Win32
 {
-    public class SoundService : ISoundService
+    public class SystemSoundService : ISystemSoundService
     {
         private AudioEndpointVolume _audioEndpointVolume;
 
-        public SoundService()
+        public SystemSoundService()
         {
             var enumerator = new MMDeviceEnumerator();
             var audioEndPoints = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
@@ -19,7 +19,7 @@ namespace Lib.Win32
             }
         }
 
-        public void Increase(float soundStep)
+        public void VolumeUp(float soundStep)
         {
             if (1 - _audioEndpointVolume.MasterVolumeLevelScalar < soundStep)
             {
@@ -29,7 +29,7 @@ namespace Lib.Win32
             _audioEndpointVolume.MasterVolumeLevelScalar += soundStep;
         }
 
-        public void Decrease(float soundStep)
+        public void VolumeDown(float soundStep)
         {
             if (_audioEndpointVolume.MasterVolumeLevelScalar < soundStep)
             {

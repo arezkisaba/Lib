@@ -13,7 +13,7 @@ namespace Lib.Win32.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _displayService = new DisplayService();
+            _displayService = new SystemDisplayService();
         }
 
         [TestCleanup]
