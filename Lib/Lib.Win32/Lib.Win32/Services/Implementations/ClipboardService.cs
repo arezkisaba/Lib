@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using static Lib.Win32.NativeMethods;
+using static Lib.Win32.NativeMethods.Clipboard;
 
 namespace Lib.Win32
 {
@@ -15,4 +15,4 @@ namespace Lib.Win32
             Marshal.FreeHGlobal(ptr);
         }
     }
-} 
+}

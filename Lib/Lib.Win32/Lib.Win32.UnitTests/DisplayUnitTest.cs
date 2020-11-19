@@ -8,12 +8,12 @@ namespace Lib.Win32.UnitTests
     [TestClass]
     public class DisplayUnitTest
     {
-        private IDisplayService _displayService;
+        private ISystemDisplayService _systemDisplayService;
 
         [TestInitialize]
         public void Initialize()
         {
-            _displayService = new SystemDisplayService();
+            _systemDisplayService = new SystemDisplayService();
         }
 
         [TestCleanup]
@@ -24,29 +24,29 @@ namespace Lib.Win32.UnitTests
         [TestMethod]
         public void GetAll_TestMethod()
         {
-            var displays = _displayService.GetAll();
+            var displays = _systemDisplayService.GetAll();
             Assert.IsTrue(displays != null && displays.Any());
         }
 
         [TestMethod]
         public void GetCurrent_TestMethod()
         {
-            var display = _displayService.GetCurrent();
+            var display = _systemDisplayService.GetCurrent();
             Assert.IsTrue(display != null);
         }
 
         [TestMethod]
         public void SetCurrent_TestMethod()
         {
-            var displays = _displayService.GetAll();
+            var displays = _systemDisplayService.GetAll();
             Assert.IsTrue(displays != null && displays.Count > 2);
-            var lowerDisplay = _displayService.GetLowerDisplay();
-            var higherDisplay = _displayService.GetHigherDisplay();
+            var lowerDisplay = _systemDisplayService.GetLowerDisplay();
+            var higherDisplay = _systemDisplayService.GetHigherDisplay();
             Assert.IsTrue(lowerDisplay != null);
             Assert.IsTrue(higherDisplay != null);
-            _displayService.SetCurrent(lowerDisplay);
+            _systemDisplayService.SetCurrent(lowerDisplay);
             Task.Delay(TimeHelper.FromSecondsToMilliseconds(5)).Wait();
-            _displayService.SetCurrent(higherDisplay);
+            _systemDisplayService.SetCurrent(higherDisplay);
         }
     }
 }

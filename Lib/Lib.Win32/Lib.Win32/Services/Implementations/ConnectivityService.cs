@@ -1,5 +1,5 @@
 ﻿using Lib.Core;
-using static Lib.Win32.NativeMethods;
+using static Lib.Win32.NativeMethods.Network;
 
 namespace Lib.Win32
 {

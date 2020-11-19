@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
-using static Lib.Win32.NativeMethods;
+using static Lib.Win32.NativeMethods.Window;
 
 namespace Lib.Win32
 {
@@ -79,13 +79,13 @@ namespace Lib.Win32
 
         public Process GetForegroundProcess()
         {
-            var hwnd = NativeMethods.GetForegroundWindow();
+            var hwnd = GetForegroundWindow();
             return GetProcess(hwnd);
         }
 
         public bool IsForegroundWindowInFullscreenMode()
         {
-            var hwnd = NativeMethods.GetForegroundWindow();
+            var hwnd = GetForegroundWindow();
             return IsWindowInFullscreenMode(hwnd);
         }
 
@@ -161,7 +161,7 @@ namespace Lib.Win32
         private Process GetProcess(IntPtr hwnd)
         {
             uint processId;
-            NativeMethods.GetWindowThreadProcessId(hwnd, out processId);
+            GetWindowThreadProcessId(hwnd, out processId);
             return GetProcess((int)processId);
         }
 
@@ -189,10 +189,10 @@ namespace Lib.Win32
         {
             RECT rect;
             RECT desktopRect;
-            var desktopHwnd = NativeMethods.GetDesktopWindow();
+            var desktopHwnd = GetDesktopWindow();
 
-            NativeMethods.GetWindowRect(hwnd, out rect);
-            NativeMethods.GetWindowRect(desktopHwnd, out desktopRect);
+            GetWindowRect(hwnd, out rect);
+            GetWindowRect(desktopHwnd, out desktopRect);
 
             if (rect.Bottom == desktopRect.Bottom)
             {

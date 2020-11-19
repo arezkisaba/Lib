@@ -7,16 +7,16 @@ using static Lib.Win32.NativeMethods;
 
 namespace Lib.Win32
 {
-    public class SystemDisplayService : IDisplayService
+    public class SystemDisplayService : ISystemDisplayService
     {
         public List<DisplayModel> GetAll()
         {
             var modeIndex = 0;
-            var mode = new DEVMODE();
+            var mode = new Display.DEVMODE();
             var displays = new List<DisplayModel>();
             mode.dmSize = (ushort)Marshal.SizeOf(mode);
 
-            while (EnumDisplaySettings(null, modeIndex, ref mode))
+            while (Display.EnumDisplaySettings(null, modeIndex, ref mode))
             {
                 var display = new DisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
                 if (!displays.Any(__ => __.Width == display.Width && __.Height == display.Height && __.BitCount == display.BitCount))
@@ -37,10 +37,10 @@ namespace Lib.Win32
 
         public DisplayModel GetCurrent()
         {
-            var mode = new DEVMODE();
+            var mode = new Display.DEVMODE();
             mode.dmSize = (ushort)Marshal.SizeOf(mode);
 
-            if (EnumDisplaySettings(null, ENUM_CURRENT_SETTINGS, ref mode))
+            if (Display.EnumDisplaySettings(null, Display.ENUM_CURRENT_SETTINGS, ref mode))
             {
                 return new DisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
 
@@ -81,18 +81,18 @@ namespace Lib.Win32
 
         public void SetCurrent(DisplayModel display)
         {
-            var originalMode = new DEVMODE();
+            var originalMode = new Display.DEVMODE();
             originalMode.dmSize = (ushort)Marshal.SizeOf(originalMode);
 
-            EnumDisplaySettings(null, ENUM_CURRENT_SETTINGS, ref originalMode);
+            Display.EnumDisplaySettings(null, Display.ENUM_CURRENT_SETTINGS, ref originalMode);
 
             var newMode = originalMode;
             newMode.dmPelsWidth = (uint)display.Width;
             newMode.dmPelsHeight = (uint)display.Height;
             newMode.dmBitsPerPel = (uint)display.BitCount;
 
-            var result = ChangeDisplaySettings(ref newMode, 0);
-            if (result == DISP_CHANGE_SUCCESSFUL)
+            var result = Display.ChangeDisplaySettings(ref newMode, 0);
+            if (result == Display.DISP_CHANGE_SUCCESSFUL)
             {
                 return;
             }

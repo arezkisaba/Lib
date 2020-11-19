@@ -5,206 +5,217 @@ namespace Lib.Win32
 {
     public static class NativeMethods
     {
-        #region DLLIMPORT
-
-        [DllImport("user32.dll")]
-        public static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
-
-        [DllImport("user32.dll")]
-        public static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetDesktopWindow();
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetShellWindow();
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool EnumChildWindows(IntPtr hwndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
-        public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern int GetWindowRect(IntPtr hwnd, out RECT rc);
-
-        [DllImport("user32.dll")]
-        public static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
-
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
-
-        [DllImport("user32.dll")]
-        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        [DllImport("user32.dll")]
-        public static extern bool OpenClipboard(IntPtr hWndNewOwner);
-
-        [DllImport("user32.dll")]
-        public static extern bool CloseClipboard();
-
-        [DllImport("user32.dll")]
-        public static extern bool SetClipboardData(uint uFormat, IntPtr data);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool EnumDisplaySettings([param: MarshalAs(UnmanagedType.LPTStr)] string lpszDeviceName, [param: MarshalAs(UnmanagedType.U4)] int iModeNum, [In, Out] ref DEVMODE lpDevMode);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.I4)]
-        public static extern int ChangeDisplaySettings([In, Out] ref DEVMODE lpDevMode, [param: MarshalAs(UnmanagedType.U4)] uint dwflags);
-
-        [DllImport("wininet.dll")]
-        public static extern bool InternetGetConnectedState(out int Description, int ReservedValue);
-
-        #endregion
-
-        #region STRUCT
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct RECT
+        public static class Clipboard
         {
-            public int Left;
-            public int Top;
-            public int Right;
-            public int Bottom;
+            [DllImport("user32.dll")]
+            public static extern bool OpenClipboard(IntPtr hWndNewOwner);
+
+            [DllImport("user32.dll")]
+            public static extern bool CloseClipboard();
+
+            [DllImport("user32.dll")]
+            public static extern bool SetClipboardData(uint uFormat, IntPtr data);
         }
 
-        public struct WINDOWPLACEMENT
+        public static class Display
         {
-            public int length;
-            public int flags;
-            public int showCmd;
-            public System.Drawing.Point ptMinPosition;
-            public System.Drawing.Point ptMaxPosition;
-            public System.Drawing.Rectangle rcNormalPosition;
+            public const int ENUM_CURRENT_SETTINGS = -1;
+            public const int DISP_CHANGE_SUCCESSFUL = 0;
+            public const int DISP_CHANGE_BADMODE = -2;
+            public const int DISP_CHANGE_FAILED = -1;
+            public const int DISP_CHANGE_RESTART = 1;
+
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool EnumDisplaySettings([param: MarshalAs(UnmanagedType.LPTStr)] string lpszDeviceName, [param: MarshalAs(UnmanagedType.U4)] int iModeNum, [In, Out] ref DEVMODE lpDevMode);
+
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.I4)]
+            public static extern int ChangeDisplaySettings([In, Out] ref DEVMODE lpDevMode, [param: MarshalAs(UnmanagedType.U4)] uint dwflags);
+
+            [StructLayout(LayoutKind.Sequential,
+            CharSet = CharSet.Ansi)]
+            public struct DEVMODE
+            {
+                [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+                public string dmDeviceName;
+
+                [MarshalAs(UnmanagedType.U2)]
+                public UInt16 dmSpecVersion;
+
+                [MarshalAs(UnmanagedType.U2)]
+                public UInt16 dmDriverVersion;
+
+                [MarshalAs(UnmanagedType.U2)]
+                public UInt16 dmSize;
+
+                [MarshalAs(UnmanagedType.U2)]
+                public UInt16 dmDriverExtra;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmFields;
+
+                public POINTL dmPosition;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmDisplayOrientation;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmDisplayFixedOutput;
+
+                [MarshalAs(UnmanagedType.I2)]
+                public Int16 dmColor;
+
+                [MarshalAs(UnmanagedType.I2)]
+                public Int16 dmDuplex;
+
+                [MarshalAs(UnmanagedType.I2)]
+                public Int16 dmYResolution;
+
+                [MarshalAs(UnmanagedType.I2)]
+                public Int16 dmTTOption;
+
+                [MarshalAs(UnmanagedType.I2)]
+                public Int16 dmCollate;
+
+                [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+                public string dmFormName;
+
+                [MarshalAs(UnmanagedType.U2)]
+                public UInt16 dmLogPixels;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmBitsPerPel;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmPelsWidth;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmPelsHeight;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmDisplayFlags;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmDisplayFrequency;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmICMMethod;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmICMIntent;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmMediaType;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmDitherType;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmReserved1;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmReserved2;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmPanningWidth;
+
+                [MarshalAs(UnmanagedType.U4)]
+                public UInt32 dmPanningHeight;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            public struct POINTL
+            {
+                [MarshalAs(UnmanagedType.I4)]
+                public int x;
+                [MarshalAs(UnmanagedType.I4)]
+                public int y;
+            }
         }
 
-        [StructLayout(LayoutKind.Sequential,
-        CharSet = CharSet.Ansi)]
-        public struct DEVMODE
+        public static class Keyboard
         {
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-            public string dmDeviceName;
+            public const int VK_VOLUME_MUTE = 0xAD;
+            public const int VK_VOLUME_DOWN = 0xAE;
+            public const int VK_VOLUME_UP = 0xAF;
 
-            [MarshalAs(UnmanagedType.U2)]
-            public UInt16 dmSpecVersion;
-
-            [MarshalAs(UnmanagedType.U2)]
-            public UInt16 dmDriverVersion;
-
-            [MarshalAs(UnmanagedType.U2)]
-            public UInt16 dmSize;
-
-            [MarshalAs(UnmanagedType.U2)]
-            public UInt16 dmDriverExtra;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmFields;
-
-            public POINTL dmPosition;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmDisplayOrientation;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmDisplayFixedOutput;
-
-            [MarshalAs(UnmanagedType.I2)]
-            public Int16 dmColor;
-
-            [MarshalAs(UnmanagedType.I2)]
-            public Int16 dmDuplex;
-
-            [MarshalAs(UnmanagedType.I2)]
-            public Int16 dmYResolution;
-
-            [MarshalAs(UnmanagedType.I2)]
-            public Int16 dmTTOption;
-
-            [MarshalAs(UnmanagedType.I2)]
-            public Int16 dmCollate;
-
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-            public string dmFormName;
-
-            [MarshalAs(UnmanagedType.U2)]
-            public UInt16 dmLogPixels;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmBitsPerPel;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmPelsWidth;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmPelsHeight;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmDisplayFlags;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmDisplayFrequency;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmICMMethod;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmICMIntent;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmMediaType;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmDitherType;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmReserved1;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmReserved2;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmPanningWidth;
-
-            [MarshalAs(UnmanagedType.U4)]
-            public UInt32 dmPanningHeight;
+            [DllImport("user32.dll")]
+            public static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
         }
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINTL
+        public static class Mouse
         {
-            [MarshalAs(UnmanagedType.I4)]
-            public int x;
-            [MarshalAs(UnmanagedType.I4)]
-            public int y;
+            [DllImport("user32.dll")]
+            public static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
         }
 
-        #endregion
+        public static class Network
+        {
+            [DllImport("wininet.dll")]
+            public static extern bool InternetGetConnectedState(out int Description, int ReservedValue);
+        }
 
-        #region CONST
+        public static class Window
+        {
 
-        public const int SW_HIDE = 0;
-        public const int SW_SHOWNORMAL = 1;
-        public const int SW_NORMAL = 1;
-        public const int SW_SHOWMINIMIZED = 2;
-        public const int SW_SHOWMAXIMIZED = 3;
-        public const int SW_MAXIMIZE = 3;
-        public const int SW_SHOWNOACTIVATE = 4;
-        public const int SW_SHOW = 5;
-        public const int SW_MINIMIZE = 6;
-        public const int SW_SHOWMINNOACTIVE = 7;
-        public const int SW_SHOWNA = 8;
-        public const int SW_RESTORE = 9;
+            public const int SW_HIDE = 0;
+            public const int SW_SHOWNORMAL = 1;
+            public const int SW_NORMAL = 1;
+            public const int SW_SHOWMINIMIZED = 2;
+            public const int SW_SHOWMAXIMIZED = 3;
+            public const int SW_MAXIMIZE = 3;
+            public const int SW_SHOWNOACTIVATE = 4;
+            public const int SW_SHOW = 5;
+            public const int SW_MINIMIZE = 6;
+            public const int SW_SHOWMINNOACTIVE = 7;
+            public const int SW_SHOWNA = 8;
+            public const int SW_RESTORE = 9;
 
-        public const int ENUM_CURRENT_SETTINGS = -1;
-        public const int DISP_CHANGE_SUCCESSFUL = 0;
-        public const int DISP_CHANGE_BADMODE = -2;
-        public const int DISP_CHANGE_FAILED = -1;
-        public const int DISP_CHANGE_RESTART = 1;
+            [StructLayout(LayoutKind.Sequential)]
+            public struct RECT
+            {
+                public int Left;
+                public int Top;
+                public int Right;
+                public int Bottom;
+            }
 
-        #endregion
+            public struct WINDOWPLACEMENT
+            {
+                public int length;
+                public int flags;
+                public int showCmd;
+                public System.Drawing.Point ptMinPosition;
+                public System.Drawing.Point ptMaxPosition;
+                public System.Drawing.Rectangle rcNormalPosition;
+            }
+
+            [DllImport("user32.dll")]
+            public static extern IntPtr GetForegroundWindow();
+
+            [DllImport("user32.dll")]
+            public static extern IntPtr GetDesktopWindow();
+
+            [DllImport("user32.dll")]
+            public static extern IntPtr GetShellWindow();
+
+            [DllImport("user32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool EnumChildWindows(IntPtr hwndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
+            public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+
+            [DllImport("user32.dll", SetLastError = true)]
+            public static extern int GetWindowRect(IntPtr hwnd, out RECT rc);
+
+            [DllImport("user32.dll")]
+            public static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+
+            [DllImport("user32.dll")]
+            public static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+
+            [DllImport("user32.dll")]
+            public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Lib.Core
 {
-	public interface IDisplayService
+	public interface ISystemDisplayService
 	{
 		List<DisplayModel> GetAll();
 
