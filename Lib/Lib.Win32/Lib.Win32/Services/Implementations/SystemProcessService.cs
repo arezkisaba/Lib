@@ -98,9 +98,7 @@ namespace Lib.Win32
             }
         }
 
-        #region Application specific
-
-        public void StartOSK()
+        public void StartOnScreenKeyboard()
         {
             var path64 = @"C:\Windows\WinSxS\amd64_microsoft-windows-osk_31bf3856ad364e35_10.0.10586.0_none_37426bc50445e4b2\osk.exe";
             var path32 = @"C:\windows\system32\osk.exe";
@@ -126,8 +124,6 @@ namespace Lib.Win32
             {
             }
         }
-
-        #endregion
 
         #region Private
 

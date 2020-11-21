@@ -19,5 +19,9 @@ namespace Lib.Core
         SystemProcessModel GetForegroundProcess();
 
         void KillProcessesWithSameNameThanCurrent();
+
+        void StartOnScreenKeyboard();
+
+        void StartWebBrowser(string url);
     }
 }
