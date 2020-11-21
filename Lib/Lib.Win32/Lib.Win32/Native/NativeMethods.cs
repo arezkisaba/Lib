@@ -7,14 +7,35 @@ namespace Lib.Win32
     {
         public static class Clipboard
         {
-            [DllImport("user32.dll")]
-            public static extern bool OpenClipboard(IntPtr hWndNewOwner);
+            public const uint CF_UNICODETEXT = 13U;
 
-            [DllImport("user32.dll")]
-            public static extern bool CloseClipboard();
+            [DllImport("User32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool IsClipboardFormatAvailable(uint format);
+
+            [DllImport("User32.dll", SetLastError = true)]
+            public static extern IntPtr GetClipboardData(uint uFormat);
 
             [DllImport("user32.dll")]
             public static extern bool SetClipboardData(uint uFormat, IntPtr data);
+
+            [DllImport("User32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool OpenClipboard(IntPtr hWndNewOwner);
+
+            [DllImport("User32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool CloseClipboard();
+
+            [DllImport("Kernel32.dll", SetLastError = true)]
+            public static extern IntPtr GlobalLock(IntPtr hMem);
+
+            [DllImport("Kernel32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool GlobalUnlock(IntPtr hMem);
+
+            [DllImport("Kernel32.dll", SetLastError = true)]
+            public static extern int GlobalSize(IntPtr hMem);
         }
 
         public static class Display

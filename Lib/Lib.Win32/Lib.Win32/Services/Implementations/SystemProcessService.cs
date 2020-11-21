@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lib.Core;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,16 +8,16 @@ using static Lib.Win32.NativeMethods.Window;
 
 namespace Lib.Win32
 {
-    public class SystemProcessService
+    public class SystemProcessService : ISystemProcessService
     {
-        public Process[] GetAll()
+        public List<SystemProcessModel> GetAll()
         {
-            return Process.GetProcesses();
+            return Process.GetProcesses().Select(obj => new SystemProcessModel(obj.Id, obj.ProcessName)).ToList();
         }
 
-        public Process[] GetByName(string name)
+        public List<SystemProcessModel> GetByName(string name)
         {
-            return Process.GetProcessesByName(name);
+            return Process.GetProcessesByName(name).Select(obj => new SystemProcessModel(obj.Id, obj.ProcessName)).ToList();
         }
 
         public void Start(string filePath)
@@ -77,27 +78,11 @@ namespace Lib.Win32
             }
         }
 
-        public Process GetForegroundProcess()
+        public SystemProcessModel GetForegroundProcess()
         {
             var hwnd = GetForegroundWindow();
-            return GetProcess(hwnd);
-        }
-
-        public bool IsForegroundWindowInFullscreenMode()
-        {
-            var hwnd = GetForegroundWindow();
-            return IsWindowInFullscreenMode(hwnd);
-        }
-
-        public bool IsProcessInFullscreenMode(string processName)
-        {
-            var processes = GetByName(processName);
-            if (processes.Length <= 0)
-            {
-                return false;
-            }
-
-            return IsWindowInFullscreenMode(processes.FirstOrDefault().MainWindowHandle);
+            var process = GetProcess(hwnd);
+            return new SystemProcessModel(process.Id, process.ProcessName);
         }
 
         public void KillProcessesWithSameNameThanCurrent()
