@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Lib.Win32.UnitTests
 {
     [TestClass]
-    public class PowerUnitTest
+    public class SystemPowerUnitTest
     {
         private ISystemPowerService _systemPowerService;
 
