@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Core
 {
-    public class StorageService : IStorageService
+    public class SystemStorageService : ISystemStorageService
     {
         public Task CreateFileAsync(string fileName, bool overwrite = false)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Lib.Core
 {
-    public class DisplayModel
+    public class SystemDisplayModel
     {
         public int Width { get; set; }
 
@@ -8,7 +8,7 @@
 
         public int BitCount { get; set; }
 
-        public DisplayModel(int width, int height, int bitCount)
+        public SystemDisplayModel(int width, int height, int bitCount)
         {
             Width = width;
             Height = height;

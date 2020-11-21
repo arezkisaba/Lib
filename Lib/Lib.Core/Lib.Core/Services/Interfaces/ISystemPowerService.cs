@@ -1,6 +1,6 @@
 ﻿namespace Lib.Core
 {
-	public interface IPowerService
+	public interface ISystemPowerService
 	{
 		bool PowerOff();
 	}

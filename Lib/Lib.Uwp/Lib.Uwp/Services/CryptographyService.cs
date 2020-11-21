@@ -6,7 +6,7 @@ using Windows.Security.Cryptography.DataProtection;
 
 namespace Lib.Uwp
 {
-    public class CryptographyService : ICryptographyService
+    public class CryptographyService
 	{
 		public async Task<byte[]> EncryptAsync(byte[] bytes)
 		{

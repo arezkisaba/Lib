@@ -9,16 +9,16 @@ namespace Lib.Win32
 {
     public class SystemDisplayService : ISystemDisplayService
     {
-        public List<DisplayModel> GetAll()
+        public List<SystemDisplayModel> GetAll()
         {
             var modeIndex = 0;
             var mode = new Display.DEVMODE();
-            var displays = new List<DisplayModel>();
+            var displays = new List<SystemDisplayModel>();
             mode.dmSize = (ushort)Marshal.SizeOf(mode);
 
             while (Display.EnumDisplaySettings(null, modeIndex, ref mode))
             {
-                var display = new DisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
+                var display = new SystemDisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
                 if (!displays.Any(__ => __.Width == display.Width && __.Height == display.Height && __.BitCount == display.BitCount))
                 {
                     displays.Add(display);
@@ -35,24 +35,24 @@ namespace Lib.Win32
             return displays;
         }
 
-        public DisplayModel GetCurrent()
+        public SystemDisplayModel GetCurrent()
         {
             var mode = new Display.DEVMODE();
             mode.dmSize = (ushort)Marshal.SizeOf(mode);
 
             if (Display.EnumDisplaySettings(null, Display.ENUM_CURRENT_SETTINGS, ref mode))
             {
-                return new DisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
+                return new SystemDisplayModel((int)mode.dmPelsWidth, (int)mode.dmPelsHeight, (int)mode.dmBitsPerPel);
 
             }
 
             throw new InvalidOperationException("EnumDisplaySettings()");
         }
 
-        public DisplayModel GetLowerDisplay()
+        public SystemDisplayModel GetLowerDisplay()
         {
             var displays = GetAll();
-            DisplayModel lowerDislay = null;
+            SystemDisplayModel lowerDislay = null;
             foreach (var display in displays)
             {
                 if (lowerDislay == null || lowerDislay.Width > display.Width)
@@ -64,10 +64,10 @@ namespace Lib.Win32
             return lowerDislay;
         }
 
-        public DisplayModel GetHigherDisplay()
+        public SystemDisplayModel GetHigherDisplay()
         {
             var displays = GetAll();
-            DisplayModel higherDislay = null;
+            SystemDisplayModel higherDislay = null;
             foreach (var display in displays)
             {
                 if (higherDislay == null || higherDislay.Width < display.Width)
@@ -79,7 +79,7 @@ namespace Lib.Win32
             return higherDislay;
         }
 
-        public void SetCurrent(DisplayModel display)
+        public void SetCurrent(SystemDisplayModel display)
         {
             var originalMode = new Display.DEVMODE();
             originalMode.dmSize = (ushort)Marshal.SizeOf(originalMode);

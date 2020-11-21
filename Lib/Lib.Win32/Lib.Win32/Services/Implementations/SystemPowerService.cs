@@ -3,7 +3,7 @@ using System;
 
 namespace Lib.Win32
 {
-    public class PowerService : IPowerService
+    public class SystemPowerService : ISystemPowerService
     {
         public bool PowerOff()
         {

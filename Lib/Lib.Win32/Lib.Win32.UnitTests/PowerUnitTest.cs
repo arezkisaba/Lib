@@ -10,12 +10,12 @@ namespace Lib.Win32.UnitTests
     [TestClass]
     public class PowerUnitTest
     {
-        private IPowerService _powerService;
+        private ISystemPowerService _systemPowerService;
 
         [TestInitialize]
         public void Initialize()
         {
-            _powerService = new PowerService();
+            _systemPowerService = new SystemPowerService();
         }
 
         [TestCleanup]
@@ -26,7 +26,7 @@ namespace Lib.Win32.UnitTests
         [TestMethod]
         public void PowerOff_TestMethod()
         {
-            var result = _powerService.PowerOff();
+            var result = _systemPowerService.PowerOff();
             Assert.IsTrue(result);
         }
     }
