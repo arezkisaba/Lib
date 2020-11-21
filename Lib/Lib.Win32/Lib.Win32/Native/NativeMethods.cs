@@ -156,6 +156,26 @@ namespace Lib.Win32
             public static extern bool InternetGetConnectedState(out int Description, int ReservedValue);
         }
 
+        public static class Service
+        {
+            public const uint SERVICE_NO_CHANGE = 0xFFFFFFFF;
+            public const uint SERVICE_QUERY_CONFIG = 0x00000001;
+            public const uint SERVICE_CHANGE_CONFIG = 0x00000002;
+            public const uint SC_MANAGER_ALL_ACCESS = 0x000F003F;
+
+            [DllImport("advapi32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern Boolean ChangeServiceConfig(IntPtr hService, UInt32 nServiceType, UInt32 nStartType, UInt32 nErrorControl, String lpBinaryPathName, String lpLoadOrderGroup, IntPtr lpdwTagId, [In] char[] lpDependencies, String lpServiceStartName, String lpPassword, String lpDisplayName);
+
+            [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+            public static extern IntPtr OpenService(IntPtr hSCManager, string lpServiceName, uint dwDesiredAccess);
+
+            [DllImport("advapi32.dll", EntryPoint = "OpenSCManagerW", ExactSpelling = true, CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern IntPtr OpenSCManager(string machineName, string databaseName, uint dwAccess);
+
+            [DllImport("advapi32.dll", EntryPoint = "CloseServiceHandle")]
+            public static extern int CloseServiceHandle(IntPtr hSCObject);
+        }
+
         public static class Window
         {
 

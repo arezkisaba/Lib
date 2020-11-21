@@ -1,47 +1,32 @@
 ﻿using Lib.Core;
-using NAudio.CoreAudioApi;
-using System.Linq;
 
 namespace Lib.Win32
 {
     public class SystemSoundService : ISystemSoundService
     {
-        private AudioEndpointVolume _audioEndpointVolume;
-
         public SystemSoundService()
         {
-            var enumerator = new MMDeviceEnumerator();
-            var audioEndPoints = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
-            var mmDevice = audioEndPoints.FirstOrDefault();
-            if (mmDevice != null)
+        }
+
+        public void VolumeUp(int step)
+        {
+            for (var i = 0; i < step; i++)
             {
-                _audioEndpointVolume = mmDevice.AudioEndpointVolume;
+                NativeMethods.Keyboard.keybd_event(NativeMethods.Keyboard.VK_VOLUME_UP, 0, 0, 0);
             }
         }
 
-        public void VolumeUp(float soundStep)
+        public void VolumeDown(int step)
         {
-            if (1 - _audioEndpointVolume.MasterVolumeLevelScalar < soundStep)
+            for (var i = 0; i < step; i++)
             {
-                soundStep = 1 - _audioEndpointVolume.MasterVolumeLevelScalar;
+                NativeMethods.Keyboard.keybd_event(NativeMethods.Keyboard.VK_VOLUME_DOWN, 0, 0, 0);
             }
-
-            _audioEndpointVolume.MasterVolumeLevelScalar += soundStep;
         }
 
-        public void VolumeDown(float soundStep)
+        public void ToggleVolumeMute()
         {
-            if (_audioEndpointVolume.MasterVolumeLevelScalar < soundStep)
-            {
-                soundStep = _audioEndpointVolume.MasterVolumeLevelScalar;
-            }
-
-            _audioEndpointVolume.MasterVolumeLevelScalar -= soundStep;
-        }
-
-        public void ToggleMute()
-        {
-            _audioEndpointVolume.Mute = !_audioEndpointVolume.Mute;
+            NativeMethods.Keyboard.keybd_event(NativeMethods.Keyboard.VK_VOLUME_MUTE, 0, 0, 0);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Lib.Win32
         {
             try
             {
-                ServiceHelper.ChangeStartMode(serviceName, ServiceStartMode.Automatic);
+                ChangeStartMode(serviceName, ServiceStartMode.Automatic);
                 return true;
             }
             catch
@@ -72,7 +72,7 @@ namespace Lib.Win32
         {
             try
             {
-                ServiceHelper.ChangeStartMode(serviceName, ServiceStartMode.Manual);
+                ChangeStartMode(serviceName, ServiceStartMode.Manual);
                 return true;
             }
             catch
@@ -80,58 +80,27 @@ namespace Lib.Win32
                 return false;
             }
         }
-    }
 
-    public static class ServiceHelper
-    {
-        [DllImport("advapi32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        public static extern Boolean ChangeServiceConfig(
-            IntPtr hService,
-            UInt32 nServiceType,
-            UInt32 nStartType,
-            UInt32 nErrorControl,
-            String lpBinaryPathName,
-            String lpLoadOrderGroup,
-            IntPtr lpdwTagId,
-            [In] char[] lpDependencies,
-            String lpServiceStartName,
-            String lpPassword,
-            String lpDisplayName);
-
-        [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        static extern IntPtr OpenService(IntPtr hSCManager, string lpServiceName, uint dwDesiredAccess);
-
-        [DllImport("advapi32.dll", EntryPoint = "OpenSCManagerW", ExactSpelling = true, CharSet = CharSet.Unicode, SetLastError = true)]
-        public static extern IntPtr OpenSCManager(string machineName, string databaseName, uint dwAccess);
-
-        [DllImport("advapi32.dll", EntryPoint = "CloseServiceHandle")]
-        public static extern int CloseServiceHandle(IntPtr hSCObject);
-
-        private const uint SERVICE_NO_CHANGE = 0xFFFFFFFF;
-        private const uint SERVICE_QUERY_CONFIG = 0x00000001;
-        private const uint SERVICE_CHANGE_CONFIG = 0x00000002;
-        private const uint SC_MANAGER_ALL_ACCESS = 0x000F003F;
-
-        public static void ChangeStartMode(string serviceName, ServiceStartMode mode)
+        private void ChangeStartMode(string serviceName, ServiceStartMode mode)
         {
-            var scManagerHandle = OpenSCManager(null, null, SC_MANAGER_ALL_ACCESS);
+            var scManagerHandle = NativeMethods.Service.OpenSCManager(null, null, NativeMethods.Service.SC_MANAGER_ALL_ACCESS);
             if (scManagerHandle == IntPtr.Zero)
             {
                 throw new ExternalException("Open Service Manager Error");
             }
 
-            var serviceHandle = OpenService(scManagerHandle, serviceName, SERVICE_QUERY_CONFIG | SERVICE_CHANGE_CONFIG);
+            var serviceHandle = NativeMethods.Service.OpenService(scManagerHandle, serviceName, NativeMethods.Service.SERVICE_QUERY_CONFIG | NativeMethods.Service.SERVICE_CHANGE_CONFIG);
 
             if (serviceHandle == IntPtr.Zero)
             {
                 throw new ExternalException("Open Service Error");
             }
 
-            var result = ChangeServiceConfig(
+            var result = NativeMethods.Service.ChangeServiceConfig(
                 serviceHandle,
-                SERVICE_NO_CHANGE,
+                NativeMethods.Service.SERVICE_NO_CHANGE,
                 (uint)mode,
-                SERVICE_NO_CHANGE,
+                NativeMethods.Service.SERVICE_NO_CHANGE,
                 null,
                 null,
                 IntPtr.Zero,
@@ -147,8 +116,8 @@ namespace Lib.Win32
                 throw new ExternalException("Could not change service start type: " + win32Exception.Message);
             }
 
-            CloseServiceHandle(serviceHandle);
-            CloseServiceHandle(scManagerHandle);
+            NativeMethods.Service.CloseServiceHandle(serviceHandle);
+            NativeMethods.Service.CloseServiceHandle(scManagerHandle);
         }
     }
 }
