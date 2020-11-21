@@ -24,9 +24,9 @@ namespace Lib.Win32.UnitTests
         }
 
         [TestMethod]
-        public void Shutdown_TestMethod()
+        public void PowerOff_TestMethod()
         {
-            var result = _powerService.Shutdown();
+            var result = _powerService.PowerOff();
             Assert.IsTrue(result);
         }
     }

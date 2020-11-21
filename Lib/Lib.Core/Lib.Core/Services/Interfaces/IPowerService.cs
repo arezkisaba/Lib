@@ -2,6 +2,6 @@
 {
 	public interface IPowerService
 	{
-		bool Shutdown();
+		bool PowerOff();
 	}
 }

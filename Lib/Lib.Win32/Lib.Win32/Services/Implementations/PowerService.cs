@@ -5,7 +5,7 @@ namespace Lib.Win32
 {
     public class PowerService : IPowerService
     {
-        public bool Shutdown()
+        public bool PowerOff()
         {
             NativeMethods.Privilege.TokPriv1Luid tp;
             var hproc = NativeMethods.Process.GetCurrentProcess();
