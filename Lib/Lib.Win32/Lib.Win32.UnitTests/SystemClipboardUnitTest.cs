@@ -22,7 +22,7 @@ namespace Lib.Win32.UnitTests
         }
 
         [TestMethod]
-        public void SetClipboardData_TestMethod()
+        public void SetText_TestMethod()
         {
             var text = "Mon texte";
             _systemClipboardService.SetText(text);
