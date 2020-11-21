@@ -39,7 +39,7 @@ namespace Lib.Win32.UnitTests
         public void SetCurrent_TestMethod()
         {
             var displays = _systemDisplayService.GetAll();
-            Assert.IsTrue(displays != null && displays.Count > 2);
+            Assert.IsTrue(displays != null && displays.Any());
             var lowerDisplay = _systemDisplayService.GetLowerDisplay();
             var higherDisplay = _systemDisplayService.GetHigherDisplay();
             Assert.IsTrue(lowerDisplay != null);
