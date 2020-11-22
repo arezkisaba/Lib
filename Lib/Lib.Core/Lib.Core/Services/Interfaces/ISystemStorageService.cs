@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Core
 {
-    public interface IStorageService
+    public interface ISystemStorageService
     {
         Task CreateFileAsync(string fileName, bool overwrite = false);
 

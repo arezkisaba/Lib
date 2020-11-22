@@ -4,14 +4,14 @@ namespace Lib.Core
 {
 	public interface ISystemDisplayService
 	{
-		List<DisplayModel> GetAll();
+		List<SystemDisplayModel> GetAll();
 
-		DisplayModel GetCurrent();
+		SystemDisplayModel GetCurrent();
 
-		DisplayModel GetLowerDisplay();
+		SystemDisplayModel GetLowerDisplay();
 
-        DisplayModel GetHigherDisplay();
+        SystemDisplayModel GetHigherDisplay();
 
-        void SetCurrent(DisplayModel display);
+        void SetCurrent(SystemDisplayModel display);
 	}
 }

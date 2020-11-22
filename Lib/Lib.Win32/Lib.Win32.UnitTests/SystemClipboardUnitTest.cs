@@ -1,21 +1,19 @@
 using Lib.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace Lib.Win32.UnitTests
 {
     [TestClass]
-    public class PowerUnitTest
+    public class SystemClipboardUnitTest
     {
-        private IPowerService _powerService;
+        private ISystemClipboardService _systemClipboardService;
 
         [TestInitialize]
         public void Initialize()
         {
-            _powerService = new PowerService();
+            _systemClipboardService = new SystemClipboardService();
         }
 
         [TestCleanup]
@@ -24,10 +22,11 @@ namespace Lib.Win32.UnitTests
         }
 
         [TestMethod]
-        public void PowerOff_TestMethod()
+        public void SetText_TestMethod()
         {
-            var result = _powerService.PowerOff();
-            Assert.IsTrue(result);
+            var text = "Mon texte";
+            _systemClipboardService.SetText(text);
+            Assert.IsTrue(_systemClipboardService.GetText() == text);
         }
     }
 }

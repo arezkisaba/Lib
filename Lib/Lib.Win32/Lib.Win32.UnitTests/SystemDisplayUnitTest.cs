@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Lib.Win32.UnitTests
 {
     [TestClass]
-    public class DisplayUnitTest
+    public class SystemDisplayUnitTest
     {
         private ISystemDisplayService _systemDisplayService;
 
