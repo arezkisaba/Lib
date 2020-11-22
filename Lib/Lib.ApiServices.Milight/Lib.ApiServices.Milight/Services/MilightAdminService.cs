@@ -1,19 +1,20 @@
-﻿using System;
+using Lib.ApiServices.Milight.Models;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace MiLight.Lib.Models
+namespace Lib.ApiServices.Milight.Services
 {
-    public class MiLightAdminClient : MiLightClient
+    public class MilightAdminService : MilightService
     {
         private static readonly Regex HotspotRegEx = new Regex(@"^(?<ch>\d{1,2}),(?<ssid>.*),(?<bssid>.*),(?<security>.*),(?<signal>\d{1,3}),(?<extch>.*),(?<nt>.*),(?<wps>.*),(?<dpid>.*),$");
         private static readonly Regex IpIdRegEx = new Regex(@"^(?<ip>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b),.*(?<id>[0-9a-zA-Z]{12}).*$");
         private static readonly Regex VersionRegEx = new Regex(@"^(?<ok>[+ok=]{4})(?<ver>[0-9a-zA-Z\.\-]*).*$");
 
-        public MiLightAdminClient(string outHost = "10.10.100.254", int outPort = 48899) : base(outHost, outPort)
+        public MilightAdminService(string outHost = "10.10.100.254", int outPort = 48899) : base(outHost, outPort)
         {
-            Admin = true;
+            _isAdmin = true;
         }
 
         public async Task<Dictionary<string, string>> FindBridgesAsync()
@@ -41,7 +42,7 @@ namespace MiLight.Lib.Models
             return bridges;
         }
 
-        public async Task<List<MiLightHotspot>> FindHostspotsAsync(string bridgeIp)
+        public async Task<List<MiLightHotspot>> FindWifiHostspotsAsync()
         {
             var hostspots = new List<MiLightHotspot>();
 
@@ -76,7 +77,7 @@ namespace MiLight.Lib.Models
             return hostspots;
         }
 
-        public async Task<string> FindVersionAsync(string bridgeIp)
+        public async Task<string> FindVersionAsync()
         {
             var isOk = await HandshakeAsync();
             if (!isOk)
@@ -99,7 +100,7 @@ namespace MiLight.Lib.Models
             return string.Empty;
         }
 
-        public async Task<bool> SetupHotspotAsync(string bridgeIp, string ssid, string password)
+        public async Task<bool> SetupHotspotAsync(string ssid, string password)
         {
             var isOk = await HandshakeAsync();
             if (!isOk)

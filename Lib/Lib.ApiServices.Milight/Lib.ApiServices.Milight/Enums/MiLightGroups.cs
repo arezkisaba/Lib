@@ -1,4 +1,4 @@
-﻿namespace MiLight.Lib.Enums
+namespace Lib.ApiServices.Milight.Enums
 {
     public enum MiLightGroups
     {

@@ -1,56 +1,43 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using MiLight.Lib.Enums;
+using Lib.ApiServices.Milight.Enums;
+using Lib.ApiServices.Milight.Models;
 
-#if NETFX_CORE || WINDOWS_PHONE
-using Windows.Networking.Sockets;
-using Windows.Networking;
-using Windows.Storage.Streams;
-#else
-#endif
-
-namespace MiLight.Lib.Models
+namespace Lib.ApiServices.Milight.Services
 {
-    public class MiLightClient
+    public class MilightService
     {
         private static readonly object Lock = new object();
-        protected StringBuilder ReceiveBuffer = new StringBuilder();
-        private readonly string _outHost;
-        private readonly int _outPort;
-        internal bool Admin = false;
-#if NETFX_CORE || WINDOWS_PHONE
-        private DatagramSocket _socket;
-        private DataWriter _writer;
-#else
-        protected UdpClient Client;
+        private readonly string _remoteHost;
+        private readonly int _remotePort;
+        private StringBuilder ReceiveBuffer = new StringBuilder();
+        private UdpClient UdpClient;
         private IPEndPoint _outIp;
-        internal IPEndPoint InIp;
-#endif
+        private IPEndPoint _inIp;
+        protected bool _isAdmin = false;
 
-        public MiLightClient(string outHost = "10.10.100.254", int outPort = 8899)
+        public MilightService(string remoteHost = "10.10.100.254", int remotePort = 8899)
         {
-            _outHost = outHost;
-            _outPort = outPort;
+            _remoteHost = remoteHost;
+            _remotePort = remotePort;
         }
 
         public async Task<string> ReceiveDataAsync()
         {
-#if NETFX_CORE || WINDOWS_PHONE
-#else
             for (var i = 0; i < 3; i++)
             {
-                if (Client.Available > 0)
+                if (UdpClient.Available > 0)
                 {
-                    ReceiveBuffer.AppendLine(Encoding.UTF8.GetString(Client.Receive(ref InIp)));
+                    ReceiveBuffer.AppendLine(Encoding.UTF8.GetString(UdpClient.Receive(ref _inIp)));
                     break;
                 }
 
                 await Task.Delay(500);
             }
-#endif
+
             var s = ReceiveBuffer.ToString();
             ReceiveBuffer.Clear();
             await Task.Run(() => { });
@@ -65,67 +52,43 @@ namespace MiLight.Lib.Models
 
         public async Task SendDataAsync(byte[] data, int delay = 100)
         {
-#if NETFX_CORE || WINDOWS_PHONE
-            if (_socket == null)
-            {
-                lock (_lock)
-                {
-                    if (_socket == null)
-                        _socket = new DatagramSocket();
-                }
-                await _socket.ConnectAsync(new HostName(_outHost), _outService);
-                if (_admin)
-                    _socket.MessageReceived += _socket_MessageReceived;
-                _writer = new DataWriter(_socket.OutputStream);
-            }
-            _writer.WriteBytes(data);
-            await _writer.StoreAsync();
-#else
-            if (Client == null)
+            if (UdpClient == null)
             {
                 lock (Lock)
                 {
-                    if (Client == null)
+                    if (UdpClient == null)
                     {
-                        Client = new UdpClient();
+                        UdpClient = new UdpClient();
                     }
                 }
 
-                _outIp = new IPEndPoint(IPAddress.Parse(_outHost), _outPort);
-                Client.Client.MulticastLoopback = false;
-                Client.EnableBroadcast = true;
+                _outIp = new IPEndPoint(IPAddress.Parse(_remoteHost), _remotePort);
+                UdpClient.Client.MulticastLoopback = false;
+                UdpClient.EnableBroadcast = true;
 
-                if (Admin)
+                if (_isAdmin)
                 {
-                    InIp = new IPEndPoint(IPAddress.Parse("0.0.0.0"), _outPort);
-                    Client.Client.ReceiveTimeout = 3000;
-                    Client.Client.Bind(InIp);
+                    _inIp = new IPEndPoint(IPAddress.Parse("0.0.0.0"), _remotePort);
+                    UdpClient.Client.ReceiveTimeout = 3000;
+                    UdpClient.Client.Bind(_inIp);
                 }
             }
 
-            Client.Send(data, data.Length, _outIp);
-#endif
+            UdpClient.Send(data, data.Length, _outIp);
             await Task.Delay(delay);
         }
 
-#if NETFX_CORE || WINDOWS_PHONE
-        private void _socket_MessageReceived(DatagramSocket sender, DatagramSocketMessageReceivedEventArgs args)
-        {
-            var reader = args.GetDataReader();
-            _receiveBuffer.AppendLine(reader.ReadString(reader.UnconsumedBufferLength));
-        }
-#endif
-
         public void Close()
         {
-#if NETFX_CORE || WINDOWS_PHONE
-            _socket.Dispose();
-#else
-            if (Client != null)
+            if (UdpClient != null)
             {
-                Client.Close();
+                UdpClient.Close();
             }
-#endif
+        }
+
+        private async Task DelayAsync(int millisecondsTimeout = 101)
+        {
+            await Task.Delay(TimeSpan.FromMilliseconds(millisecondsTimeout));
         }
 
         #region LED Commands
@@ -272,11 +235,6 @@ namespace MiLight.Lib.Models
         private async Task SendCommandAsync(byte[] buffer)
         {
             await SendDataAsync(buffer, buffer.Length);
-        }
-
-        public async Task DelayAsync(int millisecondsTimeout = 101)
-        {
-            await Task.Delay(TimeSpan.FromMilliseconds(millisecondsTimeout));
         }
 
         #endregion

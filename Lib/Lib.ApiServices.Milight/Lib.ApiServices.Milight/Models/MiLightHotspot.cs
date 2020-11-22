@@ -1,4 +1,4 @@
-﻿namespace MiLight.Lib.Models
+namespace Lib.ApiServices.Milight.Models
 {
     public class MiLightHotspot
     {

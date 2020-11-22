@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace MiLight.Lib
+namespace Lib.ApiServices.Milight
 {
     public class WifiController
     {

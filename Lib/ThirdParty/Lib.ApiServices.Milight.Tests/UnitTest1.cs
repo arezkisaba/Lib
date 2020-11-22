@@ -1,9 +1,9 @@
-﻿using System.Linq;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MiLight.Lib.Enums;
-using MiLight.Lib.Models;
+using Lib.ApiServices.Milight.Enums;
+using Lib.ApiServices.Milight.Models;
 
-namespace MiLight.Lib.Tests
+namespace Lib.ApiServices.Milight.Tests
 {
     [TestClass]
     public class UnitTest1
