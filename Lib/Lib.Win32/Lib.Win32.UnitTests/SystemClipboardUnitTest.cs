@@ -1,7 +1,5 @@
 using Lib.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Lib.Win32.UnitTests
 {
