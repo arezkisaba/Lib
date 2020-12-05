@@ -13,8 +13,10 @@ namespace Lib.Core
         bool Start(string filePath, string arguments);
 
         bool StartScript(string filePath);
-
+        
         void Stop(string name);
+
+        void Kill(string name);
 
         SystemProcessModel GetForegroundProcess();
 

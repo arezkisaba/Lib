@@ -74,6 +74,16 @@ namespace Lib.Win32
             var processes = Process.GetProcessesByName(name);
             foreach (var process in processes)
             {
+                process.CloseMainWindow();
+                process.Close();
+            }
+        }
+
+        public void Kill(string name)
+        {
+            var processes = Process.GetProcessesByName(name);
+            foreach (var process in processes)
+            {
                 process.Kill();
             }
         }

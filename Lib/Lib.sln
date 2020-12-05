@@ -84,7 +84,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Documentation", "1_Documentation", "{B517618F-5F8B-42E2-A522-3D545F9CF7E0}"
 	ProjectSection(SolutionItems) = preProject
 		1_Documentation\Documentation.txt = 1_Documentation\Documentation.txt
-		1_Documentation\Todo.txt = 1_Documentation\Todo.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.Unibet.UnitTests", "Lib.ApiServices.Unibet\Lib.ApiServices.Unibet.UnitTests\Lib.ApiServices.Unibet.UnitTests.csproj", "{F685CF1D-4F3C-4DAC-9460-025EDE671404}"
@@ -116,7 +115,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib.ApiServices.Milight", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.ApiServices.Milight", "Lib.ApiServices.Milight\Lib.ApiServices.Milight\Lib.ApiServices.Milight.csproj", "{5FB9E435-E16E-4EBE-BA86-2C06781A7403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.ApiServices.Milight.Tests", "Lib.ApiServices.Milight\Lib.ApiServices.Milight.Tests\Lib.ApiServices.Milight.Tests.csproj", "{4FB155D3-3155-43E3-AB27-D6E0CB46F18F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.Milight.Tests", "Lib.ApiServices.Milight\Lib.ApiServices.Milight.Tests\Lib.ApiServices.Milight.Tests.csproj", "{4FB155D3-3155-43E3-AB27-D6E0CB46F18F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

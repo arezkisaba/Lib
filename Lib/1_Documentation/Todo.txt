@@ -1,6 +1,0 @@
-WIX :
-- Check NETCore version
-- Options checkbox
-- Upgrade version
-- Banner
-- Uninstall bug when app has folders
