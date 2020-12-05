@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib.Core\Lib.Core\Lib.Core.csproj" />
+    <ProjectReference Include="..\..\Lib.Core\Lib.Core\Lib.Core.csproj" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
