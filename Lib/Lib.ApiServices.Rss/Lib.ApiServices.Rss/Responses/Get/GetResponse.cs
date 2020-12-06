@@ -1,11 +1,9 @@
-using System;
-
 namespace Lib.ApiServices.Rss
 {
-    [System.Xml.Serialization.XmlRootAttribute(ElementName = "rss", Namespace = "", IsNullable = false)]
+    [System.Xml.Serialization.XmlRoot(ElementName = "rss", Namespace = "", IsNullable = false)]
     public class GetResponse
     {
-        [System.Xml.Serialization.XmlElementAttribute("channel")]
+        [System.Xml.Serialization.XmlElement("channel")]
         public RssChannel channel { get; set; }
         
         public partial class RssChannel
@@ -22,7 +20,7 @@ namespace Lib.ApiServices.Rss
 
             public string language { get; set; }
 
-            [System.Xml.Serialization.XmlElementAttribute("item")]
+            [System.Xml.Serialization.XmlElement("item")]
             public RssChannelItem[] item { get; set; }
         }
 

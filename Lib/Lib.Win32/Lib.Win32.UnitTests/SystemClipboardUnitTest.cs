@@ -24,7 +24,8 @@ namespace Lib.Win32.UnitTests
         {
             var text = "Mon texte";
             _systemClipboardService.SetText(text);
-            Assert.IsTrue(_systemClipboardService.GetText() == text);
+            var clipboardText = _systemClipboardService.GetText();
+            Assert.IsTrue(clipboardText == text);
         }
     }
 }

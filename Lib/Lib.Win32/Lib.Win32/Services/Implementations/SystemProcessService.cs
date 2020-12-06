@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
-using static Lib.Win32.NativeMethods.Window;
 
 namespace Lib.Win32
 {
@@ -90,7 +89,7 @@ namespace Lib.Win32
 
         public SystemProcessModel GetForegroundProcess()
         {
-            var hwnd = GetForegroundWindow();
+            var hwnd = NativeMethods.Window.GetForegroundWindow();
             var process = GetProcess(hwnd);
             return new SystemProcessModel(process.Id, process.ProcessName);
         }
@@ -152,7 +151,7 @@ namespace Lib.Win32
         private Process GetProcess(IntPtr hwnd)
         {
             uint processId;
-            GetWindowThreadProcessId(hwnd, out processId);
+            NativeMethods.Window.GetWindowThreadProcessId(hwnd, out processId);
             return GetProcess((int)processId);
         }
 
@@ -163,8 +162,8 @@ namespace Lib.Win32
 
             try
             {
-                var childProc = new EnumWindowsProc(EnumWindow);
-                EnumChildWindows(parent, childProc, GCHandle.ToIntPtr(listHandle));
+                var childProc = new NativeMethods.Window.EnumWindowsProc(EnumWindow);
+                NativeMethods.Window.EnumChildWindows(parent, childProc, GCHandle.ToIntPtr(listHandle));
             }
             finally
             {
@@ -178,12 +177,12 @@ namespace Lib.Win32
 
         private bool IsWindowInFullscreenMode(IntPtr hwnd)
         {
-            RECT rect;
-            RECT desktopRect;
-            var desktopHwnd = GetDesktopWindow();
+            NativeMethods.Window.RECT rect;
+            NativeMethods.Window.RECT desktopRect;
+            var desktopHwnd = NativeMethods.Window.GetDesktopWindow();
 
-            GetWindowRect(hwnd, out rect);
-            GetWindowRect(desktopHwnd, out desktopRect);
+            NativeMethods.Window.GetWindowRect(hwnd, out rect);
+            NativeMethods.Window.GetWindowRect(desktopHwnd, out desktopRect);
 
             if (rect.Bottom == desktopRect.Bottom)
             {

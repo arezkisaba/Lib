@@ -7,8 +7,7 @@ namespace Lib.ApiServices.Rss
     {
         private HttpService _httpService;
 
-        public RssService(
-            string url)
+        public RssService(string url)
         {
             _httpService = new HttpService(url, ExchangeFormat.Xml);
         }
