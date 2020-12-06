@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Lib.Core.Mvvm
+namespace Lib.Core
 {
     public class RelayCommandAsync : ICommand
     {

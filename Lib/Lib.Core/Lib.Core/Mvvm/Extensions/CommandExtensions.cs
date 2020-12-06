@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace Lib.Core.Mvvm
+namespace Lib.Core
 {
     public static class CommandExtensions
 	{

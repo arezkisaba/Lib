@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <UserSecretsId>fbce9b03-ca52-43ed-ac91-6f53f76f6cab</UserSecretsId>
   </PropertyGroup>
 

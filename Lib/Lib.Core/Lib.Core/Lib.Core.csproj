@@ -19,7 +19,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageId>Lib.Core</PackageId>
     <OutputType>Library</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.0.15</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System;
 using System.Linq.Expressions;
 
-namespace Lib.Core.Mvvm
+namespace Lib.Core
 {
     [Serializable]
     public abstract class BindableBase : INotifyPropertyChanged

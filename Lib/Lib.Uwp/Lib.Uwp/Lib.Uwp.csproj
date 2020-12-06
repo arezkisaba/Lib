@@ -138,6 +138,12 @@
   <ItemGroup>
     <None Include="Lib.Uwp.nuspec" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib.Core\Lib.Core\Lib.Core.csproj">
+      <Project>{0fd5570b-675f-43ab-bc20-d7b57aea8f4b}</Project>
+      <Name>Lib.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
