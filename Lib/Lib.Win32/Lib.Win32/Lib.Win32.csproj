@@ -19,7 +19,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageId>Lib.Win32</PackageId>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <Version>1.0.18</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>

@@ -42,7 +42,7 @@
 	</Fragment>
 	<Fragment>
 		<DirectoryRef Id="dira73a016d667b462d9c6df47c5681f93b">
-			<Directory Id="dir87d0901f95b3424580d021aac2b4feb9" Name="netstandard2.0" />
+			<Directory Id="dir87d0901f95b3424580d021aac2b4feb9" Name="net5.0" />
 		</DirectoryRef>
 	</Fragment>
 
@@ -64,10 +64,10 @@
 				<File Id="Artifacts_runtimes_win_lib_netcoreapp3.0_System.Windows.Extensions.dll" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll" />
 			</Component>
 			<Component Id="cmp939e9ef1c3fc4b07a3316c5266a0d47c" Directory="dir87d0901f95b3424580d021aac2b4feb9" Guid="*">
-				<File Id="Artifacts_runtimes_win_lib_netstandard2.0_System.Security.Cryptography.ProtectedData.dll" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+				<File Id="Artifacts_runtimes_win_lib_net5.0_System.Security.Cryptography.ProtectedData.dll" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\runtimes\win\lib\net5.0\System.Security.Cryptography.ProtectedData.dll" />
 			</Component>
 			<Component Id="cmp1c0f21cd53934f808489fee3152a15e4" Directory="dir87d0901f95b3424580d021aac2b4feb9" Guid="*">
-				<File Id="Artifacts_runtimes_win_lib_netstandard2.0_System.ServiceProcess.ServiceController.dll" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll" />
+				<File Id="Artifacts_runtimes_win_lib_net5.0_System.ServiceProcess.ServiceController.dll" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\runtimes\win\lib\net5.0\System.ServiceProcess.ServiceController.dll" />
 			</Component>
 			<Component Id="cmp1dc55175a80b4f709174353c0239eed2" Directory="INSTALLFOLDER" Guid="*">
 				<File Id="Artifacts_BabylonTools.XMap.deps.json" KeyPath="yes" Source="$(var.ProjectDir)Artifacts\BabylonTools.XMap.deps.json" />
