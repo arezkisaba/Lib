@@ -53,18 +53,11 @@ steps:
     arguments: '-c Debug -o $(webPackageDir)'
 
 - task: DotNetCoreCLI@2
-  enabled: true
+  enabled: false
   displayName: Dotnet test on [Lib.Core.UnitTests]
   inputs:
     command: 'test'
     projects: '$(Build.SourcesDirectory)/Lib/Lib.Core/Lib.Core.UnitTests/*.csproj'
-
-- task: DotNetCoreCLI@2
-  enabled: true
-  displayName: Dotnet test on [Lib.ApiServices.Rawg.UnitTests]
-  inputs:
-    command: 'test'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rawg/Lib.ApiServices.Rawg.UnitTests/*.csproj'
 
 - task: DotNetCoreCLI@2
   enabled: true
@@ -81,15 +74,6 @@ steps:
     projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.OpenWeatherMap/Lib.ApiServices.OpenWeatherMap/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.OpenWeatherMap" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-
-- task: DotNetCoreCLI@2
-  enabled: true
-  displayName: Dotnet pack on [Lib.ApiServices.Rawg]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rawg/Lib.ApiServices.Rawg/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Rawg" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
