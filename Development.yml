@@ -205,15 +205,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.Core.Mvvm]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.Core.Mvvm/Lib.Core.Mvvm/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.Core.Mvvm" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-
-- task: DotNetCoreCLI@2
-  enabled: true
   displayName: Dotnet pack on [Lib.Win32]
   inputs:
     command: 'custom'
@@ -227,13 +218,6 @@ steps:
   inputs:
     command: 'custom'
     arguments: 'pack "$(Build.SourcesDirectory)/Lib/Lib.Uwp/Lib.Uwp/Lib.Uwp.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp" -Symbols -SymbolPackageFormat snupkg'
-
-- task: NuGetCommand@2
-  enabled: true
-  displayName: Nuget pack on [Lib.Uwp.Mvvm]
-  inputs:
-    command: 'custom'
-    arguments: 'pack "$(Build.SourcesDirectory)/Lib/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm/Lib.Uwp.Mvvm.nuspec" -OutputDirectory "$(nugetPackageDir)/Lib.Uwp.Mvvm" -Symbols -SymbolPackageFormat snupkg'
 
 - task: NuGetCommand@2
   enabled: true
