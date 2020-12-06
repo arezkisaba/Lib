@@ -19,46 +19,6 @@ variables:
 
 steps:
 
-- task: PowerShell@2
-  enabled: true
-  displayName: Environment settings
-  inputs:
-    targetType: 'inline'
-    script: |
-      Write-Host "BuildConfiguration : $(BuildConfiguration)"
-      Write-Host "Agent.BuildDirectory : $(Agent.BuildDirectory)"
-      Write-Host "Agent.HomeDirectory : $(Agent.HomeDirectory)"
-      Write-Host "Agent.Id : $(Agent.Id)"
-      Write-Host "Agent.JobName : $(Agent.JobName)"
-      Write-Host "Agent.JobStatus : $(Agent.JobStatus)"
-      Write-Host "Agent.MachineName : $(Agent.MachineName)"
-      Write-Host "Agent.Name : $(Agent.Name)"
-      Write-Host "Agent.OS : $(Agent.OS)"
-      Write-Host "Agent.OSArchitecture : $(Agent.OSArchitecture)"
-      Write-Host "Agent.TempDirectory : $(Agent.TempDirectory)"
-      Write-Host "Agent.ToolsDirectory : $(Agent.ToolsDirectory)"
-      Write-Host "Agent.WorkFolder : $(Agent.WorkFolder)"
-      Write-Host "Build.ArtifactStagingDirectory : $(Build.ArtifactStagingDirectory)"
-      Write-Host "Build.BuildId : $(Build.BuildId)"
-      Write-Host "Build.BuildNumber : $(Build.BuildNumber)"
-      Write-Host "Build.BuildUri : $(Build.BuildUri)"
-      Write-Host "Build.BinariesDirectory : $(Build.BinariesDirectory)"
-      Write-Host "Build.ContainerId : $(Build.ContainerId)"
-      Write-Host "Build.DefinitionName : $(Build.DefinitionName)"
-      Write-Host "Build.DefinitionVersion : $(Build.DefinitionVersion)"
-      Write-Host "Build.QueuedBy : $(Build.QueuedBy)"
-      Write-Host "Build.QueuedById : $(Build.QueuedById)"
-      Write-Host "Build.Reason : $(Build.Reason)"
-      Write-Host "Build.Repository.LocalPath : $(Build.Repository.LocalPath)"
-      Write-Host "Build.Repository.ID : $(Build.Repository.ID)"
-      Write-Host "Build.Repository.Name : $(Build.Repository.Name)"
-      Write-Host "Build.Repository.Provider : $(Build.Repository.Provider)"
-      Write-Host "Build.SourcesDirectory : $(Build.SourcesDirectory)"
-      Write-Host "Pipeline.Workspace : $(Pipeline.Workspace)"
-      Write-Host "System.DefaultWorkingDirectory : $(System.DefaultWorkingDirectory)"
-      Write-Host "System.JobName : $(System.JobName)"
-      Write-Host "System.TeamProject : $(System.TeamProject)"
-
 - task: NuGetToolInstaller@1
   enabled: true
   displayName: Nuget installation
@@ -79,17 +39,17 @@ steps:
   displayName: Build solution
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:RunWixToolsOutOfProc=true /p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
+    msbuildArgs: '/p:AppxBundlePlatforms="$(buildPlatform)" /p:AppxPackageDir="$(appxPackageDir)" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet publish on [Lib.Samples.WebApi]
+  displayName: Dotnet publish on [Lib.WebApi]
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '$(Build.SourcesDirectory)/Lib/Samples/Lib.Samples.WebApi/Lib.Samples.WebApi/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.Samples/Lib.WebApi/Lib.WebApi/*.csproj'
     arguments: '-c Debug -o $(webPackageDir)'
 
 - task: DotNetCoreCLI@2
