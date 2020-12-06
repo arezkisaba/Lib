@@ -8,7 +8,7 @@ namespace Lib.Core.UnitTests
     public class HttpServiceUnitTest
     {
         ////private string _serviceUrl = "https://localhost:5001/";
-        private string _serviceUrl = "https://libcoresampleswebapi.azurewebsites.net/";
+        private string _serviceUrl = "https://libwebapi.azurewebsites.net/";
 
         [TestInitialize]
         public void Initialize()
