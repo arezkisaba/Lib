@@ -76,7 +76,7 @@ namespace Lib.Core
                 _httpClient.DefaultRequestHeaders.Remove(key);
             }
 
-            _httpClient.DefaultRequestHeaders.Add(key, value);
+            _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(key, value);
         }
 
         public void AddQueryParameters(string additionnalQueryParameters)
