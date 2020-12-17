@@ -4,7 +4,7 @@ using System;
 
 namespace Lib.ApiServices.Transmission
 {
-    public interface ITransmissionService
+    public interface ITransmissionApiService
     {
         event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
 

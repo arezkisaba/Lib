@@ -7,13 +7,13 @@ using Lib.Core;
 
 namespace Lib.ApiServices.Transmission
 {
-    public class TransmissionService : ITransmissionService
+    public class TransmissionApiService : ITransmissionApiService
     {
         private HttpService _httpService;
         private string _accessToken;
         public event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
 
-        public TransmissionService(string url)
+        public TransmissionApiService(string url)
         {
             _httpService = new HttpService(url, ExchangeFormat.Json);
             _httpService.AddCallbackForHttpStatusCode(HttpStatusCode.Conflict, AuthenticateAsync);

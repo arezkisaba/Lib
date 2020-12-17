@@ -9,7 +9,7 @@ using Lib.Core;
 
 namespace Lib.ApiServices.Plex
 {
-    public class PlexService : IPlexService
+    public class PlexApiService : IPlexApiService
     {
         private const string SignInUrl = "https://plex.tv/users/sign_in.xml";
         private HttpService _httpService;
@@ -22,7 +22,7 @@ namespace Lib.ApiServices.Plex
         private string _plexVersion;
         public event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
 
-        public PlexService(string url, string userName, string password, string accessToken = null)
+        public PlexApiService(string url, string userName, string password, string accessToken = null)
         {
             _userName = userName;
             _password = password;

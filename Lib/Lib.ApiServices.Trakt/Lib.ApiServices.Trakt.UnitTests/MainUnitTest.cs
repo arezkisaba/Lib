@@ -9,7 +9,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
     public class MainUnitTest
     {
         private IConfiguration _configuration;
-        private ITraktService _traktService;
+        private ITraktApiService _traktService;
 
         public MainUnitTest()
         {
@@ -19,7 +19,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _traktService = new TraktService(
+            _traktService = new TraktApiService(
                 _configuration["Trakt.ApiKey"],
                 _configuration["Trakt.ClientId"],
                 _configuration["Trakt.ClientSecret"],

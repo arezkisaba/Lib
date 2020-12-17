@@ -8,7 +8,7 @@ namespace Lib.ApiServices.OpenWeatherMap.UnitTests
     public class MainUnitTest
     {
         private IConfiguration _configuration;
-        private IOpenWeatherMapService _openWeatherMapService;
+        private IOpenWeatherMapApiService _openWeatherMapService;
 
         public MainUnitTest()
         {
@@ -18,7 +18,7 @@ namespace Lib.ApiServices.OpenWeatherMap.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _openWeatherMapService = new OpenWeatherMapService(
+            _openWeatherMapService = new OpenWeatherMapApiService(
                 _configuration["OpenWeatherMap.ApiKey"]);
         }
 

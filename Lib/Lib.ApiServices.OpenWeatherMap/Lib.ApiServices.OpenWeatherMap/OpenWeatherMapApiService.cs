@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 namespace Lib.ApiServices.OpenWeatherMap
 {
-    public class OpenWeatherMapService : IOpenWeatherMapService
+    public class OpenWeatherMapApiService : IOpenWeatherMapApiService
     {
         private string _apiKey;
         private HttpService _httpService;
 
-        public OpenWeatherMapService(string apiKey)
+        public OpenWeatherMapApiService(string apiKey)
         {
             _httpService = new HttpService("http://api.openweathermap.org/data/2.5/", ExchangeFormat.Json);
             _apiKey = apiKey;

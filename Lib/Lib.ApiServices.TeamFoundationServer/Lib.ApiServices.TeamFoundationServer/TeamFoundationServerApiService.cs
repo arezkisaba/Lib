@@ -6,11 +6,11 @@ using Lib.Core;
 
 namespace Lib.ApiServices.TeamFoundationServer
 {
-    public class TeamFoundationServerService : ITeamFoundationServerService
+    public class TeamFoundationServerApiService : ITeamFoundationServerApiService
     {
         private HttpService _httpService;
 
-        public TeamFoundationServerService(string url)
+        public TeamFoundationServerApiService(string url)
         {
             _httpService = new HttpService(url, ExchangeFormat.Json);
             _httpService.SetJsonSerializerSettings(new JsonSerializerSettings

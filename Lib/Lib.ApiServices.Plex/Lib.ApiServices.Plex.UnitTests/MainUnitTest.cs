@@ -10,7 +10,7 @@ namespace Lib.ApiServices.Plex.UnitTests
     public class MainUnitTest
     {
         private IConfiguration _configuration;
-        private IPlexService _plexService;
+        private IPlexApiService _plexService;
 
         public MainUnitTest()
         {
@@ -20,7 +20,7 @@ namespace Lib.ApiServices.Plex.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _plexService = new PlexService(
+            _plexService = new PlexApiService(
                 "http://127.0.0.1:32400/",
                 _configuration["Plex.Username"],
                 _configuration["Plex.Password"]);

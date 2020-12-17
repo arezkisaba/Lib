@@ -4,7 +4,7 @@ using System;
 
 namespace Lib.ApiServices.Plex
 {
-    public interface IPlexService
+    public interface IPlexApiService
     {
         event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
 

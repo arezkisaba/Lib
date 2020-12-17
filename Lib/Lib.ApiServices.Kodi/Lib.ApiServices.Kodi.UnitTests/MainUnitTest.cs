@@ -10,7 +10,7 @@ namespace Lib.ApiServices.Kodi.UnitTests
     public class MainUnitTest
     {
         private IConfiguration _configuration;
-        private IKodiService _kodiService;
+        private IKodiApiService _kodiService;
 
         public MainUnitTest()
         {
@@ -20,7 +20,7 @@ namespace Lib.ApiServices.Kodi.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _kodiService = new KodiService();
+            _kodiService = new KodiApiService("http://127.0.0.1:8080/jsonrpc");
         }
 
         [TestCleanup]

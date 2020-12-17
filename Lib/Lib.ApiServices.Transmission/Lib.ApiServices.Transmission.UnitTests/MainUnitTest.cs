@@ -7,12 +7,12 @@ namespace Lib.ApiServices.Transmission.UnitTests
     [TestClass]
     public class MainUnitTest
     {
-        private ITransmissionService _transmissionService;
+        private ITransmissionApiService _transmissionService;
 
         [TestInitialize]
         public void Initialize()
         {
-            _transmissionService = new TransmissionService("http://127.0.0.1:9091/");
+            _transmissionService = new TransmissionApiService("http://127.0.0.1:9091/");
         }
 
         [TestCleanup]

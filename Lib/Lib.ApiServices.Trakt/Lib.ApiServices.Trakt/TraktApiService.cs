@@ -7,7 +7,7 @@ using Lib.Core;
 
 namespace Lib.ApiServices.Trakt
 {
-    public class TraktService : ITraktService
+    public class TraktApiService : ITraktApiService
     {
         private HttpService _httpService;
         private string _apiKey;
@@ -19,7 +19,7 @@ namespace Lib.ApiServices.Trakt
         public event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
         public event EventHandler<AuthenticationInformations> AuthenticationInformationsAvailable;
 
-        public TraktService(string apiKey, string clientId, string clientSecret, string userName, string accessToken = null, string refreshToken = null)
+        public TraktApiService(string apiKey, string clientId, string clientSecret, string userName, string accessToken = null, string refreshToken = null)
         {
             _apiKey = apiKey;
             _clientId = clientId;

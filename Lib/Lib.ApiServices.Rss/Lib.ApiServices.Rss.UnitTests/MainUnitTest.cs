@@ -7,7 +7,7 @@ namespace Lib.ApiServices.Rss.UnitTests
     [TestClass]
     public class MainUnitTest
     {
-        private IRssService _rssService;
+        private IRssApiService _rssService;
 
         [TestInitialize]
         public void Initialize()
@@ -23,7 +23,7 @@ namespace Lib.ApiServices.Rss.UnitTests
             // http://www.maviemobile.fr/rss/
             // https://www.sciencesetavenir.fr/rss.xml
             // https://www.insee.fr/fr/flux/10
-            _rssService = new RssService("https://www.monde-diplomatique.fr/recents.xml");
+            _rssService = new RssApiService("https://www.monde-diplomatique.fr/recents.xml");
         }
 
         [TestCleanup]

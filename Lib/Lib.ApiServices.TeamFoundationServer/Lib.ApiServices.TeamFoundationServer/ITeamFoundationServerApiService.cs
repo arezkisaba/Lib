@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Lib.ApiServices.TeamFoundationServer
 {
-    public interface ITeamFoundationServerService
+    public interface ITeamFoundationServerApiService
     {
         Task<List<GetTeamProjectsResponse.Value>> GetTeamProjectsAsync(string apiVersion = "2.0");
 

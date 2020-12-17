@@ -3,11 +3,11 @@ using Lib.Core;
 
 namespace Lib.ApiServices.Rss
 {
-    public class RssService : IRssService
+    public class RssApiService : IRssApiService
     {
         private HttpService _httpService;
 
-        public RssService(string url)
+        public RssApiService(string url)
         {
             _httpService = new HttpService(url, ExchangeFormat.Xml);
         }

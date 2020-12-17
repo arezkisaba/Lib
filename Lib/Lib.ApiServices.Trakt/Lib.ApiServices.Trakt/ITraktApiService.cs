@@ -4,7 +4,7 @@ using System;
 
 namespace Lib.ApiServices.Trakt
 {
-    public interface ITraktService
+    public interface ITraktApiService
     {
         event EventHandler<AuthenticationResult> AuthenticationSuccessfull;
 
