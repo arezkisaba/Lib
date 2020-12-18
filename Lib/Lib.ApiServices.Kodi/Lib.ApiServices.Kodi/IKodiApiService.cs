@@ -5,7 +5,7 @@ namespace Lib.ApiServices.Kodi
 {
     public interface IKodiApiService
     {
-        Task<List<GetMoviesResponse.Movie>> GetMoviesAsync();
-        Task<SetMovieDetailsResponse> SetMoviesDetailsAsync(int movieId, string sortTitle, int playCount);
+        Task<List<MovieDto>> GetMoviesAsync();
+        Task SetMoviesDetailsAsync(int movieId, string sortTitle, int playCount);
     }
 }

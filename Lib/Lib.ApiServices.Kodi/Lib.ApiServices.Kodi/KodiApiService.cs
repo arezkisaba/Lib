@@ -14,7 +14,7 @@ namespace Lib.ApiServices.Kodi
             _httpService = new HttpService(url, ExchangeFormat.Json);
         }
 
-        public async Task<List<GetMoviesResponse.Movie>> GetMoviesAsync()
+        public async Task<List<MovieDto>> GetMoviesAsync()
         {
             var body = new GetMoviesBody
             {
@@ -38,12 +38,11 @@ namespace Lib.ApiServices.Kodi
                 id = "VideoLibrary.GetMovies"
             };
 
-
             var responseObject = await _httpService.PostAsync<GetMoviesResponse>($"", body);
-            return responseObject.result.movies.OrderBy(obj => obj.label).ToList();
+            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new MovieDto(obj.label, obj.sorttitle, obj.playcount > 0)).ToList();
         }
 
-        public async Task<SetMovieDetailsResponse> SetMoviesDetailsAsync(int movieId, string sortTitle, int playCount)
+        public async Task SetMoviesDetailsAsync(int movieId, string sortTitle, int playCount)
         {
             var body = new SetMovieDetailsBody
             {
@@ -59,7 +58,7 @@ namespace Lib.ApiServices.Kodi
             };
 
 
-            return await _httpService.PostAsync<SetMovieDetailsResponse>($"", body);
+            await _httpService.PostAsync($"", body);
         }
     }
 }
