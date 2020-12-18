@@ -1,6 +1,6 @@
 ﻿namespace Lib.ApiServices.Kodi
 {
-    public class GetMoviesBody
+    public class SetTvShowDetailsBody
     {
         public string jsonrpc { get; set; }
         public string method { get; set; }
@@ -9,7 +9,8 @@
 
         public class Params
         {
-            public string[] properties { get; set; }
+            public int tvshowid { get; set; }
+            public string sorttitle { get; set; }
         }
     }
 }
