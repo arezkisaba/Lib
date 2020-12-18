@@ -43,18 +43,18 @@ namespace Lib.ApiServices.Kodi.UnitTests
             var newSortTitle = "sorttitle";
             var newPlayCount = 42;
 
-            _kodiService.SetMoviesDetailsAsync(firstMovie.movieid, newSortTitle, newPlayCount).Wait();
+            _kodiService.SetMoviesDetailsAsync(firstMovie.Id, newSortTitle, newPlayCount).Wait();
 
             var moviesUpdated = _kodiService.GetMoviesAsync().Result;
             var firstMovieUpdated = moviesUpdated.First();
 
-            var isUpdateOk = firstMovie.movieid == firstMovieUpdated.movieid &&
-                newSortTitle == firstMovieUpdated.sorttitle &&
-                newPlayCount == firstMovieUpdated.playcount;
+            var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id &&
+                newSortTitle == firstMovieUpdated.SortTitle &&
+                newPlayCount > 0 == firstMovieUpdated.IsCompleted;
 
             Assert.IsTrue(isUpdateOk);
 
-            _kodiService.SetMoviesDetailsAsync(firstMovie.movieid, string.Empty, 0).Wait();
+            _kodiService.SetMoviesDetailsAsync(firstMovie.Id, string.Empty, 0).Wait();
         }
     }
 }

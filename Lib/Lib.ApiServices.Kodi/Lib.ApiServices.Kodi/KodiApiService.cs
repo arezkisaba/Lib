@@ -39,7 +39,7 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetMoviesResponse>($"", body);
-            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new MovieDto(obj.label, obj.sorttitle, obj.playcount > 0)).ToList();
+            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new MovieDto(obj.movieid, obj.label, obj.sorttitle, obj.playcount > 0)).ToList();
         }
 
         public async Task SetMoviesDetailsAsync(int movieId, string sortTitle, int playCount)
