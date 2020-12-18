@@ -140,15 +140,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.ApiServices.Unibet]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Unibet/Lib.ApiServices.Unibet/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Unibet" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-    
-- task: DotNetCoreCLI@2
-  enabled: true
   displayName: Dotnet pack on [Lib.Core]
   inputs:
     command: 'custom'
