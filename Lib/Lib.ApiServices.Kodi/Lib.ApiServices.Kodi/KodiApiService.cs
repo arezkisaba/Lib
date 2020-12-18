@@ -55,6 +55,24 @@ namespace Lib.ApiServices.Kodi
             await _httpService.PostAsync($"", body);
         }
 
+        public async Task<List<KodiTvShowDto>> GetTvShowsWithEpisodesAsync()
+        {
+            var tvShows = await GetTvShowsAsync();
+            foreach (var tvShow in tvShows)
+            {
+                var seasons = await GetSeasonsAsync(tvShow.Id);
+                foreach (var season in seasons)
+                {
+                    var episodes = await GetEpisodesAsync(tvShow.Id, season.Id);
+                    season.Episodes = episodes;
+                }
+
+                tvShow.Seasons = seasons;
+            }
+
+            return tvShows;
+        }
+
         public async Task<List<KodiTvShowDto>> GetTvShowsAsync()
         {
             var body = new GetTvShowsBody

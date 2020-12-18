@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Lib.ApiServices.Kodi
 {
     public partial class KodiTvShowDto
@@ -11,6 +13,8 @@ namespace Lib.ApiServices.Kodi
         public bool IsWatched { get; set; }
 
         public string FilePath { get; set; }
+
+        public List<KodiSeasonDto> Seasons { get; set; } = new List<KodiSeasonDto>();
 
         public KodiTvShowDto(int id, string title, string sortTitle, bool isWatched, string filePath)
         {

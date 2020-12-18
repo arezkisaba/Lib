@@ -56,6 +56,27 @@ namespace Lib.ApiServices.Kodi.UnitTests
         }
 
         [TestMethod]
+        public void GetTvShowsWithEpisodesAsync_TestMethod()
+        {
+            var tvShows = _kodiService.GetTvShowsWithEpisodesAsync().Result;
+            foreach (var tvShow in tvShows)
+            {
+                Assert.IsTrue(tvShow.Seasons.Any());
+
+                var hasAtLeastOneEpisodeInSeasons = false;
+                foreach (var season in tvShow.Seasons)
+                {
+                    if (season.Episodes.Any())
+                    {
+                        hasAtLeastOneEpisodeInSeasons = true;
+                    }
+                }
+
+                Assert.IsTrue(hasAtLeastOneEpisodeInSeasons);
+            }
+        }
+
+        [TestMethod]
         public void GetTvShowAsync_TestMethod()
         {
             var items = _kodiService.GetTvShowsAsync().Result;
