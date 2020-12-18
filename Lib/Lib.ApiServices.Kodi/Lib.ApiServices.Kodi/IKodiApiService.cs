@@ -7,7 +7,7 @@ namespace Lib.ApiServices.Kodi
     {
         Task<List<KodiMovieDto>> GetMoviesAsync();
 
-        Task SetMovieDetailsAsync(int movieId, string sortTitle, bool isWatched);
+        Task SetMovieDetailsAsync(int movieId, string sortTitle, bool? isWatched);
 
         Task<List<KodiTvShowDto>> GetTvShowsAsync();
 
@@ -17,6 +17,6 @@ namespace Lib.ApiServices.Kodi
 
         Task SetTvShowDetailsAsync(int tvShowId, string sortTitle);
 
-        Task SetEpisodeDetailsAsync(int episodeId, bool isWatched);
+        Task SetEpisodeDetailsAsync(int episodeId, bool? isWatched);
     }
 }

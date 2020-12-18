@@ -11,7 +11,7 @@
         {
             public int movieid { get; set; }
             public string sorttitle { get; set; }
-            public int playcount { get; set; }
+            public int? playcount { get; set; }
         }
     }
 }

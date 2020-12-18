@@ -10,7 +10,7 @@
         public class Params
         {
             public int episodeid { get; set; }
-            public int playcount { get; set; }
+            public int? playcount { get; set; }
         }
     }
 }

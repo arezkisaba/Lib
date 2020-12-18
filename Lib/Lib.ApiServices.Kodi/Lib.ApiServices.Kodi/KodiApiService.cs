@@ -36,7 +36,7 @@ namespace Lib.ApiServices.Kodi
             return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new KodiMovieDto(obj.movieid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
         }
 
-        public async Task SetMovieDetailsAsync(int movieId, string sortTitle, bool isWatched)
+        public async Task SetMovieDetailsAsync(int movieId, string sortTitle, bool? isWatched)
         {
             var body = new SetMovieDetailsBody
             {
@@ -46,7 +46,7 @@ namespace Lib.ApiServices.Kodi
                 {
                     movieid = movieId,
                     sorttitle = sortTitle,
-                    playcount = isWatched ? 1 : 0,
+                    playcount = (!isWatched.HasValue ? null : (isWatched.Value ? 1 : 0)),
                 },
                 id = "VideoLibrary.SetMovieDetails"
             };
@@ -142,7 +142,7 @@ namespace Lib.ApiServices.Kodi
             await _httpService.PostAsync($"", body);
         }
 
-        public async Task SetEpisodeDetailsAsync(int episodeId, bool isWatched)
+        public async Task SetEpisodeDetailsAsync(int episodeId, bool? isWatched)
         {
             var body = new SetEpisodeDetailsBody
             {
@@ -151,7 +151,7 @@ namespace Lib.ApiServices.Kodi
                 @params = new SetEpisodeDetailsBody.Params
                 {
                     episodeid = episodeId,
-                    playcount = isWatched ? 1 : 0,
+                    playcount = (!isWatched.HasValue ? null : (isWatched.Value ? 1 : 0)),
                 },
                 id = "VideoLibrary.SetEpisodeDetails"
             };
