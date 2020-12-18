@@ -100,7 +100,7 @@ namespace Lib.ApiServices.Kodi.UnitTests
             var tvShows = _kodiService.GetTvShowsAsync().Result;
             Assert.IsTrue(tvShows.Any());
 
-            var tvShow = tvShows.First();
+            var tvShow = tvShows.First(obj => obj.Id == 81);
             var seasons = _kodiService.GetSeasonsAsync(tvShow.Id).Result;
             Assert.IsTrue(seasons.Any());
 

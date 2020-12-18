@@ -139,7 +139,7 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetEpisodesResponse>($"", body);
-            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new KodiEpisodeDto(obj.episodeid, obj.season, obj.season, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new KodiEpisodeDto(obj.episodeid, obj.episode, obj.season, obj.playcount > 0, obj.file)).ToList();
         }
 
         public async Task SetTvShowDetailsAsync(int tvShowId, string sortTitle)
