@@ -65,6 +65,15 @@ steps:
   inputs:
     command: 'test'
     projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Rss/Lib.ApiServices.Rss.UnitTests/*.csproj'
+    
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.ApiServices.Kodi]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Kodi/Lib.ApiServices.Kodi/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Kodi" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
