@@ -21,7 +21,7 @@ namespace Lib.ApiServices.Plex.UnitTests
         public void Initialize()
         {
             _plexService = new PlexApiService(
-                "http://127.0.0.1:32400/",
+                _configuration["Plex.Url"],
                 _configuration["Plex.Username"],
                 _configuration["Plex.Password"]);
 

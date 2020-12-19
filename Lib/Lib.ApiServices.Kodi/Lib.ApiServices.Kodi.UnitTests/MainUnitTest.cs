@@ -18,7 +18,7 @@ namespace Lib.ApiServices.Kodi.UnitTests
         [TestInitialize]
         public void Initialize()
         {
-            _kodiService = new KodiApiService("http://192.168.1.10:8080/jsonrpc");
+            _kodiService = new KodiApiService(_configuration["Kodi.Url"]);
         }
 
         [TestCleanup]
