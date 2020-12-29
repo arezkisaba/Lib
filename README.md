@@ -2,6 +2,9 @@
 Lib est une solution contenant diverses librairies dont je me sers sur plusieurs de mes programmes sous forme de packages Nuget.
 La plupart sont des projets .Net5.0, ils seront détaillés plus bas :)
 
+# Lib.ApiServices.Kodi
+Cette librairie contient des classes permettant l'utilisation de l'API [Kodi](https://kodi.tv/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
+
 # Lib.ApiServices.Milight
 Cette librairie contient des classes permettant l'utilisation de l'API [Milight](https://www.milight.com/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
@@ -26,14 +29,14 @@ Cette librairie contient des classes permettant l'utilisation de l'API [Trakt](h
 # Lib.ApiServices.Transmission
 Cette librairie contient des classes permettant l'utilisation de l'API RPC [Transmission](https://transmissionbt.com/), elle en focntionne qu'avec un serveur local et ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
-# Lib.ApiServices.Unibet
-Cette librairie contient des classes permettant l'utilisation de l'API non publique d'[Unibet](https://www.unibet.fr/), elle ne fonctionne qu'à la condition d'avoir déjà récupéré un cookie depuis le site.
-
 # Lib.Core
 Cette librairie contient essentiellement des classes utilitaires ainsi que des contrats disposant d'implémentations différentes en fonction des plateformes.
 
 # Lib.Uwp
 Cette librairie contient essentiellement des classes utilitaires (converters, helpers) utilisables depuis des apps [UWP](https://docs.microsoft.com/fr-fr/windows/uwp/)
+
+# Lib.Win32
+Cette librairie contient essentiellement des classes utilisables depuis des apps Windows.
 
 # Lib.Wix
 Ce projet contient tout le nécessaire permettant le packaging au format MSI de n'importe quelle application via la librairie [WIX](https://wixtoolset.org/)
