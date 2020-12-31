@@ -45,7 +45,7 @@ namespace Lib.ApiServices.Transmission
                 }
             });
 
-            if (response.result != "success" || response.arguments == null)
+            if (response?.result != "success" || response?.arguments?.torrentadded == null)
             {
                 throw new TorrentAddException($"request result : {response.result}");
             }
