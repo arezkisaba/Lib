@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Threading.Tasks;
 
+[assembly: Parallelize(Workers = 0, Scope = ExecutionScope.MethodLevel)]
+
 namespace Lib.ApiServices.Trakt.UnitTests
 {
     [TestClass]
@@ -32,6 +34,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetAccountAsync_TestMethod()
         {
             var account = await _traktService.GetAccountAsync();
@@ -39,6 +42,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetMoviesCollectedAsync_TestMethod()
         {
             var movies = await _traktService.GetMoviesCollectedAsync();
@@ -46,6 +50,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetMoviesWatchedAsync_TestMethod()
         {
             var movies = await _traktService.GetMoviesWatchedAsync();
@@ -53,6 +58,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetMovieTranslationsAsync_TestMethod()
         {
             var movies = await _traktService.GetMoviesCollectedAsync();
@@ -61,20 +67,23 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetTvShowsCollectedAsync_TestMethod()
         {
-            var movies = await _traktService.GetTvShowsCollectedAsync();
-            Assert.IsTrue(movies != null && movies.Any());
+            var tvShows = await _traktService.GetTvShowsCollectedAsync();
+            Assert.IsTrue(tvShows != null && tvShows.Any());
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetTvShowsWatchedAsync_TestMethod()
         {
-            var movies = await _traktService.GetTvShowsWatchedAsync();
-            Assert.IsTrue(movies != null && movies.Any());
+            var tvShows = await _traktService.GetTvShowsWatchedAsync();
+            Assert.IsTrue(tvShows != null && tvShows.Any());
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetTvShowTranslationsAsync_TestMethod()
         {
             var tvshows = await _traktService.GetTvShowsCollectedAsync();
@@ -83,6 +92,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         }
 
         [TestMethod]
+        [DoNotParallelize]
         public async Task GetSeasonsInListAsync_TestMethod()
         {
             var seasons = await _traktService.GetSeasonsInListAsync("VOSTFR");
