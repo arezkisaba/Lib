@@ -38,7 +38,6 @@ namespace Lib.ApiServices.Trakt
             }
 
             _httpService = new HttpService("https://api.trakt.tv/", ExchangeFormat.Json, headers);
-            _httpService.AddCallbackForHttpStatusCode(HttpStatusCode.BadRequest, AuthenticateAsync);
             _httpService.AddCallbackForHttpStatusCode(HttpStatusCode.Unauthorized, AuthenticateAsync);
             _httpService.AddCallbackForHttpStatusCode(HttpStatusCode.InternalServerError, AuthenticateAsync);
         }
