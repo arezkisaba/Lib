@@ -26,16 +26,14 @@ namespace Lib.ApiServices.Trakt.UnitTests
                 _configuration["Trakt.ClientId"],
                 _configuration["Trakt.ClientSecret"],
                 _configuration["Trakt.Username"]);
-            _traktService.AuthenticationInformationsAvailable += _traktService_AuthenticationInformationsAvailable;
-            _traktService.AuthenticationSuccessfull += _traktService_AuthenticationSuccessfull;
-        }
 
-        private void _traktService_AuthenticationInformationsAvailable(object sender, AuthenticationInformations e)
-        {
-        }
+            _traktService.AuthenticationInformationsAvailable += (sender, e) =>
+            {
+            };
 
-        private void _traktService_AuthenticationSuccessfull(object sender, AuthenticationResult e)
-        {
+            _traktService.AuthenticationSuccessfull += (sender, e) =>
+            {
+            };
         }
 
         [TestCleanup]
