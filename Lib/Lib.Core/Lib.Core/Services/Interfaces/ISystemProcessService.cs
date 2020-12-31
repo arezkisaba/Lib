@@ -8,9 +8,7 @@ namespace Lib.Core
 
         List<SystemProcessModel> GetByName(string name);
 
-        void Start(string filePath);
-
-        bool Start(string filePath, string arguments);
+        bool Start(string filePath, string arguments = null, bool waitForExit = true);
 
         bool StartScript(string filePath);
         

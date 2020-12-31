@@ -19,12 +19,7 @@ namespace Lib.Win32
             return Process.GetProcessesByName(name).Select(obj => new SystemProcessModel(obj.Id, obj.ProcessName)).ToList();
         }
 
-        public void Start(string filePath)
-        {
-            Process.Start(filePath);
-        }
-
-        public bool Start(string filePath, string arguments)
+        public bool Start(string filePath, string arguments = null, bool waitForExit = true)
         {
             var process = new Process();
             process.StartInfo.FileName = filePath;
@@ -37,15 +32,19 @@ namespace Lib.Win32
             try
             {
                 process.Start();
-                process.WaitForExit();
+
+                if (waitForExit)
+                {
+                    process.WaitForExit();
+                    return process.ExitCode == 0;
+                }
+
+                return true;
             }
             catch (Exception)
             {
                 return false;
             }
-
-
-            return process.ExitCode == 0;
         }
 
         public bool StartScript(string filePath)
