@@ -7,14 +7,14 @@ namespace Lib.ApiServices.Torrents
     {
         public static double ConvertSizeStringToNumber(string sizeString)
         {
-            sizeString = sizeString.Replace(".", ",");
+            sizeString = sizeString.Replace(",", ".");
             sizeString = sizeString.Replace(" ", " ");
 
-            var torrentSize = 0d;
             var parts = sizeString.Split(' ');
             var number = Convert.ToDouble(parts[0]);
             var unit = parts[1];
-
+            double torrentSize;
+            
             switch (unit)
             {
                 case "Kb":

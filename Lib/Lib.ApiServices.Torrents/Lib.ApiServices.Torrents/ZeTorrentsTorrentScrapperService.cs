@@ -13,7 +13,7 @@ namespace Lib.ApiServices.Torrents
         protected override string RowFilterRegexp => "<tr><td>";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
         protected override string TorrentSeedsRegexp => "<td.*?>(.*?)</td>";
-        public override bool IsActive => true;
+        public override bool IsActive => false;
         public override int Priority => 6;
         public override string Name => "ZeTorrents";
 
