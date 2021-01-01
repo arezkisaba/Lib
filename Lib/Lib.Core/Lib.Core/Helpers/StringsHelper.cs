@@ -13,7 +13,12 @@ namespace Lib.Core
                 text = text.Replace(forbiddenCharacter.ToString(), "");
             }
 
-            return text.Replace("  ", " ");
+			while (text.Contains("  "))
+			{
+				text = text.Replace("  ", " ");
+			}
+
+			return text.Trim();
         }
 
         public static string GetRandomString(int count)
