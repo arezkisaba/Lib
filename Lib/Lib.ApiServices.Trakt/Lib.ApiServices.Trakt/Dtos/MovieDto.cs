@@ -8,6 +8,8 @@ namespace Lib.ApiServices.Trakt
         
         public int? Year { get; set; }
 
+        public string Language { get; set; }
+
         public bool IsCompleted { get; set; }
     }
 }

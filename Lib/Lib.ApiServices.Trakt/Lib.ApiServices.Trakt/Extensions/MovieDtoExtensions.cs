@@ -14,6 +14,7 @@ namespace Lib.ApiServices.Trakt
                 IdTrakt = response.movie.ids.trakt,
                 Title = response.movie.title,
                 Year = response.movie.year,
+				Language = response.movie.language,
 			};
 		}
 
@@ -28,8 +29,9 @@ namespace Lib.ApiServices.Trakt
             {
                 IdTrakt = response.movie.ids.trakt,
                 Title = response.movie.title,
-                Year = response.movie.year,
-                IsCompleted = response.plays > 0,
+				Year = response.movie.year,
+				Language = response.movie.language,
+				IsCompleted = response.plays > 0,
             };
 		}
 	}

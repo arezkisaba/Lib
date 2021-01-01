@@ -100,9 +100,9 @@ namespace Lib.ApiServices.Trakt
             return responseObject.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
-        public async Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language)
+        public async Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null)
         {
-            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse.Item[]>($"movies/{movie.IdTrakt}/translations/{language}");
+            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse.Item[]>($"movies/{movie.IdTrakt}/translations/{language ?? string.Empty}");
             return responseObject.Select(obj => new TranslationDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
@@ -143,9 +143,9 @@ namespace Lib.ApiServices.Trakt
             return responseObject.Select(obj => new TvShowDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
         
-        public async Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language)
+        public async Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language = null)
         {
-            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse.Item[]>($"shows/{tvShow.IdTrakt}/translations/{language}");
+            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse.Item[]>($"shows/{tvShow.IdTrakt}/translations/{language ?? string.Empty}");
             return responseObject.Select(obj => new TranslationDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 

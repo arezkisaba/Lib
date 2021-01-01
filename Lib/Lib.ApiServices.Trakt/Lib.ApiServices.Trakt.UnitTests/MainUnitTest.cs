@@ -70,7 +70,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         public async Task GetMovieTranslationsAsync_TestMethod()
         {
             var movies = await _traktApiService.GetMoviesCollectedAsync();
-            var translations = await _traktApiService.GetMovieTranslationsAsync(movies.FirstOrDefault(obj => obj.Title.Contains("Scary Movie 5")), "en");
+            var translations = await _traktApiService.GetMovieTranslationsAsync(movies.FirstOrDefault(obj => obj.Title.Contains("Last Jedi")));
             Assert.IsTrue(translations != null && translations.Any());
         }
 
@@ -95,7 +95,7 @@ namespace Lib.ApiServices.Trakt.UnitTests
         public async Task GetTvShowTranslationsAsync_TestMethod()
         {
             var tvshows = await _traktApiService.GetTvShowsCollectedAsync();
-            var translations = await _traktApiService.GetTvShowTranslationsAsync(tvshows.First(), "fr");
+            var translations = await _traktApiService.GetTvShowTranslationsAsync(tvshows.FirstOrDefault(obj => obj.Title.Contains("The Bureau")));
             Assert.IsTrue(translations != null && translations.Any());
         }
 

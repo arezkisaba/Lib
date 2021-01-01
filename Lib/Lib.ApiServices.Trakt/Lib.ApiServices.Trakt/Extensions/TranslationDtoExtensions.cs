@@ -11,8 +11,8 @@ namespace Lib.ApiServices.Trakt
 
 			return new TranslationDto
             {
+                Language = response.language,
                 Overview = response.overview,
-                Tagline = response.tagline,
                 Title = response.title
 			};
 		}
@@ -26,8 +26,8 @@ namespace Lib.ApiServices.Trakt
 
             return new TranslationDto
             {
+                Language = response.language,
                 Overview = response.overview,
-                Tagline = response.tagline,
                 Title = response.title
             };
         }

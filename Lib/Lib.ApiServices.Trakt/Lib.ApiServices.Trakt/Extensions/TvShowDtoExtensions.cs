@@ -16,6 +16,7 @@ namespace Lib.ApiServices.Trakt
                 IdTrakt = response.show.ids.trakt,
                 Title = response.show.title,
                 Year = response.show.year,
+                Language = response.show.language,
                 EpisodesAiredCount = response.show.aired_episodes,
                 Seasons = response.seasons.Select(obj => new SeasonDto().FromQueryResponse(obj)).ToList(),
             };
@@ -33,6 +34,7 @@ namespace Lib.ApiServices.Trakt
                 IdTrakt = response.show.ids.trakt,
                 Title = response.show.title,
                 Year = response.show.year,
+                Language = response.show.language,
                 Seasons = response.seasons.Select(obj => new SeasonDto().FromQueryResponse(obj)).ToList(),
             };
         }

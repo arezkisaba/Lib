@@ -6,8 +6,6 @@ namespace Lib.ApiServices.Trakt
 
         public string Overview { get; set; }
 
-        public string Tagline { get; set; }
-
         public string Language { get; set; }
     }
 }

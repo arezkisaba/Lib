@@ -22,7 +22,7 @@ namespace Lib.ApiServices.Trakt
 
         Task<List<MovieDto>> GetMoviesWatchedAsync();
 
-        Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language);
+        Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null);
 
         Task<PutWatchedResponse> PutMovieWatchedAsync(MovieDto movie);
 
@@ -30,7 +30,7 @@ namespace Lib.ApiServices.Trakt
 
         Task<List<TvShowDto>> GetTvShowsWatchedAsync();
 
-        Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language);
+        Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language = null);
 
         Task<PutCollectedResponse> PutTvShowCollectedAsync(TvShowDto tvShow);
 
