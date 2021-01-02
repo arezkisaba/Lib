@@ -68,8 +68,17 @@ namespace Lib.ApiServices.TheMovieDatabase
         public async Task<List<MovieDto>> GetMoviesCollectedAsync()
         {
             await EnsureAccountInitializedAsync();
+
             var responseObject = await _httpService.GetAsync<GetMoviesCollectedResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}");
-            var moviesCollected = responseObject.results.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
+            var items = new List<GetMoviesCollectedResponse.Result>();
+            var pageCount = responseObject.total_pages;
+            for (var i = 1; i <= pageCount; i++)
+            {
+                responseObject = await _httpService.GetAsync<GetMoviesCollectedResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}&page={i}");
+                items.AddRange(responseObject.results);
+            }
+
+            var moviesCollected = items.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
             var moviesWatched = await GetMoviesWatchedAsync();
 
             foreach (var movieCollected in moviesCollected)
@@ -87,8 +96,17 @@ namespace Lib.ApiServices.TheMovieDatabase
         public async Task<List<MovieDto>> GetMoviesWatchedAsync()
         {
             await EnsureAccountInitializedAsync();
+
             var responseObject = await _httpService.GetAsync<GetMoviesWatchedResponse>($"account/{_accountId}/rated/movies?api_key={_apiKey}");
-            return responseObject.results.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
+            var items = new List<GetMoviesWatchedResponse.Result>();
+            var pageCount = responseObject.total_pages;
+            for (var i = 1; i <= pageCount; i++)
+            {
+                responseObject = await _httpService.GetAsync<GetMoviesWatchedResponse>($"account/{_accountId}/rated/movies?api_key={_apiKey}&page={i}");
+                items.AddRange(responseObject.results);
+            }
+
+            return items.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
         public async Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null)
@@ -110,8 +128,17 @@ namespace Lib.ApiServices.TheMovieDatabase
         public async Task<List<TvShowDto>> GetTvShowsCollectedAsync()
         {
             await EnsureAccountInitializedAsync();
+
             var responseObject = await _httpService.GetAsync<GetTvShowsCollectedResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}");
-            var tvShows = responseObject.results.Select(obj => new TvShowDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
+            var items = new List<GetTvShowsCollectedResponse.Result>();
+            var pageCount = responseObject.total_pages;
+            for (var i = 1; i <= pageCount; i++)
+            {
+                responseObject = await _httpService.GetAsync<GetTvShowsCollectedResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}&page={i}");
+                items.AddRange(responseObject.results);
+            }
+
+            var tvShows = items.Select(obj => new TvShowDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
             var episodesWatched = await GetEpisodesWatchedAsync();
             foreach (var tvShow in tvShows)
             {
@@ -142,8 +169,8 @@ namespace Lib.ApiServices.TheMovieDatabase
         {
             await EnsureAccountInitializedAsync();
 
-            var items = new List<GetEpisodesWatchedResponse.Result>();
             var responseObject = await _httpService.GetAsync<GetEpisodesWatchedResponse>($"account/{_accountId}/rated/tv/episodes?api_key={_apiKey}");
+            var items = new List<GetEpisodesWatchedResponse.Result>();
             var pageCount = responseObject.total_pages;
             for (var i = 1; i <= pageCount; i++)
             {
@@ -165,7 +192,11 @@ namespace Lib.ApiServices.TheMovieDatabase
 
         public async Task<PostWatchedResponse> PostEpisodeWatchedAsync(TvShowDto tvShow, SeasonDto season, EpisodeDto episode)
         {
-            throw new NotImplementedException();
+            await EnsureAccountInitializedAsync();
+            return await _httpService.PostAsync<PostWatchedResponse>($"tv/{tvShow.IdTheMovieDatabase}/season/{season.Number}/episode/{episode.Number}/rating?api_key={_apiKey}", new PostWatchedBody
+            {
+                value = 10
+            });
         }
 
         public async Task<List<SeasonDto>> GetSeasonsAsync(TvShowDto tvShow)

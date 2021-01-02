@@ -14,7 +14,7 @@ namespace Lib.ApiServices.Kodi
             _httpService = new HttpService(url, ExchangeFormat.Json);
         }
 
-        public async Task<List<KodiMovieDto>> GetMoviesAsync()
+        public async Task<List<MovieDto>> GetMoviesAsync()
         {
             var body = new GetMoviesBody
             {
@@ -33,7 +33,7 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetMoviesResponse>($"", body);
-            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new KodiMovieDto(obj.movieid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new MovieDto(obj.movieid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
         }
 
         public async Task SetMovieDetailsAsync(int movieId, string sortTitle, bool? isWatched)
@@ -55,7 +55,7 @@ namespace Lib.ApiServices.Kodi
             await _httpService.PostAsync($"", body);
         }
 
-        public async Task<List<KodiTvShowDto>> GetTvShowsWithEpisodesAsync()
+        public async Task<List<TvShowDto>> GetTvShowsWithEpisodesAsync()
         {
             var tvShows = await GetTvShowsAsync();
             foreach (var tvShow in tvShows)
@@ -73,7 +73,7 @@ namespace Lib.ApiServices.Kodi
             return tvShows;
         }
 
-        public async Task<List<KodiTvShowDto>> GetTvShowsAsync()
+        public async Task<List<TvShowDto>> GetTvShowsAsync()
         {
             var body = new GetTvShowsBody
             {
@@ -92,10 +92,10 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetTvShowsResponse>($"", body);
-            return responseObject.result.tvshows.OrderBy(obj => obj.label).Select(obj => new KodiTvShowDto(obj.tvshowid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.tvshows.OrderBy(obj => obj.label).Select(obj => new TvShowDto(obj.tvshowid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
         }
 
-        public async Task<List<KodiSeasonDto>> GetSeasonsAsync(int tvShowId)
+        public async Task<List<SeasonDto>> GetSeasonsAsync(int tvShowId)
         {
             var body = new GetSeasonsBody
             {
@@ -114,10 +114,10 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetSeasonsResponse>($"", body);
-            return responseObject.result.seasons.OrderBy(obj => obj.season).Select(obj => new KodiSeasonDto(obj.seasonid, obj.season, obj.playcount > 0)).ToList();
+            return responseObject.result.seasons.OrderBy(obj => obj.season).Select(obj => new SeasonDto(obj.seasonid, obj.season, obj.playcount > 0)).ToList();
         }
 
-        public async Task<List<KodiEpisodeDto>> GetEpisodesAsync(int tvShowId, int seasonId)
+        public async Task<List<EpisodeDto>> GetEpisodesAsync(int tvShowId, int seasonId)
         {
             var body = new GetEpisodesBody
             {
@@ -139,7 +139,7 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetEpisodesResponse>($"", body);
-            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new KodiEpisodeDto(obj.episodeid, obj.episode, obj.season, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new EpisodeDto(obj.episodeid, obj.episode, obj.season, obj.playcount > 0, obj.file)).ToList();
         }
 
         public async Task SetTvShowDetailsAsync(int tvShowId, string sortTitle)

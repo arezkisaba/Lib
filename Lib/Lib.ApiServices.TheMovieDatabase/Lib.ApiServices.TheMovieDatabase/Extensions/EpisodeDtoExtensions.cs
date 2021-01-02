@@ -11,7 +11,8 @@ namespace Lib.ApiServices.TheMovieDatabase
 
             return new EpisodeDto
             {
-                Number = response.episode_number
+                Number = response.episode_number,
+                IsWatched = false
             };
         }
 
@@ -25,6 +26,7 @@ namespace Lib.ApiServices.TheMovieDatabase
             return new EpisodeDto
             {
                 Number = response.episode_number,
+                IsWatched = true,
                 Season = new SeasonDto
                 {
                     Number = response.season_number,

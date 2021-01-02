@@ -2,7 +2,7 @@
 
 namespace Lib.ApiServices.Kodi
 {
-    public class KodiSeasonDto
+    public class SeasonDto
     {
         public int Id { get; set; }
 
@@ -10,9 +10,9 @@ namespace Lib.ApiServices.Kodi
 
         public bool IsWatched { get; set; }
 
-        public List<KodiEpisodeDto> Episodes { get; set; } = new List<KodiEpisodeDto>();
+        public List<EpisodeDto> Episodes { get; set; } = new List<EpisodeDto>();
 
-        public KodiSeasonDto(int id, int number, bool isWatched)
+        public SeasonDto(int id, int number, bool isWatched)
         {
             Id = id;
             Number = number;

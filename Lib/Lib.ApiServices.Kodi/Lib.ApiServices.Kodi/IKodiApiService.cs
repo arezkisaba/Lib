@@ -5,17 +5,17 @@ namespace Lib.ApiServices.Kodi
 {
     public interface IKodiApiService
     {
-        Task<List<KodiMovieDto>> GetMoviesAsync();
+        Task<List<MovieDto>> GetMoviesAsync();
 
         Task SetMovieDetailsAsync(int movieId, string sortTitle, bool? isWatched);
 
-        Task<List<KodiTvShowDto>> GetTvShowsWithEpisodesAsync();
+        Task<List<TvShowDto>> GetTvShowsWithEpisodesAsync();
         
-        Task<List<KodiTvShowDto>> GetTvShowsAsync();
+        Task<List<TvShowDto>> GetTvShowsAsync();
 
-        Task<List<KodiSeasonDto>> GetSeasonsAsync(int tvShowId);
+        Task<List<SeasonDto>> GetSeasonsAsync(int tvShowId);
 
-        Task<List<KodiEpisodeDto>> GetEpisodesAsync(int tvShowId, int seasonId);
+        Task<List<EpisodeDto>> GetEpisodesAsync(int tvShowId, int seasonId);
 
         Task SetTvShowDetailsAsync(int tvShowId, string sortTitle);
 

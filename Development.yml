@@ -110,6 +110,15 @@ steps:
     projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.TeamFoundationServer/Lib.ApiServices.TeamFoundationServer/*.csproj'
     custom: 'pack'
     arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.TeamFoundationServer" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    
+- task: DotNetCoreCLI@2
+  enabled: true
+  displayName: Dotnet pack on [Lib.ApiServices.TheMovieDatabase]
+  inputs:
+    command: 'custom'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.TheMovieDatabase/Lib.ApiServices.TheMovieDatabase/*.csproj'
+    custom: 'pack'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.TheMovieDatabase" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true

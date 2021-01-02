@@ -88,5 +88,17 @@ namespace Lib.ApiServices.TheMovieDatabase.UnitTests
             var translations = await _theMovieDatabaseApiService.GetTvShowTranslationsAsync(tvShows.FirstOrDefault(obj => obj.Title.Contains("Bureau")), "fr");
             Assert.IsTrue(translations != null && translations.Any());
         }
+
+        [TestMethod]
+        [DoNotParallelize]
+        public async Task PostEpisodeWatchedAsync_TestMethod()
+        {
+            var tvShows = await _theMovieDatabaseApiService.GetTvShowsCollectedAsync();
+            var tvShow = tvShows.FirstOrDefault(obj => obj.Title.Contains("Bureau"));
+            var season = tvShow.Seasons[0];
+            var episode = season.Episodes[0];
+            var response = await _theMovieDatabaseApiService.PostEpisodeWatchedAsync(tvShow, season, episode);
+            Assert.IsTrue(response != null && response.status_code == 1);
+        }
     }
 }

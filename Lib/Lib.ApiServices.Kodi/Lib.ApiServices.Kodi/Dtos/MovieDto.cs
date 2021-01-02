@@ -1,6 +1,6 @@
 namespace Lib.ApiServices.Kodi
 {
-    public partial class KodiMovieDto
+    public partial class MovieDto
     {
         public int Id { get; set; }
 
@@ -12,7 +12,7 @@ namespace Lib.ApiServices.Kodi
 
         public string FilePath { get; set; }
 
-        public KodiMovieDto(int id, string title, string sortTitle, bool isWatched, string filePath)
+        public MovieDto(int id, string title, string sortTitle, bool isWatched, string filePath)
         {
             Id = id;
             Title = title;

@@ -1,6 +1,6 @@
 ﻿namespace Lib.ApiServices.Kodi
 {
-    public class KodiEpisodeDto
+    public class EpisodeDto
     {
         public int Id { get; set; }
 
@@ -12,7 +12,7 @@
 
         public string FilePath { get; set; }
 
-        public KodiEpisodeDto(int id, int number, int seasonNumber, bool isWatched, string filePath)
+        public EpisodeDto(int id, int number, int seasonNumber, bool isWatched, string filePath)
         {
             Id = id;
             Number = number;
