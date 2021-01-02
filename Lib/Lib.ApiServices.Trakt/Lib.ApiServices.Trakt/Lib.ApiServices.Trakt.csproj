@@ -23,12 +23,7 @@
     <Version>1.0.10-alpha.4</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Bodies\Post\Authentication\OAuth\" />
-    <Folder Include="Responses\Post\Authentication\OAuth\" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\Lib.Core\Lib.Core\Lib.Core.csproj" PrivateAssets="all" />
   </ItemGroup>
