@@ -1,28 +1,29 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lib.ApiServices.Kodi
 {
     public partial class TvShowDto
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Title { get; set; }
 
-        public string SortTitle { get; set; }
-
-        public bool IsWatched { get; set; }
-
         public string FilePath { get; set; }
 
-        public List<SeasonDto> Seasons { get; set; } = new List<SeasonDto>();
-
-        public TvShowDto(int id, string title, string sortTitle, bool isWatched, string filePath)
+        public bool IsWatched
         {
-            Id = id;
-            Title = title;
-            SortTitle = sortTitle;
-            IsWatched = isWatched;
-            FilePath = filePath;
+            get
+            {
+                if (Seasons == null)
+                {
+                    return false;
+                }
+
+                return Seasons.All(obj => obj.IsWatched);
+            }
         }
+
+        public List<SeasonDto> Seasons { get; set; } = new List<SeasonDto>();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Lib.ApiServices.Kodi
 {
-    public class SetTvShowDetailsBody
+    public class SetMovieWatchedBody
     {
         public string jsonrpc { get; set; }
         public string method { get; set; }
@@ -9,8 +9,8 @@
 
         public class Params
         {
-            public int tvshowid { get; set; }
-            public string sorttitle { get; set; }
+            public int movieid { get; set; }
+            public int? playcount { get; set; }
         }
     }
 }

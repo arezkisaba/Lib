@@ -1,8 +1,8 @@
-namespace Lib.ApiServices.TheMovieDatabase
+namespace Lib.ApiServices.Kodi
 {
     public static class SeasonDtoExtensions
     {
-        public static SeasonDto FromQueryResponse(this SeasonDto dto, GetSeasonsResponse.Season response, string tvShowTitle)
+        public static SeasonDto FromQueryResponse(this SeasonDto dto, GetSeasonsResponse.Season response)
         {
             if (response == null)
             {
@@ -11,8 +11,8 @@ namespace Lib.ApiServices.TheMovieDatabase
 
             var seasonDto = new SeasonDto
             {
-                Id = response.id.ToString(),
-                Number = response.season_number
+                Id = response.seasonid.ToString(),
+                Number = response.season
             };
 
             return seasonDto;

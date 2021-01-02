@@ -14,17 +14,16 @@ namespace Lib.ApiServices.Kodi
             _httpService = new HttpService(url, ExchangeFormat.Json);
         }
 
-        public async Task<List<MovieDto>> GetMoviesAsync()
+        public async Task<List<MovieDto>> GetMoviesInLibraryAsync()
         {
-            var body = new GetMoviesBody
+            var body = new GetMoviesInLibraryBody
             {
                 jsonrpc = "2.0",
                 method = "VideoLibrary.GetMovies",
-                @params = new GetMoviesBody.Params
+                @params = new GetMoviesInLibraryBody.Params
                 {
                     properties = new string[]
                     {
-                        "sorttitle",
                         "playcount",
                         "file"
                     }
@@ -32,30 +31,29 @@ namespace Lib.ApiServices.Kodi
                 id = "VideoLibrary.GetMovies"
             };
 
-            var responseObject = await _httpService.PostAsync<GetMoviesResponse>($"", body);
-            return responseObject.result.movies.OrderBy(obj => obj.label).Select(obj => new MovieDto(obj.movieid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
+            var responseObject = await _httpService.PostAsync<GetMoviesInLibraryResponse>($"", body);
+            return responseObject.result.movies.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
-        public async Task SetMovieDetailsAsync(int movieId, string sortTitle, bool? isWatched)
+        public async Task<SetMovieWatchedResponse> SetMovieWatchedAsync(string movieId, bool isWatched)
         {
-            var body = new SetMovieDetailsBody
+            var body = new SetMovieWatchedBody
             {
                 jsonrpc = "2.0",
                 method = "VideoLibrary.SetMovieDetails",
-                @params = new SetMovieDetailsBody.Params
+                @params = new SetMovieWatchedBody.Params
                 {
-                    movieid = movieId,
-                    sorttitle = sortTitle,
-                    playcount = (!isWatched.HasValue ? null : (isWatched.Value ? 1 : 0)),
+                    movieid = int.Parse(movieId),
+                    playcount = isWatched ? 1 : 0,
                 },
                 id = "VideoLibrary.SetMovieDetails"
             };
 
 
-            await _httpService.PostAsync($"", body);
+            return await _httpService.PostAsync<SetMovieWatchedResponse>($"", body);
         }
 
-        public async Task<List<TvShowDto>> GetTvShowsWithEpisodesAsync()
+        public async Task<List<TvShowDto>> GetTvShowsInLibraryAsync()
         {
             var tvShows = await GetTvShowsAsync();
             foreach (var tvShow in tvShows)
@@ -73,7 +71,27 @@ namespace Lib.ApiServices.Kodi
             return tvShows;
         }
 
-        public async Task<List<TvShowDto>> GetTvShowsAsync()
+        public async Task<SetEpisodeWatchedResponse> SetEpisodeWatchedAsync(string episodeId, bool isWatched)
+        {
+            var body = new SetEpisodeWatchedBody
+            {
+                jsonrpc = "2.0",
+                method = "VideoLibrary.SetEpisodeDetails",
+                @params = new SetEpisodeWatchedBody.Params
+                {
+                    episodeid = int.Parse(episodeId),
+                    playcount = isWatched ? 1 : 0,
+                },
+                id = "VideoLibrary.SetEpisodeDetails"
+            };
+
+
+            return await _httpService.PostAsync<SetEpisodeWatchedResponse>($"", body);
+        }
+
+        #region Internal use
+
+        private async Task<List<TvShowDto>> GetTvShowsAsync()
         {
             var body = new GetTvShowsBody
             {
@@ -83,8 +101,6 @@ namespace Lib.ApiServices.Kodi
                 {
                     properties = new string[]
                     {
-                        "sorttitle",
-                        "playcount",
                         "file"
                     }
                 },
@@ -92,10 +108,10 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetTvShowsResponse>($"", body);
-            return responseObject.result.tvshows.OrderBy(obj => obj.label).Select(obj => new TvShowDto(obj.tvshowid, obj.label, obj.sorttitle, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.tvshows.OrderBy(obj => obj.label).Select(obj => new TvShowDto().FromQueryResponse(obj)).ToList();
         }
 
-        public async Task<List<SeasonDto>> GetSeasonsAsync(int tvShowId)
+        private async Task<List<SeasonDto>> GetSeasonsAsync(string tvShowId)
         {
             var body = new GetSeasonsBody
             {
@@ -103,10 +119,9 @@ namespace Lib.ApiServices.Kodi
                 method = "VideoLibrary.GetSeasons",
                 @params = new GetSeasonsBody.Params
                 {
-                    tvshowid = tvShowId,
+                    tvshowid = int.Parse(tvShowId),
                     properties = new string[]
                     {
-                        "playcount",
                         "season"
                     }
                 },
@@ -114,10 +129,10 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetSeasonsResponse>($"", body);
-            return responseObject.result.seasons.OrderBy(obj => obj.season).Select(obj => new SeasonDto(obj.seasonid, obj.season, obj.playcount > 0)).ToList();
+            return responseObject.result.seasons.OrderBy(obj => obj.season).Select(obj => new SeasonDto().FromQueryResponse(obj)).ToList();
         }
 
-        public async Task<List<EpisodeDto>> GetEpisodesAsync(int tvShowId, int seasonId)
+        private async Task<List<EpisodeDto>> GetEpisodesAsync(string tvShowId, int seasonId)
         {
             var body = new GetEpisodesBody
             {
@@ -125,11 +140,10 @@ namespace Lib.ApiServices.Kodi
                 method = "VideoLibrary.GetEpisodes",
                 @params = new GetEpisodesBody.Params
                 {
-                    tvshowid = tvShowId,
+                    tvshowid = int.Parse(tvShowId),
                     season = seasonId,
                     properties = new string[]
                     {
-                        "playcount",
                         "file",
                         "episode",
                         "season"
@@ -139,43 +153,9 @@ namespace Lib.ApiServices.Kodi
             };
 
             var responseObject = await _httpService.PostAsync<GetEpisodesResponse>($"", body);
-            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new EpisodeDto(obj.episodeid, obj.episode, obj.season, obj.playcount > 0, obj.file)).ToList();
+            return responseObject.result.episodes.OrderBy(obj => obj.episode).Select(obj => new EpisodeDto().FromQueryResponse(obj)).ToList();
         }
 
-        public async Task SetTvShowDetailsAsync(int tvShowId, string sortTitle)
-        {
-            var body = new SetTvShowDetailsBody
-            {
-                jsonrpc = "2.0",
-                method = "VideoLibrary.SetTvShowDetails",
-                @params = new SetTvShowDetailsBody.Params
-                {
-                    tvshowid = tvShowId,
-                    sorttitle = sortTitle
-                },
-                id = "VideoLibrary.SetTvShowDetails"
-            };
-
-
-            await _httpService.PostAsync($"", body);
-        }
-
-        public async Task SetEpisodeDetailsAsync(int episodeId, bool? isWatched)
-        {
-            var body = new SetEpisodeDetailsBody
-            {
-                jsonrpc = "2.0",
-                method = "VideoLibrary.SetEpisodeDetails",
-                @params = new SetEpisodeDetailsBody.Params
-                {
-                    episodeid = episodeId,
-                    playcount = (!isWatched.HasValue ? null : (isWatched.Value ? 1 : 0)),
-                },
-                id = "VideoLibrary.SetEpisodeDetails"
-            };
-
-
-            await _httpService.PostAsync($"", body);
-        }
+        #endregion
     }
 }

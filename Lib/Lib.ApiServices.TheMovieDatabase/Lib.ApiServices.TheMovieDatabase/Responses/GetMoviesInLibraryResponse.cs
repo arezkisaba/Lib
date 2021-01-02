@@ -1,6 +1,6 @@
 namespace Lib.ApiServices.TheMovieDatabase
 {
-    public class GetMoviesCollectedResponse
+    public class GetMoviesInLibraryResponse
     {
         public int page { get; set; }
         public Result[] results { get; set; }

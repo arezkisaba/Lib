@@ -15,8 +15,6 @@
         {
             public int tvshowid { get; set; }
             public string label { get; set; }
-            public int playcount { get; set; }
-            public string sorttitle { get; set; }
             public string file { get; set; }
         }
     }

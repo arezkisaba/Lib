@@ -1,6 +1,6 @@
 ﻿namespace Lib.ApiServices.Kodi
 {
-    public class SetEpisodeDetailsResponse
+    public class SetEpisodeWatchedResponse
     {
     }
 }

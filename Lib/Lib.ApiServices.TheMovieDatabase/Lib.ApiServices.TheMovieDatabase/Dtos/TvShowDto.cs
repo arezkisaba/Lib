@@ -5,7 +5,7 @@ namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class TvShowDto
     {
-        public string IdTheMovieDatabase { get; set; }
+        public string Id { get; set; }
 
         public string Title { get; set; }
 
@@ -23,25 +23,6 @@ namespace Lib.ApiServices.TheMovieDatabase
                 }
 
                 return Seasons.All(obj => obj.IsWatched);
-            }
-        }
-
-        public int EpisodesAiredCount { get; set; }
-
-        public int EpisodesCollectedCount
-        {
-            get
-            {
-                var episodesCount = 0;
-                foreach (var season in Seasons)
-                {
-                    foreach (var episode in season.Episodes)
-                    {
-                        episodesCount++;
-                    }
-                }
-
-                return episodesCount;
             }
         }
 

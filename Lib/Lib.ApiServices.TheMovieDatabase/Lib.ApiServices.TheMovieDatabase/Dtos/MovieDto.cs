@@ -2,7 +2,7 @@ namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class MovieDto
     {
-        public string IdTheMovieDatabase { get; set; }
+        public string Id { get; set; }
 
         public string Title { get; set; }
         

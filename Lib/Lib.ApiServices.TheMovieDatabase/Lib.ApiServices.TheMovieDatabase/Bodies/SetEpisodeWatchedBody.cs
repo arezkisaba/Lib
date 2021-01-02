@@ -1,6 +1,6 @@
 namespace Lib.ApiServices.TheMovieDatabase
 {
-    public class PostWatchedBody
+    public class SetEpisodeWatchedBody
     {
         public float value { get; set; }
     }

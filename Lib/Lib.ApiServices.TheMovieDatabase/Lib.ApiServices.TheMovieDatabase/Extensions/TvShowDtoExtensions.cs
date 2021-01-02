@@ -1,10 +1,8 @@
-using System.Linq;
-
 namespace Lib.ApiServices.TheMovieDatabase
 {
     public static class TvShowDtoExtensions
     {
-        public static TvShowDto FromQueryResponse(this TvShowDto dto, GetTvShowsCollectedResponse.Result response)
+        public static TvShowDto FromQueryResponse(this TvShowDto dto, GetTvShowsInLibraryResponse.Result response)
 		{
 			if (response == null)
 			{
@@ -19,11 +17,10 @@ namespace Lib.ApiServices.TheMovieDatabase
 
             return new TvShowDto
             {
-                IdTheMovieDatabase = response.id.ToString(),
+                Id = response.id.ToString(),
                 Title = response.name,
                 Year = year,
                 Language = response.original_language,
-                EpisodesAiredCount = 0,
                 Seasons = null,
             };
 		}

@@ -10,30 +10,16 @@ namespace Lib.ApiServices.TheMovieDatabase
 
         event EventHandler<AuthenticationInformations> AuthenticationInformationsAvailable;
 
-        Task<GetRequestTokenResponse> GetRequestTokenAsync();
+        Task<List<MovieDto>> GetMoviesInLibraryAsync();
 
-        Task<PostRequestTokenForSessionIdResponse> PostRequestTokenForSessionIdAsync(PostRequestTokenForSessionIdBody body);
+        Task<SetMovieWatchedResponse> SetMovieWatchedAsync(string movieId, bool isWatched);
 
-        Task<AccountDto> GetAccountAsync();
+        Task<List<TvShowDto>> GetTvShowsInLibraryAsync();
 
-        Task<List<MovieDto>> GetMoviesCollectedAsync();
+        Task<SetEpisodeWatchedResponse> SetEpisodeWatchedAsync(string tvShowId, int seasonNumber, int episodeNumber, bool isWatched);
 
-        Task<List<MovieDto>> GetMoviesWatchedAsync();
+        Task<List<TranslationDto>> GetMovieTranslationsAsync(string movieId, string language = null);
 
-        Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null);
-
-        Task<PostWatchedResponse> PostMovieWatchedAsync(MovieDto movie);
-
-        Task<List<TvShowDto>> GetTvShowsCollectedAsync();
-
-        Task<List<EpisodeDto>> GetEpisodesWatchedAsync();
-        
-        Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language = null);
-
-        Task<PostWatchedResponse> PostEpisodeWatchedAsync(TvShowDto tvShow, SeasonDto season, EpisodeDto episode);
-
-        Task<List<SeasonDto>> GetSeasonsAsync(TvShowDto tvShow);
-
-        Task<List<EpisodeDto>> GetEpisodesAsync(TvShowDto tvShow, SeasonDto season);
+        Task<List<TranslationDto>> GetTvShowTranslationsAsync(string id, string language = null);
     }
 }

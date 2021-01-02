@@ -13,7 +13,6 @@
 
         public class Season
         {
-            public int playcount { get; set; }
             public string file { get; set; }
             public int season { get; set; }
             public int seasonid { get; set; }

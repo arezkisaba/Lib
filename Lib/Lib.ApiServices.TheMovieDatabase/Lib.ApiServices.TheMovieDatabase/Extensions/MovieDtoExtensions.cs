@@ -2,7 +2,7 @@ namespace Lib.ApiServices.TheMovieDatabase
 {
     public static class MovieDtoExtensions
 	{
-		public static MovieDto FromQueryResponse(this MovieDto dto, GetMoviesCollectedResponse.Result response)
+		public static MovieDto FromQueryResponse(this MovieDto dto, GetMoviesInLibraryResponse.Result response)
 		{
 			if (response == null)
 			{
@@ -17,7 +17,7 @@ namespace Lib.ApiServices.TheMovieDatabase
 
 			return new MovieDto
             {
-                IdTheMovieDatabase = response.id.ToString(),
+                Id = response.id.ToString(),
                 Title = response.title,
                 Year = year,
 				Language = response.original_language,
@@ -40,7 +40,7 @@ namespace Lib.ApiServices.TheMovieDatabase
 
 			return new MovieDto
 			{
-				IdTheMovieDatabase = response.id.ToString(),
+				Id = response.id.ToString(),
 				Title = response.title,
 				Year = year,
 				Language = response.original_language,

@@ -30,51 +30,16 @@ namespace Lib.ApiServices.TheMovieDatabase
             _httpService.AddCallbackForHttpStatusCode(HttpStatusCode.Unauthorized, AuthenticateAsync);
         }
 
-        #region Authentication
-
-        public async Task<GetRequestTokenResponse> GetRequestTokenAsync()
-        {
-            return await _httpService.GetAsync<GetRequestTokenResponse>($"authentication/token/new?api_key={_apiKey}");
-        }
-
-        public async Task<PostRequestTokenForSessionIdResponse> PostRequestTokenForSessionIdAsync(PostRequestTokenForSessionIdBody body)
-        {
-            return await _httpService.PostAsync<PostRequestTokenForSessionIdResponse>($"authentication/session/new?api_key={_apiKey}", body, disableCallbackAndRetry: true);
-        }
-
-        #endregion
-
-        private async Task EnsureAccountInitializedAsync()
-        {
-            if (string.IsNullOrWhiteSpace(_accountId))
-            {
-                var account = await GetAccountAsync();
-                _accountId = account.Id;
-            }
-        }
-
-        #region Account
-
-        public async Task<AccountDto> GetAccountAsync()
-        {
-            var responseObject = await _httpService.GetAsync<GetAccountResponse>($"account?api_key={_apiKey}");
-            return new AccountDto().FromQueryResponse(responseObject);
-        }
-
-        #endregion
-
-        #region Movies
-
-        public async Task<List<MovieDto>> GetMoviesCollectedAsync()
+        public async Task<List<MovieDto>> GetMoviesInLibraryAsync()
         {
             await EnsureAccountInitializedAsync();
 
-            var responseObject = await _httpService.GetAsync<GetMoviesCollectedResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}");
-            var items = new List<GetMoviesCollectedResponse.Result>();
+            var responseObject = await _httpService.GetAsync<GetMoviesInLibraryResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}");
+            var items = new List<GetMoviesInLibraryResponse.Result>();
             var pageCount = responseObject.total_pages;
             for (var i = 1; i <= pageCount; i++)
             {
-                responseObject = await _httpService.GetAsync<GetMoviesCollectedResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}&page={i}");
+                responseObject = await _httpService.GetAsync<GetMoviesInLibraryResponse>($"account/{_accountId}/watchlist/movies?api_key={_apiKey}&page={i}");
                 items.AddRange(responseObject.results);
             }
 
@@ -93,7 +58,114 @@ namespace Lib.ApiServices.TheMovieDatabase
             return moviesCollected;
         }
 
-        public async Task<List<MovieDto>> GetMoviesWatchedAsync()
+        public async Task<SetMovieWatchedResponse> SetMovieWatchedAsync(string movieId, bool isWatched)
+        {
+            await EnsureAccountInitializedAsync();
+
+            if (isWatched)
+            {
+                var body = new SetMovieWatchedBody
+                {
+                    value = 10
+                };
+
+                return await _httpService.PostAsync<SetMovieWatchedResponse>($"movie/{movieId}/rating?api_key={_apiKey}", body);
+            }
+            else
+            {
+                return await _httpService.DeleteAsync<SetMovieWatchedResponse>($"movie/{movieId}/rating?api_key={_apiKey}");
+            }
+        }
+
+        public async Task<List<TvShowDto>> GetTvShowsInLibraryAsync()
+        {
+            await EnsureAccountInitializedAsync();
+
+            var responseObject = await _httpService.GetAsync<GetTvShowsInLibraryResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}");
+            var items = new List<GetTvShowsInLibraryResponse.Result>();
+            var pageCount = responseObject.total_pages;
+            for (var i = 1; i <= pageCount; i++)
+            {
+                responseObject = await _httpService.GetAsync<GetTvShowsInLibraryResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}&page={i}");
+                items.AddRange(responseObject.results);
+            }
+
+            var tvShows = items.Select(obj => new TvShowDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
+            var episodesWatched = await GetEpisodesWatchedAsync();
+            foreach (var tvShow in tvShows)
+            {
+                var seasons = await GetSeasonsAsync(tvShow);
+                foreach (var season in seasons)
+                {
+                    var episodes = await GetEpisodesAsync(tvShow, season);
+                    foreach (var episode in episodes)
+                    {
+                        if (episodesWatched.Any(obj => episode.Id == obj.Id))
+                        {
+                            episode.IsWatched = true;
+                        }
+                    }
+
+                    season.Episodes = episodes;
+                }
+
+                tvShow.Seasons = seasons;
+            }
+
+            return tvShows;
+        }
+
+        public async Task<SetEpisodeWatchedResponse> SetEpisodeWatchedAsync(string tvShowId, int seasonNumber, int episodeNumber, bool isWatched)
+        {
+            await EnsureAccountInitializedAsync();
+
+            if (isWatched)
+            {
+                var body = new SetEpisodeWatchedBody
+                {
+                    value = 10
+                };
+
+                return await _httpService.PostAsync<SetEpisodeWatchedResponse>($"tv/{tvShowId}/season/{seasonNumber}/episode/{episodeNumber}/rating?api_key={_apiKey}", body);
+            }
+            else
+            {
+                return await _httpService.DeleteAsync<SetEpisodeWatchedResponse>($"tv/{tvShowId}/season/{seasonNumber}/episode/{episodeNumber}/rating?api_key={_apiKey}");
+            }
+        }
+
+        public async Task<List<TranslationDto>> GetMovieTranslationsAsync(string movieId, string language = null)
+        {
+            await EnsureAccountInitializedAsync();
+            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse>($"movie/{movieId}/translations?api_key={_apiKey}");
+            return responseObject.translations.Select(obj => new TranslationDto().FromQueryResponse(obj)).Where(obj => language != null ? obj.Language == language : true).OrderBy(obj => obj.Title).ToList();
+        }
+
+        public async Task<List<TranslationDto>> GetTvShowTranslationsAsync(string id, string language = null)
+        {
+            await EnsureAccountInitializedAsync();
+            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse>($"tv/{id}/translations?api_key={_apiKey}");
+            return responseObject.translations.Select(obj => new TranslationDto().FromQueryResponse(obj)).Where(obj => language != null ? obj.Language == language : true).OrderBy(obj => obj.Title).ToList();
+        }
+
+        #region Internal use
+
+        private async Task EnsureAccountInitializedAsync()
+        {
+            if (string.IsNullOrWhiteSpace(_accountId))
+            {
+                var account = await GetAccountAsync();
+                _accountId = account.Id;
+            }
+        }
+
+        private async Task<AccountDto> GetAccountAsync()
+        {
+            var responseObject = await _httpService.GetAsync<GetAccountResponse>($"account?api_key={_apiKey}");
+            return new AccountDto().FromQueryResponse(responseObject);
+        }
+
+        private async Task<List<MovieDto>> GetMoviesWatchedAsync()
         {
             await EnsureAccountInitializedAsync();
 
@@ -109,63 +181,7 @@ namespace Lib.ApiServices.TheMovieDatabase
             return items.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
-        public async Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null)
-        {
-            await EnsureAccountInitializedAsync();
-            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse>($"movie/{movie.IdTheMovieDatabase}/translations?api_key={_apiKey}");
-            return responseObject.translations.Select(obj => new TranslationDto().FromQueryResponse(obj)).Where(obj => language != null ? obj.Language == language : true).OrderBy(obj => obj.Title).ToList();
-        }
-
-        public async Task<PostWatchedResponse> PostMovieWatchedAsync(MovieDto movie)
-        {
-            await EnsureAccountInitializedAsync();
-            return await _httpService.PostAsync<PostWatchedResponse>($"movie/{movie.IdTheMovieDatabase}/rating?api_key={_apiKey}", new PostWatchedBody
-            {
-                value = 10
-            });
-        }
-
-        public async Task<List<TvShowDto>> GetTvShowsCollectedAsync()
-        {
-            await EnsureAccountInitializedAsync();
-
-            var responseObject = await _httpService.GetAsync<GetTvShowsCollectedResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}");
-            var items = new List<GetTvShowsCollectedResponse.Result>();
-            var pageCount = responseObject.total_pages;
-            for (var i = 1; i <= pageCount; i++)
-            {
-                responseObject = await _httpService.GetAsync<GetTvShowsCollectedResponse>($"account/{_accountId}/watchlist/tv?api_key={_apiKey}&page={i}");
-                items.AddRange(responseObject.results);
-            }
-
-            var tvShows = items.Select(obj => new TvShowDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
-            var episodesWatched = await GetEpisodesWatchedAsync();
-            foreach (var tvShow in tvShows)
-            {
-                var seasons = await GetSeasonsAsync(tvShow);
-                foreach (var season in seasons)
-                {
-                    season.TvShow = tvShow;
-                    var episodes = await GetEpisodesAsync(tvShow, season);
-                    foreach (var episode in episodes)
-                    {
-                        episode.Season = season;
-                        if (episodesWatched.Any(obj => tvShow.IdTheMovieDatabase == obj.Season.TvShow.IdTheMovieDatabase && season.Number == obj.Season.Number && episode.Number == obj.Number))
-                        {
-                            episode.IsWatched = true;
-                        }
-                    }
-
-                    season.Episodes = episodes;
-                }
-
-                tvShow.Seasons = seasons;
-            }
-
-            return tvShows;
-        }
-
-        public async Task<List<EpisodeDto>> GetEpisodesWatchedAsync()
+        private async Task<List<EpisodeDto>> GetEpisodesWatchedAsync()
         {
             await EnsureAccountInitializedAsync();
 
@@ -183,41 +199,23 @@ namespace Lib.ApiServices.TheMovieDatabase
             return items.Select(obj => new EpisodeDto().FromQueryResponse(obj)).OrderBy(obj => obj.Number).ToList();
         }
 
-        public async Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language = null)
+        private async Task<List<SeasonDto>> GetSeasonsAsync(TvShowDto tvShow)
         {
             await EnsureAccountInitializedAsync();
-            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse>($"tv/{tvShow.IdTheMovieDatabase}/translations?api_key={_apiKey}");
-            return responseObject.translations.Select(obj => new TranslationDto().FromQueryResponse(obj)).Where(obj => language != null ? obj.Language == language : true).OrderBy(obj => obj.Title).ToList();
-        }
-
-        public async Task<PostWatchedResponse> PostEpisodeWatchedAsync(TvShowDto tvShow, SeasonDto season, EpisodeDto episode)
-        {
-            await EnsureAccountInitializedAsync();
-            return await _httpService.PostAsync<PostWatchedResponse>($"tv/{tvShow.IdTheMovieDatabase}/season/{season.Number}/episode/{episode.Number}/rating?api_key={_apiKey}", new PostWatchedBody
-            {
-                value = 10
-            });
-        }
-
-        public async Task<List<SeasonDto>> GetSeasonsAsync(TvShowDto tvShow)
-        {
-            await EnsureAccountInitializedAsync();
-            var responseObject = await _httpService.GetAsync<GetSeasonsResponse>($"tv/{tvShow.IdTheMovieDatabase}?api_key={_apiKey}");
+            var responseObject = await _httpService.GetAsync<GetSeasonsResponse>($"tv/{tvShow.Id}?api_key={_apiKey}");
             return responseObject.seasons.Select(obj => new SeasonDto().FromQueryResponse(obj, tvShow.Title)).OrderBy(obj => obj.Number).Where(obj => obj.Number > 0).ToList();
         }
 
-        public async Task<List<EpisodeDto>> GetEpisodesAsync(TvShowDto tvShow, SeasonDto season)
+        private async Task<List<EpisodeDto>> GetEpisodesAsync(TvShowDto tvShow, SeasonDto season)
         {
             await EnsureAccountInitializedAsync();
-            var responseObject = await _httpService.GetAsync<GetEpisodesResponse>($"tv/{tvShow.IdTheMovieDatabase}/season/{season.Number}?api_key={_apiKey}");
+            var responseObject = await _httpService.GetAsync<GetEpisodesResponse>($"tv/{tvShow.Id}/season/{season.Number}?api_key={_apiKey}");
             return responseObject.episodes.Select(obj => new EpisodeDto().FromQueryResponse(obj)).OrderBy(obj => obj.Number).Where(obj => obj.Number > 0).ToList();
         }
 
-        #endregion
-
         private async Task AuthenticateAsync()
         {
-            PostRequestTokenForSessionIdResponse postRequestTokenForSessionIdResponse = null;
+            SetRequestTokenForSessionIdResponse postRequestTokenForSessionIdResponse = null;
 
             if (string.IsNullOrWhiteSpace(_sessionId))
             {
@@ -232,7 +230,7 @@ namespace Lib.ApiServices.TheMovieDatabase
                 {
                     try
                     {
-                        postRequestTokenForSessionIdResponse = await PostRequestTokenForSessionIdAsync(new PostRequestTokenForSessionIdBody { request_token = requestTokenResponse.request_token });
+                        postRequestTokenForSessionIdResponse = await SetRequestTokenForSessionIdAsync(new SetRequestTokenForSessionIdBody { request_token = requestTokenResponse.request_token });
                         _sessionId = postRequestTokenForSessionIdResponse.session_id;
                     }
                     catch (Exception)
@@ -249,6 +247,18 @@ namespace Lib.ApiServices.TheMovieDatabase
                 SessionId = _sessionId
             });
         }
+
+        private async Task<GetRequestTokenResponse> GetRequestTokenAsync()
+        {
+            return await _httpService.GetAsync<GetRequestTokenResponse>($"authentication/token/new?api_key={_apiKey}");
+        }
+
+        private async Task<SetRequestTokenForSessionIdResponse> SetRequestTokenForSessionIdAsync(SetRequestTokenForSessionIdBody body)
+        {
+            return await _httpService.PostAsync<SetRequestTokenForSessionIdResponse>($"authentication/session/new?api_key={_apiKey}", body, disableCallbackAndRetry: true);
+        }
+
+        #endregion
     }
 
     public class AuthenticationInformations

@@ -1,6 +1,6 @@
 ﻿namespace Lib.ApiServices.Kodi
 {
-    public class SetMovieDetailsResponse
+    public class SetMovieWatchedResponse
     {
     }
 }

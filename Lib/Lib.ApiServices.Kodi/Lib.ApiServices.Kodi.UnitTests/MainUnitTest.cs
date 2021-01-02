@@ -27,116 +27,58 @@ namespace Lib.ApiServices.Kodi.UnitTests
         }
 
         [TestMethod]
-        public void GetMoviesAsync_TestMethod()
+        [DoNotParallelize]
+        public void GetMoviesInLibraryAsync_TestMethod()
         {
-            var movies = _kodiService.GetMoviesAsync().Result;
+            var movies = _kodiService.GetMoviesInLibraryAsync().Result;
             Assert.IsTrue(movies.Any());
         }
 
         [TestMethod]
-        public void SetMovieDetailsAsync_TestMethod()
+        [DoNotParallelize]
+        public void SetMovieWatchedAsync_TestMethod()
         {
-            var movies = _kodiService.GetMoviesAsync().Result;
-            var firstMovie = movies.First();
-            var newSortTitle = "sorttitle";
-            var newIsWatched = true;
+            var movies = _kodiService.GetMoviesInLibraryAsync().Result;
+            var firstMovie = movies.First(obj => obj.IsWatched);
 
-            _kodiService.SetMovieDetailsAsync(firstMovie.Id, newSortTitle, newIsWatched).Wait();
+            _kodiService.SetMovieWatchedAsync(firstMovie.Id, !firstMovie.IsWatched).Wait();
 
-            var moviesUpdated = _kodiService.GetMoviesAsync().Result;
-            var firstMovieUpdated = moviesUpdated.First();
-
-            var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id &&
-                newSortTitle == firstMovieUpdated.SortTitle &&
-                newIsWatched == firstMovieUpdated.IsWatched;
-
+            var moviesUpdated = _kodiService.GetMoviesInLibraryAsync().Result;
+            var firstMovieUpdated = moviesUpdated.First(obj => obj.Id == firstMovie.Id);
+            var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id && !firstMovie.IsWatched == firstMovieUpdated.IsWatched;
             Assert.IsTrue(isUpdateOk);
 
-            _kodiService.SetMovieDetailsAsync(firstMovie.Id, string.Empty, false).Wait();
+            _kodiService.SetMovieWatchedAsync(firstMovie.Id, firstMovie.IsWatched).Wait();
         }
 
         [TestMethod]
-        public void GetTvShowsWithEpisodesAsync_TestMethod()
+        [DoNotParallelize]
+        public void GetTvShowsInLibraryAsync_TestMethod()
         {
-            var tvShows = _kodiService.GetTvShowsWithEpisodesAsync().Result;
+            var tvShows = _kodiService.GetTvShowsInLibraryAsync().Result;
             Assert.IsTrue(tvShows.Any());
         }
 
         [TestMethod]
-        public void GetTvShowAsync_TestMethod()
+        [DoNotParallelize]
+        public void SetEpisodeWatchedAsync_TestMethod()
         {
-            var tvShows = _kodiService.GetTvShowsAsync().Result;
-            Assert.IsTrue(tvShows.Any());
-        }
-
-        [TestMethod]
-        public void GetSeasonsAsync_TestMethod()
-        {
-            var tvShows = _kodiService.GetTvShowsAsync().Result;
-            Assert.IsTrue(tvShows.Any());
-
-            var tvShow = tvShows.First();
-            var seasons = _kodiService.GetSeasonsAsync(tvShow.Id).Result;
-            Assert.IsTrue(seasons.Any());
-        }
-
-        [TestMethod]
-        public void GetEpisodesAsync_TestMethod()
-        {
-            var tvShows = _kodiService.GetTvShowsAsync().Result;
-            Assert.IsTrue(tvShows.Any());
-
-            var tvShow = tvShows.First();//// (obj => obj.Id == 17);
-            var seasons = _kodiService.GetSeasonsAsync(tvShow.Id).Result;
-            Assert.IsTrue(seasons.Any());
-
-            var season = seasons.First();
-            var episodes = _kodiService.GetEpisodesAsync(tvShow.Id, season.Number).Result;
-            Assert.IsTrue(episodes.Any());
-        }
-
-        [TestMethod]
-        public void SetTvShowDetailsAsync_TestMethod()
-        {
-            var tvShows = _kodiService.GetTvShowsAsync().Result;
+            var tvShows = _kodiService.GetTvShowsInLibraryAsync().Result;
             var firstTvShow = tvShows.First();
-            var newSortTitle = "sorttitle";
+            var firstSeason = firstTvShow.Seasons.First();
+            var firstEpisode = firstSeason.Episodes.First(obj => obj.IsWatched);
 
-            _kodiService.SetTvShowDetailsAsync(firstTvShow.Id, newSortTitle).Wait();
+            _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, !firstEpisode.IsWatched).Wait();
 
-            var tvShowsUpdated = _kodiService.GetTvShowsAsync().Result;
+            var tvShowsUpdated = _kodiService.GetTvShowsInLibraryAsync().Result;
             var firstTvShowUpdated = tvShowsUpdated.First();
+            var firstSeasonUpdated = firstTvShowUpdated.Seasons.First();
+            var firstEpisodeUpdated = firstSeasonUpdated.Episodes.First(obj => obj.Id == firstEpisode.Id);
 
-            var isUpdateOk = firstTvShow.Id == firstTvShowUpdated.Id &&
-                newSortTitle == firstTvShowUpdated.SortTitle;
-
+            var isUpdateOk = firstEpisode.Id == firstEpisodeUpdated.Id && !firstEpisode.IsWatched == firstEpisodeUpdated.IsWatched;
             Assert.IsTrue(isUpdateOk);
 
-            _kodiService.SetTvShowDetailsAsync(firstTvShow.Id, string.Empty).Wait();
-        }
-
-        [TestMethod]
-        public void SetEpisodeDetailsAsync_TestMethod()
-        {
-            var tvShows = _kodiService.GetTvShowsAsync().Result;
-            var firstTvShow = tvShows.First();
-            var seasons = _kodiService.GetSeasonsAsync(firstTvShow.Id).Result;
-            var firstSeason = seasons.First();
-            var episodes = _kodiService.GetEpisodesAsync(firstTvShow.Id, firstSeason.Id).Result;
-            var firstEpisode = episodes.First();
-            var newIsWatched = true;
-
-            _kodiService.SetEpisodeDetailsAsync(firstEpisode.Id, newIsWatched).Wait();
-
-            var episodesUpdated = _kodiService.GetEpisodesAsync(firstTvShow.Id, firstSeason.Id).Result;
-            var firstEpisodeUpdated = episodesUpdated.First();
-
-            var isUpdateOk = firstEpisode.Id == firstEpisodeUpdated.Id &&
-                newIsWatched == firstEpisodeUpdated.IsWatched;
-
-            Assert.IsTrue(isUpdateOk);
-
-            _kodiService.SetEpisodeDetailsAsync(firstEpisode.Id, false).Wait();
+            _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, firstEpisode.IsWatched).Wait();
         }
     }
 }
