@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Lib.ApiServices.Kodi.UnitTests
 {
@@ -16,61 +17,61 @@ namespace Lib.ApiServices.Kodi.UnitTests
         }
 
         [TestInitialize]
-        public void Initialize()
+        public async Task Initialize()
         {
             _kodiService = new KodiApiService(_configuration["Kodi.Url"]);
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void GetMoviesInLibraryAsync_TestMethod()
+        public async Task GetMoviesInLibraryAsync_TestMethod()
         {
-            var movies = _kodiService.GetMoviesInLibraryAsync().Result;
+            var movies = await _kodiService.GetMoviesInLibraryAsync();
             Assert.IsTrue(movies.Any());
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void SetMovieWatchedAsync_TestMethod()
+        public async Task SetMovieWatchedAsync_TestMethod()
         {
-            var movies = _kodiService.GetMoviesInLibraryAsync().Result;
+            var movies = await _kodiService.GetMoviesInLibraryAsync();
             var firstMovie = movies.First(obj => obj.IsWatched);
 
-            _kodiService.SetMovieWatchedAsync(firstMovie.Id, !firstMovie.IsWatched).Wait();
+            await _kodiService.SetMovieWatchedAsync(firstMovie.Id, !firstMovie.IsWatched);
 
-            var moviesUpdated = _kodiService.GetMoviesInLibraryAsync().Result;
+            var moviesUpdated = await _kodiService.GetMoviesInLibraryAsync();
             var firstMovieUpdated = moviesUpdated.First(obj => obj.Id == firstMovie.Id);
             var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id && !firstMovie.IsWatched == firstMovieUpdated.IsWatched;
             Assert.IsTrue(isUpdateOk);
 
-            _kodiService.SetMovieWatchedAsync(firstMovie.Id, firstMovie.IsWatched).Wait();
+            await _kodiService.SetMovieWatchedAsync(firstMovie.Id, firstMovie.IsWatched);
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void GetTvShowsInLibraryAsync_TestMethod()
+        public async Task GetTvShowsInLibraryAsync_TestMethod()
         {
-            var tvShows = _kodiService.GetTvShowsInLibraryAsync().Result;
+            var tvShows = await _kodiService.GetTvShowsInLibraryAsync();
             Assert.IsTrue(tvShows.Any());
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void SetEpisodeWatchedAsync_TestMethod()
+        public async Task SetEpisodeWatchedAsync_TestMethod()
         {
-            var tvShows = _kodiService.GetTvShowsInLibraryAsync().Result;
+            var tvShows = await _kodiService.GetTvShowsInLibraryAsync();
             var firstTvShow = tvShows.First();
             var firstSeason = firstTvShow.Seasons.First();
             var firstEpisode = firstSeason.Episodes.First(obj => obj.IsWatched);
 
-            _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, !firstEpisode.IsWatched).Wait();
+            await _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, !firstEpisode.IsWatched);
 
-            var tvShowsUpdated = _kodiService.GetTvShowsInLibraryAsync().Result;
+            var tvShowsUpdated = await _kodiService.GetTvShowsInLibraryAsync();
             var firstTvShowUpdated = tvShowsUpdated.First();
             var firstSeasonUpdated = firstTvShowUpdated.Seasons.First();
             var firstEpisodeUpdated = firstSeasonUpdated.Episodes.First(obj => obj.Id == firstEpisode.Id);
@@ -78,7 +79,7 @@ namespace Lib.ApiServices.Kodi.UnitTests
             var isUpdateOk = firstEpisode.Id == firstEpisodeUpdated.Id && !firstEpisode.IsWatched == firstEpisodeUpdated.IsWatched;
             Assert.IsTrue(isUpdateOk);
 
-            _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, firstEpisode.IsWatched).Wait();
+            await _kodiService.SetEpisodeWatchedAsync(firstEpisode.Id, firstEpisode.IsWatched);
         }
     }
 }

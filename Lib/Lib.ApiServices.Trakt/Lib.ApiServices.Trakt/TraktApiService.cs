@@ -102,7 +102,7 @@ namespace Lib.ApiServices.Trakt
 
         public async Task<List<TranslationDto>> GetMovieTranslationsAsync(MovieDto movie, string language = null)
         {
-            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse.Item[]>($"movies/{movie.IdTrakt}/translations/{language ?? string.Empty}");
+            var responseObject = await _httpService.GetAsync<GetMovieTranslationsResponse.Item[]>($"movies/{movie.Id}/translations/{language ?? string.Empty}");
             return responseObject.Select(obj => new TranslationDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
@@ -118,7 +118,7 @@ namespace Lib.ApiServices.Trakt
                         year = movie.Year.Value,
                         ids = new PutWatchedBody.MovieIds
                         {
-                            trakt = movie.IdTrakt,
+                            trakt = movie.Id,
                         }
                     }
                 },
@@ -145,7 +145,7 @@ namespace Lib.ApiServices.Trakt
         
         public async Task<List<TranslationDto>> GetTvShowTranslationsAsync(TvShowDto tvShow, string language = null)
         {
-            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse.Item[]>($"shows/{tvShow.IdTrakt}/translations/{language ?? string.Empty}");
+            var responseObject = await _httpService.GetAsync<GetTvShowTranslationsResponse.Item[]>($"shows/{tvShow.Id}/translations/{language ?? string.Empty}");
             return responseObject.Select(obj => new TranslationDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
         }
 
@@ -163,7 +163,7 @@ namespace Lib.ApiServices.Trakt
                         year = tvShow.Year.Value,
                         ids = new PutCollectedBody.ShowIds
                         {
-                            trakt = tvShow.IdTrakt
+                            trakt = tvShow.Id
                         }
                     }
                 }
@@ -184,7 +184,7 @@ namespace Lib.ApiServices.Trakt
                         year = tvShow.Year.Value,
                         ids = new PutWatchedBody.ShowIds
                         {
-                            trakt = tvShow.IdTrakt,
+                            trakt = tvShow.Id,
                         }
                     }
                 }
@@ -215,7 +215,7 @@ namespace Lib.ApiServices.Trakt
                         year = season.TvShow.Year.Value,
                         ids = new PutWatchedBody.ShowIds
                         {
-                            trakt = season.TvShow.IdTrakt,
+                            trakt = season.TvShow.Id,
                         },
                         seasons = new PutWatchedBody.Season[1]
                         {
@@ -247,7 +247,7 @@ namespace Lib.ApiServices.Trakt
                         year = episode.Season.TvShow.Year.Value,
                         ids = new PutWatchedBody.ShowIds
                         {
-                            trakt = episode.Season.TvShow.IdTrakt,
+                            trakt = episode.Season.TvShow.Id,
                         },
                         seasons = new PutWatchedBody.Season[1]
                         {

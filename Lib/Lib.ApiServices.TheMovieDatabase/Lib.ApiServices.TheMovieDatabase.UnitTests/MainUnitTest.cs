@@ -19,7 +19,7 @@ namespace Lib.ApiServices.TheMovieDatabase.UnitTests
         }
 
         [TestInitialize]
-        public void Initialize()
+        public async Task Initialize()
         {
             _theMovieDatabaseApiService = new TheMovieDatabaseApiService(
                 _configuration["TheMovieDatabase.ApiKey"],
@@ -36,63 +36,32 @@ namespace Lib.ApiServices.TheMovieDatabase.UnitTests
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public async Task Cleanup()
         {
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void GetMoviesInLibraryAsync_TestMethod()
+        public async Task SearchMovieAsync_TestMethod()
         {
-            var movies = _theMovieDatabaseApiService.GetMoviesInLibraryAsync().Result;
+            var movies = await _theMovieDatabaseApiService.SearchMovieAsync("Star Wars: The Force Awakens");
             Assert.IsTrue(movies.Any());
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void SetMovieWatchedAsync_TestMethod()
+        public async Task GetMoviesInLibraryAsync_TestMethod()
         {
-            var movies = _theMovieDatabaseApiService.GetMoviesInLibraryAsync().Result;
-            var firstMovie = movies.First(obj => obj.IsWatched);
-
-            _theMovieDatabaseApiService.SetMovieWatchedAsync(firstMovie.Id, !firstMovie.IsWatched).Wait();
-
-            var moviesUpdated = _theMovieDatabaseApiService.GetMoviesInLibraryAsync().Result;
-            var firstMovieUpdated = moviesUpdated.First(obj => obj.Id == firstMovie.Id);
-            var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id && !firstMovie.IsWatched == firstMovieUpdated.IsWatched;
-            Assert.IsTrue(isUpdateOk);
-
-            _theMovieDatabaseApiService.SetMovieWatchedAsync(firstMovie.Id, firstMovie.IsWatched).Wait();
+            var movies = await _theMovieDatabaseApiService.GetMoviesInLibraryAsync();
+            Assert.IsTrue(movies.Any());
         }
 
         [TestMethod]
         [DoNotParallelize]
-        public void GetTvShowsInLibraryAsync_TestMethod()
+        public async Task GetMovieAsync_TestMethod()
         {
-            var tvShows = _theMovieDatabaseApiService.GetTvShowsInLibraryAsync().Result;
-            Assert.IsTrue(tvShows.Any());
-        }
-
-        [TestMethod]
-        [DoNotParallelize]
-        public void SetEpisodeWatchedAsync_TestMethod()
-        {
-            var tvShows = _theMovieDatabaseApiService.GetTvShowsInLibraryAsync().Result;
-            var firstTvShow = tvShows.First();
-            var firstSeason = firstTvShow.Seasons.First();
-            var firstEpisode = firstSeason.Episodes.First(obj => obj.IsWatched);
-
-            _theMovieDatabaseApiService.SetEpisodeWatchedAsync(firstTvShow.Id, firstSeason.Number, firstEpisode.Number, !firstEpisode.IsWatched).Wait();
-
-            var tvShowsUpdated = _theMovieDatabaseApiService.GetTvShowsInLibraryAsync().Result;
-            var firstTvShowUpdated = tvShowsUpdated.First();
-            var firstSeasonUpdated = firstTvShowUpdated.Seasons.First();
-            var firstEpisodeUpdated = firstSeasonUpdated.Episodes.First(obj => obj.Id == firstEpisode.Id);
-
-            var isUpdateOk = firstEpisode.Id == firstEpisodeUpdated.Id && !firstEpisode.IsWatched == firstEpisodeUpdated.IsWatched;
-            Assert.IsTrue(isUpdateOk);
-
-            _theMovieDatabaseApiService.SetEpisodeWatchedAsync(firstTvShow.Id, firstSeason.Number, firstEpisode.Number, firstEpisode.IsWatched).Wait();
+            var movie = await _theMovieDatabaseApiService.GetMovieAsync("53182");
+            Assert.IsTrue(movie != null);
         }
 
         [TestMethod]
@@ -107,12 +76,75 @@ namespace Lib.ApiServices.TheMovieDatabase.UnitTests
 
         [TestMethod]
         [DoNotParallelize]
+        public async Task SetMovieWatchedAsync_TestMethod()
+        {
+            var movies = await _theMovieDatabaseApiService.GetMoviesInLibraryAsync();
+            var firstMovie = movies.First(obj => obj.IsWatched);
+
+            await _theMovieDatabaseApiService.SetMovieWatchedAsync(firstMovie.Id, !firstMovie.IsWatched);
+
+            var moviesUpdated = await _theMovieDatabaseApiService.GetMoviesInLibraryAsync();
+            var firstMovieUpdated = moviesUpdated.First(obj => obj.Id == firstMovie.Id);
+            var isUpdateOk = firstMovie.Id == firstMovieUpdated.Id && !firstMovie.IsWatched == firstMovieUpdated.IsWatched;
+            Assert.IsTrue(isUpdateOk);
+
+            await _theMovieDatabaseApiService.SetMovieWatchedAsync(firstMovie.Id, firstMovie.IsWatched);
+        }
+
+        [TestMethod]
+        [DoNotParallelize]
+        public async Task SearchTvShowAsync_TestMethod()
+        {
+            var tvShows = await _theMovieDatabaseApiService.SearchTvShowAsync("The Bureau");
+            Assert.IsTrue(tvShows.Any());
+        }
+
+        [TestMethod]
+        [DoNotParallelize]
+        public async Task GetTvShowsInLibraryAsync_TestMethod()
+        {
+            var tvShows = await _theMovieDatabaseApiService.GetTvShowsInLibraryAsync();
+            Assert.IsTrue(tvShows.Any());
+        }
+
+        [TestMethod]
+        [DoNotParallelize]
+        public async Task GetTvShowAsync_TestMethod()
+        {
+            var tvShow = await _theMovieDatabaseApiService.GetTvShowAsync("31941");
+            Assert.IsTrue(tvShow != null);
+        }
+
+        [TestMethod]
+        [DoNotParallelize]
         public async Task GetTvShowTranslationsAsync_TestMethod()
         {
             var tvShows = await _theMovieDatabaseApiService.GetTvShowsInLibraryAsync();
             var firstTvShow = tvShows.First();
             var translations = await _theMovieDatabaseApiService.GetTvShowTranslationsAsync(firstTvShow.Id, "fr");
             Assert.IsTrue(translations != null && translations.Any());
+        }
+
+        [TestMethod]
+        [DoNotParallelize]
+        public async Task SetEpisodeWatchedAsync_TestMethod()
+        {
+            var tvShows = await _theMovieDatabaseApiService.GetTvShowsInLibraryAsync();
+            var firstTvShow = tvShows.First();
+            var firstSeason = firstTvShow.Seasons.First();
+            var firstEpisode = firstSeason.Episodes.First(obj => obj.IsWatched);
+
+            await _theMovieDatabaseApiService.SetEpisodeWatchedAsync(firstTvShow.Id, firstSeason.Number, firstEpisode.Number, !firstEpisode.IsWatched);
+
+            var tvShowsUpdated = await _theMovieDatabaseApiService.GetTvShowsInLibraryAsync();
+            var firstTvShowUpdated = tvShowsUpdated.First();
+            var firstSeasonUpdated = firstTvShowUpdated.Seasons.First();
+            var firstEpisodeUpdated = firstSeasonUpdated.Episodes.First(obj => obj.Id == firstEpisode.Id);
+
+            var isUpdateOk = firstEpisode.Id == firstEpisodeUpdated.Id && !firstEpisode.IsWatched == firstEpisodeUpdated.IsWatched;
+            Assert.IsTrue(isUpdateOk);
+
+            await _theMovieDatabaseApiService.SetEpisodeWatchedAsync(firstTvShow.Id, firstSeason.Number, firstEpisode.Number, firstEpisode.IsWatched);
         }
     }
 }

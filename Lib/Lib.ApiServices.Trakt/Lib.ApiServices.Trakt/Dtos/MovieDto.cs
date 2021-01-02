@@ -2,7 +2,9 @@ namespace Lib.ApiServices.Trakt
 {
     public partial class MovieDto
     {
-        public string IdTrakt { get; set; }
+        public string Id { get; set; }
+        
+        public string IdTmdb { get; set; }
 
         public string Title { get; set; }
         

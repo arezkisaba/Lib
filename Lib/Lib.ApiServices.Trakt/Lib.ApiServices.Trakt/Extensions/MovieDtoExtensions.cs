@@ -10,9 +10,10 @@ namespace Lib.ApiServices.Trakt
 			}
 
 			return new MovieDto
-            {
-                IdTrakt = response.movie.ids.trakt,
-                Title = response.movie.title,
+			{
+				Id = response.movie.ids.trakt,
+				IdTmdb = response.movie.ids.tmdb,
+				Title = response.movie.title,
                 Year = response.movie.year,
 				Language = response.movie.language,
 			};
@@ -27,8 +28,9 @@ namespace Lib.ApiServices.Trakt
 
 			return new MovieDto
             {
-                IdTrakt = response.movie.ids.trakt,
-                Title = response.movie.title,
+                Id = response.movie.ids.trakt,
+				IdTmdb = response.movie.ids.tmdb,
+				Title = response.movie.title,
 				Year = response.movie.year,
 				Language = response.movie.language,
 				IsWatched = response.plays > 0,

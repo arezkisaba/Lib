@@ -13,7 +13,8 @@ namespace Lib.ApiServices.Trakt
 
 			return new TvShowDto
             {
-                IdTrakt = response.show.ids.trakt,
+                Id = response.show.ids.trakt,
+                IdTmdb = response.show.ids.tmdb,
                 Title = response.show.title,
                 Year = response.show.year,
                 Language = response.show.language,
@@ -31,7 +32,8 @@ namespace Lib.ApiServices.Trakt
 
             return new TvShowDto
             {
-                IdTrakt = response.show.ids.trakt,
+                Id = response.show.ids.trakt,
+                IdTmdb = response.show.ids.tmdb,
                 Title = response.show.title,
                 Year = response.show.year,
                 Language = response.show.language,
