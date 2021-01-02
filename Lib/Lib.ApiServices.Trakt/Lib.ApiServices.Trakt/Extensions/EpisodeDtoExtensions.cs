@@ -25,7 +25,7 @@ namespace Lib.ApiServices.Trakt
             return new EpisodeDto
             {
                 Number = response.number,
-                IsCompleted = response.plays > 0
+                IsWatched = response.plays > 0
             };
         }
 	}

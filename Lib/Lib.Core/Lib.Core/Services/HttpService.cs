@@ -86,45 +86,45 @@ namespace Lib.Core
 
         #region Verbs
 
-        public async Task<byte[]> GetByteArrayAsync(string url)
+        public async Task<byte[]> GetByteArrayAsync(string url, bool disableCallbackAndRetry = false)
         {
-            var response = await SendAsync(url, HttpMethod.Get, null);
+            var response = await SendAsync(url, HttpMethod.Get, null, disableCallbackAndRetry);
             return await response.Content.ReadAsByteArrayAsync();
         }
 
-        public async Task<string> GetStringAsync(string url)
+        public async Task<string> GetStringAsync(string url, bool disableCallbackAndRetry = false)
         {
-            var response = await SendAsync(url, HttpMethod.Get, null);
+            var response = await SendAsync(url, HttpMethod.Get, null, disableCallbackAndRetry);
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<HttpResponseMessage> GetAsync(string url)
+        public async Task<HttpResponseMessage> GetAsync(string url, bool disableCallbackAndRetry = false)
         {
-            return await SendAsync(url, HttpMethod.Get, null, ensureSuccessStatusCode: false);
+            return await SendAsync(url, HttpMethod.Get, null, disableCallbackAndRetry, ensureSuccessStatusCode: false);
         }
 
-        public async Task<T> GetAsync<T>(string url)
+        public async Task<T> GetAsync<T>(string url, bool disableCallbackAndRetry = false)
         {
-            var responseMessage = await SendAsync(url, HttpMethod.Get, null);
+            var responseMessage = await SendAsync(url, HttpMethod.Get, null, disableCallbackAndRetry);
             var response = await responseMessage.Content.ReadAsStringAsync();
             var responseObject = await DeserializeByExchangeFormatAsync<T>(response);
             return responseObject;
         }
 
-        public async Task<HttpResponseMessage> DeleteAsync(string url)
+        public async Task<HttpResponseMessage> DeleteAsync(string url, bool disableCallbackAndRetry = false)
         {
-            return await SendAsync(url, HttpMethod.Delete, null, ensureSuccessStatusCode: false);
+            return await SendAsync(url, HttpMethod.Delete, null, disableCallbackAndRetry, ensureSuccessStatusCode: false);
         }
 
-        public async Task<T> DeleteAsync<T>(string url)
+        public async Task<T> DeleteAsync<T>(string url, bool disableCallbackAndRetry = false)
         {
-            var responseMessage = await SendAsync(url, HttpMethod.Delete, null);
+            var responseMessage = await SendAsync(url, HttpMethod.Delete, null, disableCallbackAndRetry);
             var response = await responseMessage.Content.ReadAsStringAsync();
             var responseObject = await DeserializeByExchangeFormatAsync<T>(response);
             return responseObject;
         }
 
-        public async Task<HttpResponseMessage> PostAsync(string url, object contentObject)
+        public async Task<HttpResponseMessage> PostAsync(string url, object contentObject, bool disableCallbackAndRetry = false)
         {
             HttpContent httpContent = null;
             if (contentObject != null)
@@ -133,12 +133,12 @@ namespace Lib.Core
                 httpContent = new StringContent(content, Encoding.UTF8, GetMediaType());
             }
 
-            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent, ensureSuccessStatusCode: false);
+            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent, disableCallbackAndRetry, ensureSuccessStatusCode: false);
             httpContent?.Dispose();
             return responseMessage;
         }
 
-        public async Task<T> PostAsync<T>(string url, object contentObject)
+        public async Task<T> PostAsync<T>(string url, object contentObject, bool disableCallbackAndRetry = false)
         {
             HttpContent httpContent = null;
             if (contentObject != null)
@@ -147,7 +147,7 @@ namespace Lib.Core
                 httpContent = new StringContent(content, Encoding.UTF8, GetMediaType());
             }
 
-            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent);
+            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent, disableCallbackAndRetry: disableCallbackAndRetry);
             var response = await responseMessage.Content.ReadAsStringAsync();
             var responseObject = await DeserializeByExchangeFormatAsync<T>(response);
 
@@ -155,23 +155,23 @@ namespace Lib.Core
             return responseObject;
         }
 
-        public async Task<HttpResponseMessage> PostAsFormDataAsync(string url, string content)
+        public async Task<HttpResponseMessage> PostAsFormDataAsync(string url, string content, bool disableCallbackAndRetry = false)
         {
             using (var httpContent = new StringContent(content, Encoding.UTF8, "multipart/form-data"))
             {
-                return await SendAsync(url, HttpMethod.Post, httpContent, ensureSuccessStatusCode: false);
+                return await SendAsync(url, HttpMethod.Post, httpContent, disableCallbackAndRetry, ensureSuccessStatusCode: false);
             }
         }
 
-        public async Task<HttpResponseMessage> PostAsFormUrlEncodedAsync(string url, IEnumerable<KeyValuePair<string, string>> content)
+        public async Task<HttpResponseMessage> PostAsFormUrlEncodedAsync(string url, IEnumerable<KeyValuePair<string, string>> content, bool disableCallbackAndRetry = false)
         {
             using (var httpContent = new FormUrlEncodedContent(content))
             {
-                return await SendAsync(url, HttpMethod.Post, httpContent, ensureSuccessStatusCode: false);
+                return await SendAsync(url, HttpMethod.Post, httpContent, disableCallbackAndRetry, ensureSuccessStatusCode: false);
             }
         }
 
-        public async Task<T> PostAsFormUrlEncodedAsync<T>(string url, IEnumerable<KeyValuePair<string, string>> contentObject)
+        public async Task<T> PostAsFormUrlEncodedAsync<T>(string url, IEnumerable<KeyValuePair<string, string>> contentObject, bool disableCallbackAndRetry = false)
         {
             HttpContent httpContent = null;
             if (contentObject != null)
@@ -179,7 +179,7 @@ namespace Lib.Core
                 httpContent = new FormUrlEncodedContent(contentObject);
             }
 
-            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent);
+            var responseMessage = await SendAsync(url, HttpMethod.Post, httpContent, disableCallbackAndRetry);
             var response = await responseMessage.Content.ReadAsStringAsync();
             var responseObject = await DeserializeByExchangeFormatAsync<T>(response);
 
@@ -187,7 +187,7 @@ namespace Lib.Core
             return responseObject;
         }
 
-        public async Task<HttpResponseMessage> PutAsync(string url, object contentObject)
+        public async Task<HttpResponseMessage> PutAsync(string url, object contentObject, bool disableCallbackAndRetry = false)
         {
             HttpContent httpContent = null;
             if (contentObject != null)
@@ -196,12 +196,12 @@ namespace Lib.Core
                 httpContent = new StringContent(content, Encoding.UTF8, GetMediaType());
             }
 
-            var responseMessage = await SendAsync(url, HttpMethod.Put, httpContent, ensureSuccessStatusCode: false);
+            var responseMessage = await SendAsync(url, HttpMethod.Put, httpContent, disableCallbackAndRetry, ensureSuccessStatusCode: false);
             httpContent?.Dispose();
             return responseMessage;
         }
 
-        public async Task<T> PutAsync<T>(string url, object contentObject)
+        public async Task<T> PutAsync<T>(string url, object contentObject, bool disableCallbackAndRetry = false)
         {
             HttpContent httpContent = null;
             if (contentObject != null)
@@ -210,7 +210,7 @@ namespace Lib.Core
                 httpContent = new StringContent(content, Encoding.UTF8, GetMediaType());
             }
 
-            var responseMessage = await SendAsync(url, HttpMethod.Put, httpContent);
+            var responseMessage = await SendAsync(url, HttpMethod.Put, httpContent, disableCallbackAndRetry);
             var response = await responseMessage.Content.ReadAsStringAsync();
             var responseObject = await DeserializeByExchangeFormatAsync<T>(response);
 
@@ -222,7 +222,7 @@ namespace Lib.Core
 
         #region Internal use
 
-        private async Task<HttpResponseMessage> SendAsync(string url, HttpMethod method, HttpContent content, int tryCount = 0, Exception lastException = null, bool ensureSuccessStatusCode = true)
+        private async Task<HttpResponseMessage> SendAsync(string url, HttpMethod method, HttpContent content, bool disableCallbackAndRetry, int tryCount = 0, Exception lastException = null, bool ensureSuccessStatusCode = true)
         {
             if (tryCount >= _tryCount)
             {
@@ -236,41 +236,48 @@ namespace Lib.Core
 
             tryCount++;
 
-            HttpResponseMessage response = null;
+            HttpResponseMessage responseMessage = null;
 
             try
             {
                 url += _additionnalQueryParameters;
 
                 var httpRequestMessage = new HttpRequestMessage(method, url) { Content = content };
-                var tmpResponse = await _httpClient.SendAsync(httpRequestMessage);
-                response = tmpResponse;
+                var tmpResponseMessage = await _httpClient.SendAsync(httpRequestMessage);
+                responseMessage = tmpResponseMessage;
                 
                 if (ensureSuccessStatusCode)
                 {
-                    tmpResponse.EnsureSuccessStatusCode();
+                    tmpResponseMessage.EnsureSuccessStatusCode();
                 }
 
-                return response;
+                return responseMessage;
             }
             catch (Exception ex)
             {
-                if (response == null)
+                var httpException = new HttpException(ex, responseMessage.StatusCode);
+
+                if (disableCallbackAndRetry)
                 {
-                    var networkException = new NetworkException(ex);
-                    return await SendAsync(url, method, content, tryCount, networkException);
+                    throw httpException;
                 }
 
+                if (responseMessage == null)
+                {
+                    var networkException = new NetworkException(ex);
+                    return await SendAsync(url, method, content, disableCallbackAndRetry, tryCount, networkException);
+                }
+
+                var response = await responseMessage.Content.ReadAsStringAsync();
                 foreach (var func in _funcs)
                 {
-                    if (func.Item1 == response.StatusCode)
+                    if (func.Item1 == responseMessage.StatusCode)
                     {
                         await func.Item2();
                     }
                 }
 
-                var httpException = new HttpException(ex, response.StatusCode);
-                return await SendAsync(url, method, content, tryCount, httpException);
+                return await SendAsync(url, method, content, disableCallbackAndRetry, tryCount, httpException);
             }
         }
         

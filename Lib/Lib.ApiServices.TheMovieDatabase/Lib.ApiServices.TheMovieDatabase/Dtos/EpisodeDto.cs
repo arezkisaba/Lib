@@ -1,4 +1,4 @@
-namespace Lib.ApiServices.Trakt
+namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class EpisodeDto
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lib.ApiServices.Trakt
+namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class SeasonDto
     {

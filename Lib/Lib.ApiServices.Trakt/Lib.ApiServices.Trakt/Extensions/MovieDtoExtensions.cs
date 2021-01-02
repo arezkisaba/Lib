@@ -31,7 +31,7 @@ namespace Lib.ApiServices.Trakt
                 Title = response.movie.title,
 				Year = response.movie.year,
 				Language = response.movie.language,
-				IsCompleted = response.plays > 0,
+				IsWatched = response.plays > 0,
             };
 		}
 	}

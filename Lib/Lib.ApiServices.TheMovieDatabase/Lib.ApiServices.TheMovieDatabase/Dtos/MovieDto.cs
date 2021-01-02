@@ -1,8 +1,8 @@
-namespace Lib.ApiServices.Trakt
+namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class MovieDto
     {
-        public string IdTrakt { get; set; }
+        public string IdTheMovieDatabase { get; set; }
 
         public string Title { get; set; }
         

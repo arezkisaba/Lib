@@ -39,11 +39,11 @@ namespace Lib.Core
             return JsonConvert.DeserializeObject<T>(value, settings);
         }
 
-        public static async Task<T> JsonDeserializeAsync<T>(
+        public static Task<T> JsonDeserializeAsync<T>(
             string value,
             JsonSerializerSettings settings = null)
         {
-            return await Task.Factory.StartNew(() => { return JsonDeserialize<T>(value, settings); });
+            return Task.Run(() => JsonDeserialize<T>(value, settings));
         }
 
         public static string JsonSerialize(
@@ -58,11 +58,11 @@ namespace Lib.Core
             return JsonConvert.SerializeObject(value, settings);
         }
 
-        public static async Task<string> JsonSerializeAsync(
+        public static Task<string> JsonSerializeAsync(
             object value,
             JsonSerializerSettings settings = null)
         {
-            return await Task.Factory.StartNew(() => { return JsonSerialize(value, settings); });
+            return Task.Run(() => JsonSerialize(value, settings));
         }
 
         public static T XmlDeserialize<T>(
@@ -79,11 +79,11 @@ namespace Lib.Core
             }
         }
 
-        public static async Task<T> XmlDeserializeAsync<T>(
+        public static Task<T> XmlDeserializeAsync<T>(
             string value,
             XmlReaderSettings settings = default)
         {
-            return await Task.Factory.StartNew(() => { return XmlDeserialize<T>(value, settings); });
+            return Task.Run(() => XmlDeserialize<T>(value, settings));
         }
 
         public static string XmlSerialize(
@@ -109,11 +109,11 @@ namespace Lib.Core
             }
         }
 
-        public static async Task<string> XmlSerializeAsync(
+        public static Task<string> XmlSerializeAsync(
             object value,
             XmlWriterSettings settings = default)
         {
-            return await Task.Factory.StartNew(() => { return XmlSerialize(value, settings); });
+            return Task.Run(() => XmlSerialize(value, settings));
         }
     }
 

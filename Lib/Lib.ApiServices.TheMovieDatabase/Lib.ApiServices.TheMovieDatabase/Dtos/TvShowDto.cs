@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lib.ApiServices.Trakt
+namespace Lib.ApiServices.TheMovieDatabase
 {
     public partial class TvShowDto
     {
-        public string IdTrakt { get; set; }
+        public string IdTheMovieDatabase { get; set; }
 
         public string Title { get; set; }
 
