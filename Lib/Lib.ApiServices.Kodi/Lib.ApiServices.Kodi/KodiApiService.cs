@@ -144,6 +144,7 @@ namespace Lib.ApiServices.Kodi
                     season = seasonId,
                     properties = new string[]
                     {
+                        "playcount",
                         "file",
                         "episode",
                         "season"
