@@ -11,9 +11,19 @@ namespace Lib.ApiServices.Transmission
         {
             [JsonProperty("torrent-added")]
             public TorrentAdded torrentadded { get; set; }
+
+            [JsonProperty("torrent-duplicate")]
+            public TorrentDuplicate torrentduplicate { get; set; }
         }
 
         public class TorrentAdded
+        {
+            public string hashString { get; set; }
+            public int id { get; set; }
+            public string name { get; set; }
+        }
+
+        public class TorrentDuplicate
         {
             public string hashString { get; set; }
             public int id { get; set; }
