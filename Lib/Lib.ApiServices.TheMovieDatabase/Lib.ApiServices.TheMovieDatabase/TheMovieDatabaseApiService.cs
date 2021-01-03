@@ -50,19 +50,19 @@ namespace Lib.ApiServices.TheMovieDatabase
                 items.AddRange(responseObject.results);
             }
 
-            var moviesCollected = items.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
+            var moviesInLibrary = items.Select(obj => new MovieDto().FromQueryResponse(obj)).OrderBy(obj => obj.Title).ToList();
             var moviesWatched = await GetMoviesWatchedAsync();
 
-            foreach (var movieCollected in moviesCollected)
+            foreach (var movieInLibrary in moviesInLibrary)
             {
-                var match = moviesWatched.FirstOrDefault(obj => obj.Title == movieCollected.Title);
+                var match = moviesWatched.FirstOrDefault(obj => obj.Title == movieInLibrary.Title);
                 if (match != null)
                 {
-                    movieCollected.IsWatched = true;
+                    movieInLibrary.IsWatched = true;
                 }
             }
 
-            return moviesCollected;
+            return moviesInLibrary;
         }
 
         public async Task<MovieDto> GetMovieAsync(string movieId)
