@@ -234,8 +234,6 @@ namespace Lib.ApiServices.TheMovieDatabase
             {
                 responseObject = await _httpService.GetAsync<GetEpisodesWatchedResponse>($"account/{_accountId}/rated/tv/episodes?api_key={_apiKey}&page={i}");
                 items.AddRange(responseObject.results);
-
-                System.Diagnostics.Debug.WriteLine(i);
             }
 
             return items.Select(obj => new EpisodeDto().FromQueryResponse(obj)).OrderBy(obj => obj.Number).ToList();
