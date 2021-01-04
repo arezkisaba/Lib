@@ -10,7 +10,7 @@ namespace Lib.Core
 
         bool Start(string filePath, string arguments = null, bool waitForExit = true);
 
-        bool StartScript(string filePath);
+        bool StartScript(string filePath, bool waitForExit = true);
         
         void Stop(string name);
 

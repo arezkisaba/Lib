@@ -47,7 +47,7 @@ namespace Lib.Win32
             }
         }
 
-        public bool StartScript(string filePath)
+        public bool StartScript(string filePath, bool waitForExit = true)
         {
             var process = new Process();
             process.StartInfo.FileName = "powershell.exe";
@@ -56,15 +56,19 @@ namespace Lib.Win32
             try
             {
                 process.Start();
-                process.WaitForExit();
+
+                if (waitForExit)
+                {
+                    process.WaitForExit();
+                    return process.ExitCode == 0;
+                }
+
+                return true;
             }
             catch (Exception)
             {
                 return false;
             }
-
-
-            return process.ExitCode == 0;
         }
 
         public void Stop(string name)

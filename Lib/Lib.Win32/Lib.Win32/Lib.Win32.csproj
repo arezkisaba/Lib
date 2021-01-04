@@ -20,7 +20,7 @@
     <PackageId>Lib.Win32</PackageId>
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <Version>1.0.19</Version>
+    <Version>1.0.20</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
