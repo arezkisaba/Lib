@@ -8,7 +8,6 @@ namespace Lib.ApiServices.Torrents
 {
     public class Torrent9TorrentScrapperService : TorrentScrapperServiceBase
     {
-        private const string Url = "https://www.torrent9.pl/";
         protected override string RowRegexp => "<tr.*?>(.*?)</tr>";
         protected override string RowFilterRegexp => "<tr><td>";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
@@ -17,8 +16,8 @@ namespace Lib.ApiServices.Torrents
         public override int Priority => 5;
         public override string Name => "Torrent9";
 
-        public Torrent9TorrentScrapperService()
-            : base(Url)
+        public Torrent9TorrentScrapperService(string url)
+            : base(url)
         {
         }
 

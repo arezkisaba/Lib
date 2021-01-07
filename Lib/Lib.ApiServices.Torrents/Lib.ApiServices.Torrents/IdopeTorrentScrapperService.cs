@@ -8,7 +8,6 @@ namespace Lib.ApiServices.Torrents
 {
     public class IdopeTorrentScrapperService : TorrentScrapperServiceBase
     {
-        private const string Url = "https://www.idope.se/";
         protected override string RowRegexp => "<div class=\"resultdiv\">(.*?)MAGNET URI";
         protected override string RowFilterRegexp => "<div class=\"resultdiv\"";
         protected override string TorrentSizeRegexp => "<div class=['\"]resultdivbottonlength['\"]>(.*?)</div>";
@@ -17,8 +16,8 @@ namespace Lib.ApiServices.Torrents
         public override int Priority => 1;
         public override string Name => "Idope";
 
-        public IdopeTorrentScrapperService()
-            : base(Url)
+        public IdopeTorrentScrapperService(string url)
+            : base(url)
         {
         }
 

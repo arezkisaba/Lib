@@ -23,9 +23,12 @@ namespace Lib.ApiServices.Torrents
         public abstract int Priority { get; }
         public abstract string Name { get; }
 
+        public string Url { get; set; }
+
         public TorrentScrapperServiceBase(string url)
         {
-            _httpService = new HttpService(url, randomizeUserAgent: true);
+            Url = url;
+            _httpService = new HttpService(Url, randomizeUserAgent: true);
         }
 
         public async Task<List<TorrentDto>> GetTorrentsByKeywordQueryAsync(string keyword)

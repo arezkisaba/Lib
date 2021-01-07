@@ -8,7 +8,6 @@ namespace Lib.ApiServices.Torrents
 {
     public class ZeTorrentsTorrentScrapperService : TorrentScrapperServiceBase
     {
-        private const string Url = "https://www.zetorrents.co/";
         protected override string RowRegexp => "<tr.*?>(.*?)</tr>";
         protected override string RowFilterRegexp => "<tr><td>";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
@@ -17,8 +16,8 @@ namespace Lib.ApiServices.Torrents
         public override int Priority => 6;
         public override string Name => "ZeTorrents";
 
-        public ZeTorrentsTorrentScrapperService()
-            : base(Url)
+        public ZeTorrentsTorrentScrapperService(string url)
+            : base(url)
         {
         }
 

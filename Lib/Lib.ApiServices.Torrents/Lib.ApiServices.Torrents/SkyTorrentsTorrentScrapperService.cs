@@ -8,7 +8,6 @@ namespace Lib.ApiServices.Torrents
 {
     public class SkyTorrentsTorrentScrapperService : TorrentScrapperServiceBase
     {
-        private const string Url = "https://www.skytorrents.lol/";
         protected override string RowRegexp => "<tr.*?>(.*?)</tr>";
         protected override string RowFilterRegexp => "<tr class=\"result\"";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
@@ -17,8 +16,8 @@ namespace Lib.ApiServices.Torrents
         public override int Priority => 2;
         public override string Name => "SkyTorrents";
 
-        public SkyTorrentsTorrentScrapperService()
-            : base(Url)
+        public SkyTorrentsTorrentScrapperService(string url)
+            : base(url)
         {
         }
 

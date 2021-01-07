@@ -8,7 +8,6 @@ namespace Lib.ApiServices.Torrents
 {
     public class GkTorrentTorrentScrapperService : TorrentScrapperServiceBase
     {
-        private const string Url = "https://www.gktorrent.io/";
         protected override string RowRegexp => "<tr.*?>(.*?)</tr>";
         protected override string RowFilterRegexp => "<tr><td class=\"liste-accueil-nom\"";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
@@ -17,8 +16,8 @@ namespace Lib.ApiServices.Torrents
         public override int Priority => 4;
         public override string Name => "GkTorrent";
 
-        public GkTorrentTorrentScrapperService()
-            : base(Url)
+        public GkTorrentTorrentScrapperService(string url)
+            : base(url)
         {
         }
 
