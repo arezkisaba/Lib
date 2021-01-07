@@ -17,6 +17,8 @@ namespace Lib.Core
             var link = matches[0].Groups[1].Value;
             var name = RemoveHtml(matches[0].Groups[2].Value);
 
+            var ssdf = RegexHelper.RemoveHtml(name);
+
             return Tuple.Create(name, link);
         }
 
@@ -26,27 +28,10 @@ namespace Lib.Core
                 .Replace("<br>", "")
                 .Replace("<br/>", "")
                 .Replace("<br />", "")
-                .Replace("  ", " ")
-                .Replace("  ", " ")
                 .Replace("\t", "")
                 .Replace("\r\n", "")
                 .Replace("\r", "")
-                .Replace("\n", "")
-                .Replace(">               <", "><")
-                .Replace(">              <", "><")
-                .Replace(">             <", "><")
-                .Replace(">            <", "><")
-                .Replace(">           <", "><")
-                .Replace(">          <", "><")
-                .Replace(">         <", "><")
-                .Replace(">        <", "><")
-                .Replace(">       <", "><")
-                .Replace(">      <", "><")
-                .Replace(">     <", "><")
-                .Replace(">    <", "><")
-                .Replace(">   <", "><")
-                .Replace(">  <", "><")
-                .Replace("> <", "><").Trim();
+                .Replace("\n", "").Trim();
         }
 
         public static string RemoveHtml(string text)

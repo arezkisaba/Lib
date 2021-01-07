@@ -12,7 +12,7 @@ namespace Lib.ApiServices.Torrents
         protected override string RowFilterRegexp => "<tr><td class=\"liste-accueil-nom\"";
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
         protected override string TorrentSeedsRegexp => "<td.*?>(.*?)</td>";
-        public override bool IsActive => false;
+        public override bool IsActive => true;
         public override int Priority => 4;
         public override string Name => "GkTorrent";
 
@@ -51,7 +51,6 @@ namespace Lib.ApiServices.Torrents
                     {
                         DescriptionUrl = $"{Url}{nameAndLink.Item2}",
                         Name = nameAndLink.Item1,
-                        OriginalName = StringsHelper.GetStringForStorage(nameAndLink.Item1),
                         Provider = Name,
                         Seeds = Convert.ToInt32(valueSeeds),
                         Size = ScrappingHelper.ConvertSizeStringToNumber(valueSize)

@@ -13,7 +13,7 @@ namespace Lib.ApiServices.Torrents
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
         protected override string TorrentSeedsRegexp => "<td.*?>(.*?)</td>";
         public override bool IsActive => true;
-        public override int Priority => 3;
+        public override int Priority => 1;
         public override string Name => "OxTorrent";
 
         public OxTorrentTorrentScrapperService(string url)
@@ -25,6 +25,7 @@ namespace Lib.ApiServices.Torrents
         {
             var content = await _httpService.GetStringAsync($"recherche/{keyword}");
             content = RegexHelper.RemoveCarriageReturnAndOtherFuckingCharacters(content);
+            content = Regex.Replace(content, "\\s*title=\".*?\"\\s*", "", RegexOptions.Singleline);
 
             var torrents = new List<TorrentDto>();
             var regexTr = new Regex(RowRegexp);
@@ -51,7 +52,6 @@ namespace Lib.ApiServices.Torrents
                     {
                         DescriptionUrl = $"{Url}{nameAndLink.Item2}",
                         Name = nameAndLink.Item1,
-                        OriginalName = StringsHelper.GetStringForStorage(nameAndLink.Item1),
                         Provider = Name,
                         Seeds = Convert.ToInt32(valueSeeds),
                         Size = ScrappingHelper.ConvertSizeStringToNumber(valueSize)

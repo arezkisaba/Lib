@@ -4,7 +4,6 @@ namespace Lib.ApiServices.Torrents
     {
         public string DescriptionUrl { get; set; }
         public string Name { get; set; }
-        public string OriginalName { get; set; }
         public string Provider { get; set; }
         public long Seeds { get; set; }
         public double Size { get; set; }
@@ -12,7 +11,7 @@ namespace Lib.ApiServices.Torrents
 
         public override string ToString()
         {
-            return $"{OriginalName} - {Url.Substring(0, 30)} - {Size} Bytes - SD : {Seeds} - {Provider}";
+            return $"{Name} - {Url.Substring(0, 30)} - {Size} Bytes - SD : {Seeds} - {Provider}";
         }
     }
 }

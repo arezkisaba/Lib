@@ -13,7 +13,7 @@ namespace Lib.ApiServices.Torrents
         protected override string TorrentSizeRegexp => "<td.*?>(.*?)</td>";
         protected override string TorrentSeedsRegexp => "<td.*?>(.*?)</td>";
         public override bool IsActive => true;
-        public override int Priority => 5;
+        public override int Priority => 2;
         public override string Name => "Torrent9";
 
         public Torrent9TorrentScrapperService(string url)
@@ -54,7 +54,6 @@ namespace Lib.ApiServices.Torrents
                     {
                         DescriptionUrl = $"{Url}{nameAndLink.Item2}",
                         Name = nameAndLink.Item1,
-                        OriginalName = StringsHelper.GetStringForStorage(nameAndLink.Item1),
                         Provider = Name,
                         Seeds = Convert.ToInt32(valueSeeds),
                         Size = ScrappingHelper.ConvertSizeStringToNumber(valueSize)

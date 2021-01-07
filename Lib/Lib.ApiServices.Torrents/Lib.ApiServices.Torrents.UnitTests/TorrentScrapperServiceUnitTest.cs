@@ -11,7 +11,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task GkTorrentTorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new GkTorrentTorrentScrapperService("https://vww.gktorrent.pw/");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Game of Thrones");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
 
@@ -19,7 +19,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task IdopeTorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new IdopeTorrentScrapperService("https://www.idope.se/");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Game of Thrones");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
 
@@ -35,7 +35,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task SkyTorrentsTorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new SkyTorrentsTorrentScrapperService("https://www.skytorrents.lol/");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Game of Thrones");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
 
@@ -43,7 +43,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task Torrent9TorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new Torrent9TorrentScrapperService("https://www.torrent9.so/");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Game of Thrones");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
 
@@ -51,7 +51,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task ZeTorrentsTorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new ZeTorrentsTorrentScrapperService("https://ww1.zetorrents.io/");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Game of Thrones");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
     }

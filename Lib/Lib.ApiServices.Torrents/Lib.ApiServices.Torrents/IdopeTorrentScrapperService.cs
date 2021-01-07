@@ -13,7 +13,7 @@ namespace Lib.ApiServices.Torrents
         protected override string TorrentSizeRegexp => "<div class=['\"]resultdivbottonlength['\"]>(.*?)</div>";
         protected override string TorrentSeedsRegexp => "<div class=['\"]resultdivbottonseed['\"]>(.*?)</div>";
         public override bool IsActive => true;
-        public override int Priority => 1;
+        public override int Priority => 5;
         public override string Name => "Idope";
 
         public IdopeTorrentScrapperService(string url)
@@ -54,7 +54,6 @@ namespace Lib.ApiServices.Torrents
                     {
                         DescriptionUrl = $"{nameAndLink.Item2}",
                         Name = nameAndLink.Item1,
-                        OriginalName = StringsHelper.GetStringForStorage(nameAndLink.Item1),
                         Provider = Name,
                         Seeds = Convert.ToInt32(valueSeeds),
                         Size = ScrappingHelper.ConvertSizeStringToNumber(valueSize)
