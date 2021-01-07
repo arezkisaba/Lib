@@ -99,11 +99,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.Kodi", "Lib
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.Kodi.UnitTests", "Lib.ApiServices.Kodi\Lib.ApiServices.Kodi.UnitTests\Lib.ApiServices.Kodi.UnitTests.csproj", "{D0F0CB7F-729E-44F3-A7CB-27BF62730087}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib.ApiServices.TheMovieDatabase", "Lib.ApiServices.TheMovieDatabase", "{E8764B86-A4E5-472F-89B2-A02E759250F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib.ApiServices.Tmdb", "Lib.ApiServices.Tmdb", "{E8764B86-A4E5-472F-89B2-A02E759250F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.TheMovieDatabase", "Lib.ApiServices.TheMovieDatabase\Lib.ApiServices.TheMovieDatabase\Lib.ApiServices.TheMovieDatabase.csproj", "{3C255868-BDC3-4E7C-BA18-7E46621C248C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ApiServices.Tmdb", "Lib.ApiServices.Tmdb\Lib.ApiServices.Tmdb\Lib.ApiServices.Tmdb.csproj", "{3C255868-BDC3-4E7C-BA18-7E46621C248C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.ApiServices.TheMovieDatabase.UnitTests", "Lib.ApiServices.TheMovieDatabase\Lib.ApiServices.TheMovieDatabase.UnitTests\Lib.ApiServices.TheMovieDatabase.UnitTests.csproj", "{5A39596C-1A7A-4812-B814-37E92A948880}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.ApiServices.Tmdb.UnitTests", "Lib.ApiServices.Tmdb\Lib.ApiServices.Tmdb.UnitTests\Lib.ApiServices.Tmdb.UnitTests.csproj", "{5A39596C-1A7A-4812-B814-37E92A948880}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

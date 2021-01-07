@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
@@ -9,18 +9,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyName>Lib.ApiServices.Transmission</AssemblyName>
-    <AssemblyTitle>Lib.ApiServices.Transmission</AssemblyTitle>
+    <AssemblyName>Lib.ApiServices.Tmdb</AssemblyName>
+    <AssemblyTitle>Lib.ApiServices.Tmdb</AssemblyTitle>
     <Authors>Arezki Saba</Authors>
     <Company>Arezki Saba</Company>
     <Copyright></Copyright>
     <DebugType>portable</DebugType>
-    <Description>Lib.ApiServices.Transmission</Description>
+    <Description>Lib.ApiServices.Tmdb</Description>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageId>Lib.ApiServices.Transmission</PackageId>
+    <PackageId>Lib.ApiServices.Tmdb</PackageId>
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>1.0.13-alpha.1</Version>
+    <Version>1.0.1</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 

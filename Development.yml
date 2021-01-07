@@ -113,12 +113,12 @@ steps:
     
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.ApiServices.TheMovieDatabase]
+  displayName: Dotnet pack on [Lib.ApiServices.Tmdb]
   inputs:
     command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.TheMovieDatabase/Lib.ApiServices.TheMovieDatabase/*.csproj'
+    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Tmdb/Lib.ApiServices.Tmdb/*.csproj'
     custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.TheMovieDatabase" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
+    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Tmdb" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
 
 - task: DotNetCoreCLI@2
   enabled: true
