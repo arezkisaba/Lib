@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -74,6 +75,55 @@ namespace Lib.Core
                 .Replace("ù", "u")
                 .Replace("û", "u")
                 .Replace("ü", "u");
+        }
+
+        public static string RemoveCarriageReturnAndOtherFuckingCharacters(this string text)
+        {
+            return text
+                .Replace("<br>", "")
+                .Replace("<br/>", "")
+                .Replace("<br />", "")
+                .Replace("\t", "")
+                .Replace("\r\n", "")
+                .Replace("\r", "")
+                .Replace("\n", "").Trim();
+        }
+
+        public static string RemoveHtml(this string text)
+        {
+            return RemovePattern(text, "<.*?>");
+        }
+
+        public static string RemoveBrackets(this string text)
+        {
+            return RemovePattern(text, "(\\(.*?\\))");
+        }
+
+        public static string RemovePattern(this string text, string pattern)
+        {
+            return Regex.Replace(text, $"\\s*{pattern}\\s*", " ", RegexOptions.Singleline);
+        }
+
+        public static string RemoveDoubleSpacesAndTrim(this string text)
+        {
+            text = text.Replace("&nbsp;", " ");
+
+			while (text.Contains("  "))
+			{
+				text = text.Replace("  ", " ");
+			}
+
+            return text.Trim();
+        }
+
+        public static string TransformForStorage(this string text)
+        {
+            foreach (var forbiddenCharacter in Path.GetInvalidFileNameChars())
+            {
+                text = text.Replace(forbiddenCharacter.ToString(), string.Empty);
+            }
+
+            return text.RemoveDoubleSpacesAndTrim();
         }
     }
 }

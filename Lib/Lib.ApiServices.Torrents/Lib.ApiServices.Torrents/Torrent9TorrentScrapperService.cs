@@ -24,7 +24,7 @@ namespace Lib.ApiServices.Torrents
         protected override async Task<List<TorrentDto>> GetTorrentsByKeywordAsync(string keyword, int timeout = 20)
         {
             var content = await _httpService.GetStringAsync($"recherche/{keyword}");
-            content = RegexHelper.RemoveCarriageReturnAndOtherFuckingCharacters(content);
+            content = StringExtensions.RemoveCarriageReturnAndOtherFuckingCharacters(content);
 
             var torrents = new List<TorrentDto>();
             var regexTr = new Regex(RowRegexp);
@@ -40,13 +40,13 @@ namespace Lib.ApiServices.Torrents
                     continue;
                 }
 
-                var nameAndLink = RegexHelper.GetParamsFromLink(valueTr);
+                var nameAndLink = ScrappingHelper.GetParamsFromLink(valueTr);
                 var regexSize = new Regex(TorrentSizeRegexp);
                 var matchesSize = regexSize.Matches(valueTr);
-                var valueSize = RegexHelper.RemoveHtml(matchesSize[1].Groups[1].Value);
+                var valueSize = StringExtensions.RemoveHtml(matchesSize[1].Groups[1].Value);
                 var regexSeeds = new Regex(TorrentSeedsRegexp);
                 var matchesSeeds = regexSeeds.Matches(valueTr);
-                var valueSeeds = RegexHelper.RemoveHtml(matchesSeeds[2].Groups[1].Value);
+                var valueSeeds = StringExtensions.RemoveHtml(matchesSeeds[2].Groups[1].Value);
 
                 if (!string.IsNullOrWhiteSpace(nameAndLink.Item2))
                 {
