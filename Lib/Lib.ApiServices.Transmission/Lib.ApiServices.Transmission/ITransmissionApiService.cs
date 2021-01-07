@@ -12,6 +12,6 @@ namespace Lib.ApiServices.Transmission
 
         Task<AddTorrentResponse> AddTorrentAsync(string torrentUrl, string downloadDirectory);
 
-        Task<RemoveTorrentResponse> RemoveTorrentAsync(int id);
+        Task<RemoveTorrentResponse> DeleteTorrentAsync(int id);
     }
 }

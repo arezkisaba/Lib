@@ -45,7 +45,7 @@ namespace Lib.ApiServices.Transmission
                 }
             });
 
-            if (response?.result != "success" || response?.arguments?.torrentadded == null)
+            if (response?.result != "success")
             {
                 throw new TorrentAddException($"request result : {response.result}");
             }
@@ -53,7 +53,7 @@ namespace Lib.ApiServices.Transmission
             return response;
         }
 
-        public async Task<RemoveTorrentResponse> RemoveTorrentAsync(int id)
+        public async Task<RemoveTorrentResponse> DeleteTorrentAsync(int id)
         {
             var response = await _httpService.PostAsync<RemoveTorrentResponse>($"transmission/rpc", new RemoveTorrentBody
             {
