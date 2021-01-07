@@ -52,7 +52,7 @@ namespace Lib.ApiServices.Torrents
                 {
                     torrents.Add(new TorrentDto
                     {
-                        DescriptionUrl = $"{nameAndLink.Item2}",
+                        DescriptionUrl = $"{Url}{nameAndLink.Item2}",
                         Name = nameAndLink.Item1,
                         Provider = Name,
                         Seeds = Convert.ToInt32(valueSeeds),
