@@ -56,6 +56,13 @@ namespace Lib.Core.UnitTests
         }
 
         [TestMethod]
+        public void Clean_TestMethod()
+        {
+            var text = "[sdfsdf]lLWL#DsZ5(qsd)z:63+6".Clean();
+            Assert.IsTrue(text == "lLWLDsZ5z636");
+        }
+
+        [TestMethod]
         public void RemoveFirstCharacter_TestMethod()
         {
             var text = "Thor".RemoveFirstCharacter();
@@ -77,9 +84,16 @@ namespace Lib.Core.UnitTests
         }
 
         [TestMethod]
-        public void RemoveBrackets_TestMethod()
+        public void RemoveBracketsContent_TestMethod()
         {
-            var text = "Thor(2011)".RemoveBrackets();
+            var text = "[Cpasbien]Thor".RemoveBracketsContent();
+            Assert.IsTrue(text == "Thor");
+        }
+
+        [TestMethod]
+        public void RemoveParenthesisContent_TestMethod()
+        {
+            var text = "Thor(2011)".RemoveParenthesisContent();
             Assert.IsTrue(text == "Thor");
         }
 
@@ -95,6 +109,13 @@ namespace Lib.Core.UnitTests
         {
             var text = "  Star    Wars  ".RemoveDoubleSpacesAndTrim();
             Assert.IsTrue(text == "Star Wars");
+        }
+
+        [TestMethod]
+        public void RemoveSpecialCharacters_TestMethod()
+        {
+            var text = "lLWL#DsZ5z:63+6".RemoveSpecialCharacters();
+            Assert.IsTrue(text == "lLWLDsZ5z636");
         }
 
         [TestMethod]

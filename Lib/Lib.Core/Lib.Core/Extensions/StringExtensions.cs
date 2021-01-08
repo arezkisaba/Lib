@@ -51,6 +51,11 @@ namespace Lib.Core
             return source.StartsWith(target, StringComparison.CurrentCultureIgnoreCase);
         }
 
+        public static string Clean(this string text)
+        {
+            return text.RemoveBracketsContent().RemoveParenthesisContent().RemoveSpecialCharacters().RemoveDoubleSpacesAndTrim();
+        }
+
         public static string RemoveFirstCharacter(this string text)
         {
             return text.Substring(1, text.Length - 1);
@@ -94,9 +99,14 @@ namespace Lib.Core
             return RemovePattern(text, "<.*?>");
         }
 
-        public static string RemoveBrackets(this string text)
+        public static string RemoveBracketsContent(this string text)
         {
-            return RemovePattern(text, "(\\(.*?\\))");
+            return RemovePattern(text, "\\[.*?\\]");
+        }
+
+        public static string RemoveParenthesisContent(this string text)
+        {
+            return RemovePattern(text, "\\(.*?\\)");
         }
 
         public static string RemovePattern(this string text, string pattern)
@@ -114,6 +124,11 @@ namespace Lib.Core
 			}
 
             return text.Trim();
+        }
+
+        public static string RemoveSpecialCharacters(this string text)
+        {
+            return Regex.Replace(text, "[^a-zA-Z0-9]", string.Empty);
         }
 
         public static string TransformForStorage(this string text)
