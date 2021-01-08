@@ -101,7 +101,7 @@ namespace Lib.Core
 
         public static string RemovePattern(this string text, string pattern)
         {
-            return Regex.Replace(text, $"\\s*{pattern}\\s*", " ", RegexOptions.Singleline);
+            return Regex.Replace(text, $"{pattern}", string.Empty, RegexOptions.Singleline);
         }
 
         public static string RemoveDoubleSpacesAndTrim(this string text)

@@ -27,7 +27,7 @@ namespace Lib.ApiServices.Torrents.UnitTests
         public async Task OxTorrentTorrentScrapperService_GetTorrentsByKeywordQueryAsync_TestMethod()
         {
             var service = new OxTorrentTorrentScrapperService("https://www.oxtorrent.co");
-            var torrents = await service.GetTorrentsByKeywordQueryAsync("Dark S01 FRENCH");
+            var torrents = await service.GetTorrentsByKeywordQueryAsync("Thor FRENCH");
             Assert.IsTrue(torrents != null && torrents.Any());
         }
 

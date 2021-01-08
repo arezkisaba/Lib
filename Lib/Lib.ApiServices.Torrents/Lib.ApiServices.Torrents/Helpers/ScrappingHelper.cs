@@ -54,7 +54,7 @@ namespace Lib.ApiServices.Torrents
             }
 
             var link = matches[0].Groups[1].Value;
-            var name = StringExtensions.RemoveHtml(matches[0].Groups[2].Value);
+            var name = matches[0].Groups[2].Value.RemoveHtml();
 
             return Tuple.Create(name, link);
         }
