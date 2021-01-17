@@ -85,13 +85,14 @@ namespace Lib.Core
         public static string RemoveCarriageReturnAndOtherFuckingCharacters(this string text)
         {
             return text
-                .Replace("<br>", "")
-                .Replace("<br/>", "")
-                .Replace("<br />", "")
-                .Replace("\t", "")
-                .Replace("\r\n", "")
-                .Replace("\r", "")
-                .Replace("\n", "").Trim();
+                .Replace("<br>", string.Empty)
+                .Replace("<br/>", string.Empty)
+                .Replace("<br />", string.Empty)
+                .Replace("\t", string.Empty)
+                .Replace("\r\n", string.Empty)
+                .Replace("\r", string.Empty)
+                .Replace("\n", string.Empty)
+                .RemoveDoubleSpacesAndTrim();
         }
 
         public static string RemoveHtml(this string text)
