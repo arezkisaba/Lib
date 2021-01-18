@@ -79,7 +79,7 @@ namespace Lib.Core.UnitTests
         [TestMethod]
         public void RemoveAccents_TestMethod()
         {
-            var text = "J'ai été à l'arrêt près de là où habitent Moïse et Gwenaëlle".RemoveAccents();
+            var text = "J'ai été à l'arrêt près de là où habitent Moïse et Gwenaëlle".ReplaceAccentsByOriginalLetters();
             Assert.IsTrue(text == "J'ai ete a l'arret pres de la ou habitent Moise et Gwenaëlle");
         }
 

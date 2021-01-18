@@ -11,8 +11,8 @@ namespace Lib.Core
         {
             if (ignoreAccents)
             {
-                source = source.RemoveAccents();
-                target = target.RemoveAccents();
+                source = source.ReplaceAccentsByOriginalLetters();
+                target = target.ReplaceAccentsByOriginalLetters();
             }
 
             return source.IndexOf(target, StringComparison.CurrentCultureIgnoreCase) != -1;
@@ -22,8 +22,8 @@ namespace Lib.Core
         {
             if (ignoreAccents)
             {
-                source = source.RemoveAccents();
-                target = target.RemoveAccents();
+                source = source.ReplaceAccentsByOriginalLetters();
+                target = target.ReplaceAccentsByOriginalLetters();
             }
 
             return source.IndexOf(target, StringComparison.CurrentCultureIgnoreCase);
@@ -33,8 +33,8 @@ namespace Lib.Core
         {
             if (ignoreAccents)
             {
-                source = source.RemoveAccents();
-                target = target.RemoveAccents();
+                source = source.ReplaceAccentsByOriginalLetters();
+                target = target.ReplaceAccentsByOriginalLetters();
             }
 
             return source.EndsWith(target, StringComparison.CurrentCultureIgnoreCase);
@@ -44,8 +44,8 @@ namespace Lib.Core
         {
             if (ignoreAccents)
             {
-                source = source.RemoveAccents();
-                target = target.RemoveAccents();
+                source = source.ReplaceAccentsByOriginalLetters();
+                target = target.ReplaceAccentsByOriginalLetters();
             }
 
             return source.StartsWith(target, StringComparison.CurrentCultureIgnoreCase);
@@ -66,22 +66,6 @@ namespace Lib.Core
             return text.Substring(0, text.Length - 1);
         }
 
-        public static string RemoveAccents(this string text)
-        {
-            return text.Replace("à", "a")
-                .Replace("â", "a")
-                .Replace("é", "e")
-                .Replace("è", "e")
-                .Replace("ê", "e")
-                .Replace("î", "i")
-                .Replace("ï", "i")
-                .Replace("ô", "o")
-                .Replace("ö", "o")
-                .Replace("ù", "u")
-                .Replace("û", "u")
-                .Replace("ü", "u");
-        }
-
         public static string RemoveCarriageReturnAndOtherFuckingCharacters(this string text)
         {
             return text
@@ -100,19 +84,24 @@ namespace Lib.Core
             return RemovePattern(text, "<.*?>");
         }
 
-        public static string RemoveBracketsContent(this string text)
+        public static string RemoveBracketsContent(this string text, string replaceBy = "")
         {
-            return RemovePattern(text, "\\[.*?\\]");
+            return RemovePattern(text, "\\[.*?\\]", replaceBy);
         }
 
-        public static string RemoveParenthesisContent(this string text)
+        public static string RemoveParenthesisContent(this string text, string replaceBy = "")
         {
-            return RemovePattern(text, "\\(.*?\\)");
+            return RemovePattern(text, "\\(.*?\\)", replaceBy);
         }
 
-        public static string RemovePattern(this string text, string pattern)
+        public static string RemovePattern(this string text, string pattern, string replaceBy = "")
         {
-            return Regex.Replace(text, $"{pattern}", string.Empty, RegexOptions.Singleline);
+            return Regex.Replace(text, $"{pattern}", replaceBy, RegexOptions.Singleline);
+        }
+
+        public static string RemoveSpecialCharacters(this string text, string replaceBy = "")
+        {
+            return Regex.Replace(text, "[^a-zA-Z0-9\u00C0-\u00FF]", replaceBy);
         }
 
         public static string RemoveDoubleSpacesAndTrim(this string text)
@@ -127,9 +116,21 @@ namespace Lib.Core
             return text.Trim();
         }
 
-        public static string RemoveSpecialCharacters(this string text)
+        public static string ReplaceAccentsByOriginalLetters(this string text)
         {
-            return Regex.Replace(text, "[^a-zA-Z0-9\u00C0-\u00FF]", string.Empty);
+            return text
+                .Replace("à", "a")
+                .Replace("â", "a")
+                .Replace("é", "e")
+                .Replace("è", "e")
+                .Replace("ê", "e")
+                .Replace("î", "i")
+                .Replace("ï", "i")
+                .Replace("ô", "o")
+                .Replace("ö", "o")
+                .Replace("ù", "u")
+                .Replace("û", "u")
+                .Replace("ü", "u");
         }
 
         public static string TransformForStorage(this string text)
