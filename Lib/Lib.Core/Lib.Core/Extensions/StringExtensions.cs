@@ -129,7 +129,7 @@ namespace Lib.Core
 
         public static string RemoveSpecialCharacters(this string text)
         {
-            return Regex.Replace(text, "[^a-zA-Z0-9]", string.Empty);
+            return Regex.Replace(text, "[^a-zA-Z0-9\u00C0-\u00FF]", string.Empty);
         }
 
         public static string TransformForStorage(this string text)
