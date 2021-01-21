@@ -20,6 +20,9 @@ Cette librairie contient des classes permettant l'utilisation des flux RSS [Rawg
 # Lib.ApiServices.TeamFoundationServer
 Cette librairie contient des classes permettant l'utilisation de l'API [Team Foundation Server (2015)](https://fr.wikipedia.org/wiki/Team_Foundation_Server), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
+# Lib.ApiServices.Tmdb
+Cette librairie contient des classes permettant l'utilisation de l'API [TheMovieDatabase](https://www.themoviedb.org/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
+
 # Lib.ApiServices.Torrents
 Cette librairie contient des classes permettant la récupération de liens Magnet depuis plusieurs sites de [Torrent](https://fr.wikipedia.org/wiki/Torrent), la plupart des sites étant des sites FR.
 
