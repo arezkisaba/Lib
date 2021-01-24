@@ -58,14 +58,11 @@ namespace Lib.ApiServices.Kodi
             var tvShows = await GetTvShowsAsync();
             foreach (var tvShow in tvShows)
             {
-                var seasons = await GetSeasonsAsync(tvShow.Id);
-                foreach (var season in seasons)
+                tvShow.Seasons = await GetSeasonsAsync(tvShow.Id);
+                foreach (var season in tvShow.Seasons)
                 {
-                    var episodes = await GetEpisodesAsync(tvShow.Id, season.Number);
-                    season.Episodes = episodes;
+                    season.Episodes = await GetEpisodesAsync(tvShow.Id, season.Number);
                 }
-
-                tvShow.Seasons = seasons;
             }
 
             return tvShows;

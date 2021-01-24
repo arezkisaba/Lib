@@ -27,7 +27,7 @@ Cette librairie contient des classes permettant l'utilisation de l'API [TheMovie
 Cette librairie contient des classes permettant l'utilisation de l'API [Trakt](https://trakt.tv/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
 # Lib.ApiServices.Transmission
-Cette librairie contient des classes permettant l'utilisation de l'API RPC [Transmission](https://transmissionbt.com/), elle en focntionne qu'avec un serveur local et ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
+Cette librairie contient des classes permettant l'utilisation de l'API RPC [Transmission](https://transmissionbt.com/), elle ne fonctionne qu'avec un serveur local et ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
 # Lib.Core
 Cette librairie contient essentiellement des classes utilitaires ainsi que des contrats disposant d'implémentations différentes en fonction des plateformes.

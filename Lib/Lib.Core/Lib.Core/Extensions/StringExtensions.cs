@@ -140,7 +140,7 @@ namespace Lib.Core
                 text = text.Replace(forbiddenCharacter.ToString(), string.Empty);
             }
 
-            return text.RemoveDoubleSpacesAndTrim();
+            return text.Replace("&", "and").RemoveDoubleSpacesAndTrim();
         }
     }
 }

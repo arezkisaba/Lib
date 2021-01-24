@@ -121,8 +121,8 @@ namespace Lib.Core.UnitTests
         [TestMethod]
         public void TransformForStorage_TestMethod()
         {
-            var text = "  Star  Wars //    :   L'Ascenscion de   <Skywalker   > ".TransformForStorage();
-            Assert.IsTrue(text == "Star Wars L'Ascenscion de Skywalker");
+            var text = "  Star  Wars //    :   L'Ascenscion de   <Skywalker   > & Organa".TransformForStorage();
+            Assert.IsTrue(text == "Star Wars L'Ascenscion de Skywalker and Organa");
         }
     }
 }
