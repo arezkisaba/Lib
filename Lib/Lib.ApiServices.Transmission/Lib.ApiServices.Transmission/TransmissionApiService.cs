@@ -26,7 +26,22 @@ namespace Lib.ApiServices.Transmission
                 method = "torrent-get",
                 arguments = new GetTorrentsBody.Arguments
                 {
-                    fields = new string[] { "id", "name", "percentDone", "hashString", "startDate" }
+                    fields = new string[] 
+                    { 
+                        "id",
+                        "hashString",
+                        "startDate",
+                        "name",
+                        "downloadedEver",
+                        "leftUntilDone",
+                        "peersConnected",
+                        "peersGettingFromUs",
+                        "peersSendingToUs",
+                        "percentDone",
+                        "rateDownload",
+                        "rateUpload",
+                        "sizeWhenDone",
+                    }
                 }
             });
 

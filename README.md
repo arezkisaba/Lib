@@ -20,14 +20,14 @@ Cette librairie contient des classes permettant l'utilisation des flux RSS [Rawg
 # Lib.ApiServices.TeamFoundationServer
 Cette librairie contient des classes permettant l'utilisation de l'API [Team Foundation Server (2015)](https://fr.wikipedia.org/wiki/Team_Foundation_Server), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
-# Lib.ApiServices.Torrents
-Cette librairie contient des classes permettant la récupération de liens Magnet depuis plusieurs sites de [Torrent](https://fr.wikipedia.org/wiki/Torrent), la plupart des sites étant des sites FR.
+# Lib.ApiServices.Tmdb
+Cette librairie contient des classes permettant l'utilisation de l'API [TheMovieDatabase](https://www.themoviedb.org/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
 # Lib.ApiServices.Trakt
 Cette librairie contient des classes permettant l'utilisation de l'API [Trakt](https://trakt.tv/), elle ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
 # Lib.ApiServices.Transmission
-Cette librairie contient des classes permettant l'utilisation de l'API RPC [Transmission](https://transmissionbt.com/), elle en focntionne qu'avec un serveur local et ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
+Cette librairie contient des classes permettant l'utilisation de l'API RPC [Transmission](https://transmissionbt.com/), elle ne fonctionne qu'avec un serveur local et ne couvre évidemment pas toute les ressouces de l'API, uniquement celles qui repondent à mes besoins.
 
 # Lib.Core
 Cette librairie contient essentiellement des classes utilitaires ainsi que des contrats disposant d'implémentations différentes en fonction des plateformes.

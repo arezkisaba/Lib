@@ -24,7 +24,7 @@ namespace Lib.ApiServices.Tmdb.UnitTests
             _TmdbApiService = new TmdbApiService(
                 _configuration["Tmdb.ApiKey"],
                 _configuration["Tmdb.AccessToken"],
-                "44872b826e77f6e6558af6a3fbcde14a06934000");
+                _configuration["Tmdb.SessionId"]);
 
             _TmdbApiService.AuthenticationInformationsAvailable += (sender, e) =>
             {

@@ -20,7 +20,7 @@
     <PackageId>Lib.Core</PackageId>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.18-alpha.3</Version>
+    <Version>1.0.19</Version>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 

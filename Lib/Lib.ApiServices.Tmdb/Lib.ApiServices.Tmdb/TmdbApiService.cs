@@ -115,22 +115,18 @@ namespace Lib.ApiServices.Tmdb
             var episodesWatched = await GetEpisodesWatchedAsync();
             foreach (var tvShow in tvShows)
             {
-                var seasons = await GetSeasonsAsync(tvShow);
-                foreach (var season in seasons)
+                tvShow.Seasons = await GetSeasonsAsync(tvShow);
+                foreach (var season in tvShow.Seasons)
                 {
-                    var episodes = await GetEpisodesAsync(tvShow, season);
-                    foreach (var episode in episodes)
+                    season.Episodes = await GetEpisodesAsync(tvShow, season);
+                    foreach (var episode in season.Episodes)
                     {
                         if (episodesWatched.Any(obj => episode.Id == obj.Id))
                         {
                             episode.IsWatched = true;
                         }
                     }
-
-                    season.Episodes = episodes;
                 }
-
-                tvShow.Seasons = seasons;
             }
 
             return tvShows;

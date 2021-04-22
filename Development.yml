@@ -122,15 +122,6 @@ steps:
 
 - task: DotNetCoreCLI@2
   enabled: true
-  displayName: Dotnet pack on [Lib.ApiServices.Torrents]
-  inputs:
-    command: 'custom'
-    projects: '$(Build.SourcesDirectory)/Lib/Lib.ApiServices.Torrents/Lib.ApiServices.Torrents/*.csproj'
-    custom: 'pack'
-    arguments: '-c "$(buildConfiguration)" -o "$(nugetPackageDir)/Lib.ApiServices.Torrents" -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg'
-
-- task: DotNetCoreCLI@2
-  enabled: true
   displayName: Dotnet pack on [Lib.ApiServices.Trakt]
   inputs:
     command: 'custom'
